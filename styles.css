@@ -1808,3 +1808,182 @@ footer p {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* REAL CITY BACKGROUND */
+.real-city-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      rgba(2, 6, 12, 0.25),
+      rgba(2, 6, 12, 0.58)
+    ),
+    url("./images/city-bg.jpeg");
+
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #02060c;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* PARTICLES ABOVE CITY IMAGE */
+#particleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* CONTENT ABOVE EVERYTHING */
+nav,
+.hero,
+section,
+.marquee-wrap,
+.contact-section,
+footer,
+.lang-toggle {
+  position: relative;
+  z-index: 5;
+}
+
+.cursor-glow {
+  z-index: 4;
+}
+
+/* ============================================
+   FIX NAVBAR DISTORTION
+   ============================================ */
+
+nav {
+  position: fixed !important;
+  top: 22px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+
+  width: auto !important;
+  max-width: 92% !important;
+  height: 58px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+
+  padding: 8px 14px !important;
+
+  background: rgba(5, 12, 18, 0.78) !important;
+  border: 1px solid rgba(0, 232, 143, 0.18) !important;
+  border-radius: 999px !important;
+
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.35),
+    inset 0 0 20px rgba(0, 232, 143, 0.03) !important;
+
+  z-index: 9999 !important;
+}
+
+.nav-logo {
+  white-space: nowrap !important;
+  font-family: var(--font-display) !important;
+  font-size: 15px !important;
+  font-weight: 900 !important;
+  letter-spacing: 5px !important;
+  margin-right: 8px !important;
+  color: #ffffff !important;
+}
+
+.nav-logo span {
+  color: #00e88f !important;
+}
+
+nav a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  height: 38px !important;
+  padding: 0 18px !important;
+
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+
+  color: rgba(255, 255, 255, 0.78) !important;
+  text-decoration: none !important;
+
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.6px !important;
+}
+
+nav a:hover {
+  background: rgba(0, 232, 143, 0.16) !important;
+  color: #ffffff !important;
+}
+
+/* Fix language buttons position */
+.lang-toggle {
+  position: fixed !important;
+  top: 22px !important;
+  right: 28px !important;
+  z-index: 10000 !important;
+}
+
+/* Make sure background stays behind */
+.real-city-bg {
+  z-index: 0 !important;
+}
+
+#particleCanvas {
+  z-index: 1 !important;
+}
+
+.hero,
+section,
+.marquee-wrap,
+.contact-section,
+footer {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Mobile navbar */
+@media (max-width: 768px) {
+  nav {
+    top: 16px !important;
+    width: calc(100% - 24px) !important;
+    max-width: calc(100% - 24px) !important;
+    height: auto !important;
+    padding: 10px !important;
+    gap: 6px !important;
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+  }
+
+  .nav-logo {
+    font-size: 12px !important;
+    letter-spacing: 3px !important;
+    margin-right: 6px !important;
+  }
+
+  nav a {
+    height: 34px !important;
+    padding: 0 13px !important;
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .lang-toggle {
+    top: 78px !important;
+    right: 16px !important;
+  }
+}
