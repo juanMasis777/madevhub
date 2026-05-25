@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>MADEVHUB — Web Design & Development</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
 <canvas id="particleCanvas"></canvas>
@@ -14,373 +18,798 @@
 
 <!-- LANGUAGE TOGGLE -->
 <div class="lang-toggle">
-  <button class="lang-btn active" onclick="setLang('en')">EN</button>
-  <button class="lang-btn" onclick="setLang('es')">ES</button>
+<button class="lang-btn active" onclick="setLang('en')">EN</button>
+<button class="lang-btn" onclick="setLang('es')">ES</button>
 </div>
 
 <!-- NAVIGATION -->
 <nav>
-  <div class="nav-logo"><span>MADEV</span>HUB</div>
-  <a href="#services" data-en="Services" data-es="Servicios">Services</a>
-  <a href="#portfolio" data-en="Work" data-es="Trabajo">Work</a>
-  <a href="#process" data-en="Process" data-es="Proceso">Process</a>
-  <a href="#pricing" data-en="Pricing" data-es="Precios">Pricing</a>
-  <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+<div class="nav-logo"><span>MADEV</span>HUB</div>
+<a href="#services" data-en="Services" data-es="Servicios">Services</a>
+<a href="#portfolio" data-en="Work" data-es="Trabajo">Work</a>
+<a href="#process" data-en="Process" data-es="Proceso">Process</a>
+<a href="#pricing" data-en="Pricing" data-es="Precios">Pricing</a>
+<a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-badge" data-en="Web Design & Development · Miami Beach" data-es="Diseño & Desarrollo Web · Miami Beach">Web Design & Development · Miami Beach</div>
-  <h1><span class="green-text">MADEV</span>HUB</h1>
-  <p class="hero-sub" data-en="We design and develop stunning websites that turn visitors into customers. Fast, modern, and built to grow." data-es="Diseñamos y desarrollamos sitios web impactantes que convierten visitantes en clientes. Rápidos, modernos y hechos para crecer.">We design and develop stunning websites that turn visitors into customers. Fast, modern, and built to grow.</p>
-  <div class="hero-cta">
-    <a href="#pricing" class="btn btn-primary" data-en="See Pricing" data-es="Ver Precios">See Pricing</a>
-    <a href="#portfolio" class="btn btn-outline" data-en="View Our Work" data-es="Ver Nuestro Trabajo">View Our Work</a>
-  </div>
+<div class="hero-bg"></div>
+
+<div
+  class="hero-badge"
+  data-en="Web Design & Development · Miami Beach"
+  data-es="Diseño & Desarrollo Web · Miami Beach"
+>
+  Web Design & Development · Miami Beach
+</div>
+
+<h1><span class="green-text">MADEV</span>HUB</h1>
+
+<p
+  class="hero-sub"
+  data-en="We design and develop stunning websites that turn visitors into customers. Fast, modern, and built to grow."
+  data-es="Diseñamos y desarrollamos sitios web impactantes que convierten visitantes en clientes. Rápidos, modernos y hechos para crecer."
+>
+  We design and develop stunning websites that turn visitors into customers. Fast, modern, and built to grow.
+</p>
+
+<div class="hero-cta">
+  <a href="#pricing" class="btn btn-primary" data-en="See Pricing" data-es="Ver Precios">See Pricing</a>
+  <a href="#portfolio" class="btn btn-outline" data-en="View Our Work" data-es="Ver Nuestro Trabajo">View Our Work</a>
+</div>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee-wrap">
-  <div class="marquee">
-    <span>Web Design</span><span class="hl">Branding</span><span>Responsive</span><span class="hl">SEO Ready</span><span>Fast Loading</span><span class="hl">UI/UX</span><span>E-Commerce</span><span class="hl">Mobile First</span><span>100% Custom</span><span class="hl">No Templates</span>
-    <span>Web Design</span><span class="hl">Branding</span><span>Responsive</span><span class="hl">SEO Ready</span><span>Fast Loading</span><span class="hl">UI/UX</span><span>E-Commerce</span><span class="hl">Mobile First</span><span>100% Custom</span><span class="hl">No Templates</span>
-  </div>
+<div class="marquee">
+  <span>Web Design</span>
+  <span class="hl">Branding</span>
+  <span>Responsive</span>
+  <span class="hl">SEO Ready</span>
+  <span>Fast Loading</span>
+  <span class="hl">UI/UX</span>
+  <span>E-Commerce</span>
+  <span class="hl">Mobile First</span>
+  <span>100% Custom</span>
+  <span class="hl">No Templates</span>
+
+  <span>Web Design</span>
+  <span class="hl">Branding</span>
+  <span>Responsive</span>
+  <span class="hl">SEO Ready</span>
+  <span>Fast Loading</span>
+  <span class="hl">UI/UX</span>
+  <span>E-Commerce</span>
+  <span class="hl">Mobile First</span>
+  <span>100% Custom</span>
+  <span class="hl">No Templates</span>
+</div>
 </div>
 
 <!-- SERVICES -->
 <section id="services">
-  <div class="section-num">01</div>
-  <h2 class="section-title reveal" data-en="What We <span class='green-text'>Build</span>" data-es="Lo Que <span class='green-text'>Creamos</span>">What We <span class="green-text">Build</span></h2>
-  <p class="section-desc reveal" data-en="100% custom-made websites — no generic templates. Designed and built exclusively for your business." data-es="Sitios web 100% personalizados — sin plantillas genéricas. Diseñados y construidos exclusivamente para tu negocio.">100% custom-made websites — no generic templates. Designed and built exclusively for your business.</p>
-  
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-icon">🎨</div>
-      <h3 data-en="Custom Web Design" data-es="Diseño Web Personalizado">Custom Web Design</h3>
-      <p data-en="Unique designs that reflect your brand. Every pixel is intentional — no cookie-cutter layouts." data-es="Diseños únicos que reflejan tu marca. Cada píxel es intencional — sin diseños genéricos.">Unique designs that reflect your brand. Every pixel is intentional — no cookie-cutter layouts.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">📱</div>
-      <h3 data-en="Mobile Responsive" data-es="Diseño Responsivo">Mobile Responsive</h3>
-      <p data-en="Every site we build looks perfect on all devices — included in every package, always." data-es="Cada sitio que creamos se ve perfecto en todos los dispositivos — incluido en cada paquete, siempre.">Every site we build looks perfect on all devices — included in every package, always.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">🔍</div>
-      <h3 data-en="Google Ranking" data-es="Posicionamiento en Google">Google Ranking</h3>
-      <p data-en="Built to rank on Google from day one. Fast load times, proper structure, and best practices." data-es="Construido para posicionar en Google desde el día uno. Carga rápida, estructura correcta y mejores prácticas.">Built to rank on Google from day one. Fast load times, proper structure, and best practices.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">⚡</div>
-      <h3 data-en="Lightning Fast" data-es="Ultra Rápido">Lightning Fast</h3>
-      <p data-en="Speed matters. Our websites load in under 2 seconds, keeping visitors engaged and boosting sales." data-es="La velocidad importa. Nuestros sitios cargan en menos de 2 segundos, manteniendo visitantes y aumentando ventas.">Speed matters. Our websites load in under 2 seconds, keeping visitors engaged and boosting sales.</p>
-    </div>
+<div class="section-num">01</div>
+
+<h2
+  class="section-title reveal"
+  data-en="What We <span class='green-text'>Build</span>"
+  data-es="Lo Que <span class='green-text'>Creamos</span>"
+>
+  What We <span class="green-text">Build</span>
+</h2>
+
+<p
+  class="section-desc reveal"
+  data-en="100% custom-made websites — no generic templates. Designed and built exclusively for your business."
+  data-es="Sitios web 100% personalizados — sin plantillas genéricas. Diseñados y construidos exclusivamente para tu negocio."
+>
+  100% custom-made websites — no generic templates. Designed and built exclusively for your business.
+</p>
+
+<div class="services-grid">
+
+  <div class="service-card reveal">
+    <div class="service-icon">🎨</div>
+    <h3 data-en="Custom Web Design" data-es="Diseño Web Personalizado">Custom Web Design</h3>
+    <p
+      data-en="Unique designs that reflect your brand. Every pixel is intentional — no cookie-cutter layouts."
+      data-es="Diseños únicos que reflejan tu marca. Cada píxel es intencional — sin diseños genéricos."
+    >
+      Unique designs that reflect your brand. Every pixel is intentional — no cookie-cutter layouts.
+    </p>
   </div>
+
+  <div class="service-card reveal">
+    <div class="service-icon">📱</div>
+    <h3 data-en="Mobile Responsive" data-es="Diseño Responsivo">Mobile Responsive</h3>
+    <p
+      data-en="Every site we build looks perfect on all devices — included in every package, always."
+      data-es="Cada sitio que creamos se ve perfecto en todos los dispositivos — incluido en cada paquete, siempre."
+    >
+      Every site we build looks perfect on all devices — included in every package, always.
+    </p>
+  </div>
+
+  <div class="service-card reveal">
+    <div class="service-icon">🔍</div>
+    <h3 data-en="Google Ranking" data-es="Posicionamiento en Google">Google Ranking</h3>
+    <p
+      data-en="Built to rank on Google from day one. Fast load times, proper structure, and best practices."
+      data-es="Construido para posicionar en Google desde el día uno. Carga rápida, estructura correcta y mejores prácticas."
+    >
+      Built to rank on Google from day one. Fast load times, proper structure, and best practices.
+    </p>
+  </div>
+
+  <div class="service-card reveal">
+    <div class="service-icon">⚡</div>
+    <h3 data-en="Lightning Fast" data-es="Ultra Rápido">Lightning Fast</h3>
+    <p
+      data-en="Speed matters. Our websites load in under 2 seconds, keeping visitors engaged and boosting sales."
+      data-es="La velocidad importa. Nuestros sitios cargan en menos de 2 segundos, manteniendo visitantes y aumentando ventas."
+    >
+      Speed matters. Our websites load in under 2 seconds, keeping visitors engaged and boosting sales.
+    </p>
+  </div>
+
+</div>
 </section>
 
 <!-- PORTFOLIO -->
 <section id="portfolio">
-  <div class="section-num">02</div>
-  <h2 class="section-title reveal" data-en="Featured <span class='green-text'>Work</span>" data-es="Trabajo <span class='green-text'>Destacado</span>">Featured <span class="green-text">Work</span></h2>
-  <p class="section-desc reveal" data-en="Real results for real businesses. Here's a look at what we've built." data-es="Resultados reales para negocios reales. Un vistazo a lo que hemos creado.">Real results for real businesses. Here's a look at what we've built.</p>
-  
-  <div class="portfolio-grid">
+<div class="section-num">02</div>
 
-    <div class="portfolio-card reveal">
-      <div class="portfolio-preview">
-        <div class="mock-preview" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop')"></div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag" data-en="Restaurant" data-es="Restaurante">Restaurant</span>
-          <h3>La Mesa — Fine Dining</h3>
-        </div>
-      </div>
-      <div class="portfolio-info">
-        <h3>La Mesa — Fine Dining</h3>
-        <p data-en="Full website for a Latin restaurant. Menu, reservations, and gallery." data-es="Sitio web completo para restaurante latino. Menú, reservas y galería.">Full website for a Latin restaurant. Menu, reservations, and gallery.</p>
-      </div>
-      <div class="portfolio-techs">
-        <span class="tech-pill">Web Design</span><span class="tech-pill">Mobile Ready</span><span class="tech-pill">Reservations</span><span class="tech-pill">Gallery</span>
+<h2
+  class="section-title reveal"
+  data-en="Featured <span class='green-text'>Work</span>"
+  data-es="Trabajo <span class='green-text'>Destacado</span>"
+>
+  Featured <span class="green-text">Work</span>
+</h2>
+
+<p
+  class="section-desc reveal"
+  data-en="Explore our live demo websites. Click any project to view the full website."
+  data-es="Explora nuestras páginas demo en vivo. Haz clic en cualquier proyecto para ver la página completa."
+>
+  Explore our live demo websites. Click any project to view the full website.
+</p>
+
+<div class="portfolio-grid">
+
+  <!-- RELYXAI / NECK MASSAGER -->
+<a href="https://relyxai.com" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
+<div class="portfolio-preview">
+<div
+  class="mock-preview"
+  style="background-image:
+  linear-gradient(rgba(3, 8, 20, 0.10), rgba(3, 8, 20, 0.45)),
+  url('./images/massager-6-heads.jpeg');"
+></div>
+
+<div class="portfolio-overlay">
+  <span
+    class="portfolio-tag"
+    data-en="Product Landing Page"
+    data-es="Landing Page de Producto"
+  >
+    Product Landing Page
+  </span>
+  <h3>RelyxAI — Neck Massager</h3>
+</div>
+</div>
+
+<div class="portfolio-info">
+<h3>RelyxAI — Neck Massager</h3>
+<p
+  data-en="Product landing page created to showcase a neck massager with a clean, modern, and conversion-focused layout."
+  data-es="Landing page de producto creada para mostrar un masajeador de cuello con diseño limpio, moderno y enfocado en conversiones."
+>
+  Product landing page created to showcase a neck massager with a clean, modern, and conversion-focused layout.
+</p>
+</div>
+
+<div class="portfolio-techs">
+<span class="tech-pill">Product Page</span>
+<span class="tech-pill">Neck Massager</span>
+<span class="tech-pill">Landing Page</span>
+<span class="tech-pill">E-Commerce Ready</span>
+</div>
+</a>
+
+  <!-- CHINESE RESTAURANT -->
+  <a href="https://madevhub-chinese-restaurant-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
+    <div class="portfolio-preview">
+      <div
+        class="mock-preview"
+        style="background-image:
+        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
+        url('https://images.unsplash.com/photo-1552611052-33e04de081de?w=800&h=500&fit=crop');"
+      ></div>
+
+      <div class="portfolio-overlay">
+        <span
+          class="portfolio-tag"
+          data-en="Chinese Restaurant"
+          data-es="Restaurante Chino"
+        >
+          Chinese Restaurant
+        </span>
+        <h3>Canton Ma</h3>
       </div>
     </div>
 
-    <div class="portfolio-card reveal">
-      <div class="portfolio-preview">
-        <div class="mock-preview" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=400&fit=crop')"></div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag" data-en="Beauty Salon" data-es="Salón de Belleza">Beauty Salon</span>
-          <h3>Glow Beauty Studio</h3>
-        </div>
-      </div>
-      <div class="portfolio-info">
+    <div class="portfolio-info">
+      <h3>Canton Ma — Chinese Restaurant</h3>
+      <p
+        data-en="Premium Chinese restaurant website with menu, story, gallery, and online order call to action."
+        data-es="Sitio premium para restaurante chino con menú, historia, galería y llamada para ordenar online."
+      >
+        Premium Chinese restaurant website with menu, story, gallery, and online order call to action.
+      </p>
+    </div>
+
+    <div class="portfolio-techs">
+      <span class="tech-pill">Restaurant</span>
+      <span class="tech-pill">Menu</span>
+      <span class="tech-pill">Gallery</span>
+      <span class="tech-pill">Order Now</span>
+    </div>
+  </a>
+
+  <!-- BEAUTY SALON -->
+  <a href="https://madevhub-beauty-salon-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
+    <div class="portfolio-preview">
+      <div
+        class="mock-preview"
+        style="background-image:
+        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
+        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=500&fit=crop');"
+      ></div>
+
+      <div class="portfolio-overlay">
+        <span
+          class="portfolio-tag"
+          data-en="Beauty Salon"
+          data-es="Salón de Belleza"
+        >
+          Beauty Salon
+        </span>
         <h3>Glow Beauty Studio</h3>
-        <p data-en="Elegant site for a premium beauty salon. Booking and team profiles." data-es="Sitio elegante para salón de belleza premium. Reservas y equipo.">Elegant site for a premium beauty salon. Booking and team profiles.</p>
-      </div>
-      <div class="portfolio-techs">
-        <span class="tech-pill">Web Design</span><span class="tech-pill">Online Booking</span><span class="tech-pill">Animations</span><span class="tech-pill">SEO</span>
       </div>
     </div>
 
-    <div class="portfolio-card reveal">
-      <div class="portfolio-preview">
-        <div class="mock-preview" style="background-image:url('https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&h=400&fit=crop')"></div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag" data-en="E-Commerce" data-es="E-Commerce">E-Commerce</span>
-          <h3>NOVA PRO — Headphones</h3>
-        </div>
-      </div>
-      <div class="portfolio-info">
-        <h3>NOVA PRO — Headphones</h3>
-        <p data-en="Product landing page for premium wireless headphones. Pricing, reviews, and buy now." data-es="Landing page de producto para auriculares premium. Precios, reseñas y compra.">Product landing page for premium wireless headphones. Pricing, reviews, and buy now.</p>
-      </div>
-      <div class="portfolio-techs">
-        <span class="tech-pill">Product Page</span><span class="tech-pill">E-Commerce</span><span class="tech-pill">Reviews</span><span class="tech-pill">Animations</span>
-      </div>
+    <div class="portfolio-info">
+      <h3>Glow Beauty Studio</h3>
+      <p
+        data-en="Elegant beauty salon website with services, team, booking, and premium visual design."
+        data-es="Sitio elegante para salón de belleza con servicios, equipo, reservas y diseño premium."
+      >
+        Elegant beauty salon website with services, team, booking, and premium visual design.
+      </p>
     </div>
 
-    <div class="portfolio-card reveal">
-      <div class="portfolio-preview">
-        <div class="mock-preview" style="background-image:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop')"></div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag" data-en="Dental Clinic" data-es="Clínica Dental">Dental Clinic</span>
-          <h3>BrightSmile Dental</h3>
-        </div>
-      </div>
-      <div class="portfolio-info">
-        <h3>BrightSmile Dental</h3>
-        <p data-en="Modern dental clinic website. Services, team profiles, reviews, and online booking." data-es="Sitio web moderno para clínica dental. Servicios, equipo, reseñas y reservas online.">Modern dental clinic website. Services, team profiles, reviews, and online booking.</p>
-      </div>
-      <div class="portfolio-techs">
-        <span class="tech-pill">Web Design</span><span class="tech-pill">Appointments</span><span class="tech-pill">Team Profiles</span><span class="tech-pill">Reviews</span>
-      </div>
+    <div class="portfolio-techs">
+      <span class="tech-pill">Beauty</span>
+      <span class="tech-pill">Booking</span>
+      <span class="tech-pill">Services</span>
+      <span class="tech-pill">Premium UI</span>
     </div>
+  </a>
 
-    <div class="portfolio-card reveal">
-      <div class="portfolio-preview">
-        <div class="mock-preview" style="background-image:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=400&fit=crop')"></div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag" data-en="Fashion Store" data-es="Tienda de Moda">Fashion Store</span>
-          <h3>LUXORA — Fashion E-Commerce</h3>
-        </div>
-      </div>
-      <div class="portfolio-info">
-        <h3>LUXORA — Fashion E-Commerce</h3>
-        <p data-en="Glamorous online fashion store. Product catalog, cart, wishlist, and newsletter." data-es="Tienda de moda online glamurosa. Catálogo, carrito, wishlist y newsletter.">Glamorous online fashion store. Product catalog, cart, wishlist, and newsletter.</p>
-      </div>
-      <div class="portfolio-techs">
-        <span class="tech-pill">E-Commerce</span><span class="tech-pill">Product Catalog</span><span class="tech-pill">Wishlist</span><span class="tech-pill">Mobile Ready</span>
-      </div>
-    </div>
+  <!-- CLEANING COMPANY -->
+  <a href="https://madevhub-cleaning-company-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
+    <div class="portfolio-preview">
+      <div
+        class="mock-preview"
+        style="background-image:
+        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
+        url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=500&fit=crop');"
+      ></div>
 
-    <div class="portfolio-card reveal">
-      <div class="portfolio-preview">
-        <div class="mock-preview" style="background-image:url('https://images.unsplash.com/photo-1585747860019-8b73abf25e49?w=600&h=400&fit=crop')"></div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag" data-en="Barbershop" data-es="Barbería">Barbershop</span>
-          <h3>BLADE &amp; CO.</h3>
-        </div>
-      </div>
-      <div class="portfolio-info">
-        <h3>BLADE &amp; CO. — Barbershop</h3>
-        <p data-en="Premium barbershop website. Services with pricing, team, gallery, and online booking." data-es="Sitio web de barbería premium. Servicios con precios, equipo, galería y reservas online.">Premium barbershop website. Services with pricing, team, gallery, and online booking.</p>
-      </div>
-      <div class="portfolio-techs">
-        <span class="tech-pill">Web Design</span><span class="tech-pill">Booking System</span><span class="tech-pill">Gallery</span><span class="tech-pill">Pricing</span>
-      </div>
-    </div>
-
-    <div class="portfolio-card reveal">
-      <div class="portfolio-preview">
-        <div class="mock-preview" style="background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=400&fit=crop')"></div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag" data-en="Cleaning Service" data-es="Servicio de Limpieza">Cleaning Service</span>
-          <h3>Cleaning Company</h3>
-        </div>
-      </div>
-      <div class="portfolio-info">
+      <div class="portfolio-overlay">
+        <span
+          class="portfolio-tag"
+          data-en="Cleaning Service"
+          data-es="Servicio de Limpieza"
+        >
+          Cleaning Service
+        </span>
         <h3>Cleaning Company</h3>
-        <p data-en="Professional cleaning service website. Residential and commercial, quotes, and booking." data-es="Sitio web de servicio de limpieza profesional. Residencial y comercial, cotizaciones y reservas.">Professional cleaning service website. Residential and commercial, quotes, and booking.</p>
-      </div>
-      <div class="portfolio-techs">
-        <span class="tech-pill">Web Design</span><span class="tech-pill">Quote Form</span><span class="tech-pill">Services</span><span class="tech-pill">Mobile Ready</span>
       </div>
     </div>
 
-    <div class="portfolio-card reveal">
-      <div class="portfolio-preview">
-        <div class="mock-preview" style="background-image:url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=400&fit=crop')"></div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag" data-en="Product Page" data-es="Página de Producto">Product Page</span>
-          <h3>Pulseneck</h3>
-        </div>
-      </div>
-      <div class="portfolio-info">
-        <h3>Pulseneck — Smart Gadget</h3>
-        <p data-en="Product landing page for a smart wearable device. Features, reviews, and buy now." data-es="Landing page de producto para dispositivo wearable inteligente. Características, reseñas y compra.">Product landing page for a smart wearable device. Features, reviews, and buy now.</p>
-      </div>
-      <div class="portfolio-techs">
-        <span class="tech-pill">Landing Page</span><span class="tech-pill">E-Commerce</span><span class="tech-pill">Reviews</span><span class="tech-pill">Animations</span>
-      </div>
+    <div class="portfolio-info">
+      <h3>Cleaning Company</h3>
+      <p
+        data-en="Professional cleaning service website with residential, commercial, quote, and booking sections."
+        data-es="Sitio profesional para limpieza con secciones residencial, comercial, cotizaciones y reservas."
+      >
+        Professional cleaning service website with residential, commercial, quote, and booking sections.
+      </p>
     </div>
 
-    <div class="portfolio-card reveal">
-      <div class="portfolio-preview">
-        <div class="mock-preview" style="background-image:url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop')"></div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag" data-en="Your Project?" data-es="¿Tu Proyecto?">Your Project?</span>
-          <h3 data-en="Let's Build Yours" data-es="Construyamos el Tuyo">Let's Build Yours</h3>
-        </div>
-      </div>
-      <div class="portfolio-info">
-        <h3 data-en="Your Project Could Be Next" data-es="Tu Proyecto Podría Ser el Siguiente">Your Project Could Be Next</h3>
-        <p data-en="Have a business that needs a website? Let's talk and make it happen." data-es="¿Tienes un negocio que necesita sitio web? Hablemos y hagámoslo realidad.">Have a business that needs a website? Let's talk and make it happen.</p>
-      </div>
-      <div class="portfolio-techs">
-        <span class="tech-pill" data-en="Get a Quote" data-es="Pedir Cotización">Get a Quote</span><span class="tech-pill" data-en="Free Consultation" data-es="Consulta Gratis">Free Consultation</span>
-      </div>
+    <div class="portfolio-techs">
+      <span class="tech-pill">Cleaning</span>
+      <span class="tech-pill">Quote Form</span>
+      <span class="tech-pill">Local Business</span>
+      <span class="tech-pill">Mobile Ready</span>
     </div>
+  </a>
 
+  <!-- BLADE CO -->
+<a href="https://madevhub-blade-co-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
+<div class="portfolio-preview">
+  <div
+    class="mock-preview"
+    style="background-image:
+    linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.50)),
+    url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&h=600&fit=crop');"
+  ></div>
+
+  <div class="portfolio-overlay">
+    <span
+      class="portfolio-tag"
+      data-en="Barbershop"
+      data-es="Barbería"
+    >
+      Barbershop
+    </span>
+    <h3>BLADE &amp; CO.</h3>
   </div>
+</div>
+
+<div class="portfolio-info">
+  <h3>BLADE &amp; CO. — Barbershop</h3>
+  <p
+    data-en="Premium barbershop website demo with services, pricing, booking, and a strong modern brand style."
+    data-es="Demo premium para barbería con servicios, precios, reservas y una marca moderna con estilo fuerte."
+  >
+    Premium barbershop website demo with services, pricing, booking, and a strong modern brand style.
+  </p>
+</div>
+
+<div class="portfolio-techs">
+  <span class="tech-pill">Barbershop</span>
+  <span class="tech-pill">Booking</span>
+  <span class="tech-pill">Pricing</span>
+  <span class="tech-pill">Premium Brand</span>
+</div>
+</a>
+
+  <!-- FITNESS -->
+  <a href="https://madevhub-fitness-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
+    <div class="portfolio-preview">
+      <div
+        class="mock-preview"
+        style="background-image:
+        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
+        url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=500&fit=crop');"
+      ></div>
+
+      <div class="portfolio-overlay">
+        <span
+          class="portfolio-tag"
+          data-en="Fitness Brand"
+          data-es="Marca Fitness"
+        >
+          Fitness Brand
+        </span>
+        <h3>TITAN Fitness</h3>
+      </div>
+    </div>
+
+    <div class="portfolio-info">
+      <h3>TITAN Fitness</h3>
+      <p
+        data-en="High-energy fitness website with classes, trainers, gallery, reviews, and join now call to action."
+        data-es="Sitio fitness dinámico con clases, entrenadores, galería, reseñas y llamada para inscribirse."
+      >
+        High-energy fitness website with classes, trainers, gallery, reviews, and join now call to action.
+      </p>
+    </div>
+
+    <div class="portfolio-techs">
+      <span class="tech-pill">Fitness</span>
+      <span class="tech-pill">Classes</span>
+      <span class="tech-pill">Trainers</span>
+      <span class="tech-pill">Join Now</span>
+    </div>
+  </a>
+
+  <!-- BRIGHT SMILE -->
+  <a href="https://madevhub-bright-smile-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
+    <div class="portfolio-preview">
+      <div
+        class="mock-preview"
+        style="background-image:
+        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
+        url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=500&fit=crop');"
+      ></div>
+
+      <div class="portfolio-overlay">
+        <span
+          class="portfolio-tag"
+          data-en="Dental Clinic"
+          data-es="Clínica Dental"
+        >
+          Dental Clinic
+        </span>
+        <h3>BrightSmile Dental</h3>
+      </div>
+    </div>
+
+    <div class="portfolio-info">
+      <h3>BrightSmile Dental</h3>
+      <p
+        data-en="Modern dental clinic website with services, doctors, reviews, and appointment booking."
+        data-es="Sitio moderno para clínica dental con servicios, doctores, reseñas y citas online."
+      >
+        Modern dental clinic website with services, doctors, reviews, and appointment booking.
+      </p>
+    </div>
+
+    <div class="portfolio-techs">
+      <span class="tech-pill">Dental</span>
+      <span class="tech-pill">Appointments</span>
+      <span class="tech-pill">Reviews</span>
+      <span class="tech-pill">Team</span>
+    </div>
+  </a>
+
+  <!-- LA MESA RESTAURANT -->
+  <a href="https://madevhub-restaurant-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
+    <div class="portfolio-preview">
+      <div
+        class="mock-preview"
+        style="background-image:
+        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
+        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=500&fit=crop');"
+      ></div>
+
+      <div class="portfolio-overlay">
+        <span
+          class="portfolio-tag"
+          data-en="Restaurant"
+          data-es="Restaurante"
+        >
+          Restaurant
+        </span>
+        <h3>La Mesa — Fine Dining</h3>
+      </div>
+    </div>
+
+    <div class="portfolio-info">
+      <h3>La Mesa — Fine Dining</h3>
+      <p
+        data-en="Full restaurant website with menu, reservations, gallery, and elegant dining experience."
+        data-es="Sitio completo para restaurante con menú, reservas, galería y experiencia elegante."
+      >
+        Full restaurant website with menu, reservations, gallery, and elegant dining experience.
+      </p>
+    </div>
+
+    <div class="portfolio-techs">
+      <span class="tech-pill">Restaurant</span>
+      <span class="tech-pill">Reservations</span>
+      <span class="tech-pill">Menu</span>
+      <span class="tech-pill">Gallery</span>
+    </div>
+  </a>
+
+  <!-- YOUR PROJECT -->
+  <a href="#contact" class="portfolio-card reveal">
+    <div class="portfolio-preview">
+      <div
+        class="mock-preview"
+        style="background-image:
+        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
+        url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=500&fit=crop');"
+      ></div>
+
+      <div class="portfolio-overlay">
+        <span
+          class="portfolio-tag"
+          data-en="Your Project?"
+          data-es="¿Tu Proyecto?"
+        >
+          Your Project?
+        </span>
+        <h3
+          data-en="Let's Build Yours"
+          data-es="Construyamos el Tuyo"
+        >
+          Let's Build Yours
+        </h3>
+      </div>
+    </div>
+
+    <div class="portfolio-info">
+      <h3
+        data-en="Your Project Could Be Next"
+        data-es="Tu Proyecto Podría Ser el Siguiente"
+      >
+        Your Project Could Be Next
+      </h3>
+
+      <p
+        data-en="Have a business that needs a website? Let's talk and make it happen."
+        data-es="¿Tienes un negocio que necesita sitio web? Hablemos y hagámoslo realidad."
+      >
+        Have a business that needs a website? Let's talk and make it happen.
+      </p>
+    </div>
+
+    <div class="portfolio-techs">
+      <span class="tech-pill" data-en="Get a Quote" data-es="Pedir Cotización">Get a Quote</span>
+      <span class="tech-pill" data-en="Free Consultation" data-es="Consulta Gratis">Free Consultation</span>
+    </div>
+  </a>
+
+</div>
 </section>
 
 <!-- PROCESS -->
 <section id="process">
-  <div class="section-num">03</div>
-  <h2 class="section-title reveal" data-en="How We <span class='green-text'>Work</span>" data-es="Cómo <span class='green-text'>Trabajamos</span>">How We <span class="green-text">Work</span></h2>
-  <p class="section-desc reveal" data-en="From idea to live website in 4 clear steps. No surprises, no hidden fees." data-es="De la idea al sitio web en vivo en 4 pasos claros. Sin sorpresas, sin costos ocultos.">From idea to live website in 4 clear steps. No surprises, no hidden fees.</p>
-  
-  <div class="process-grid">
-    <div class="process-step reveal">
-      <h3 data-en="Discovery" data-es="Descubrimiento">Discovery</h3>
-      <p data-en="We learn about your business, goals, and audience to plan the perfect site." data-es="Conocemos tu negocio, objetivos y audiencia para planificar el sitio perfecto.">We learn about your business, goals, and audience to plan the perfect site.</p>
-    </div>
-    <div class="process-step reveal">
-      <h3 data-en="Design" data-es="Diseño">Design</h3>
-      <p data-en="We create mockups. You approve every detail before we start building your site." data-es="Creamos bocetos. Apruebas cada detalle antes de que empecemos a construir tu sitio.">We create mockups. You approve every detail before we start building your site.</p>
-    </div>
-    <div class="process-step reveal">
-      <h3 data-en="Build" data-es="Construcción">Build</h3>
-      <p data-en="We bring your design to life. Optimized for speed, Google ranking, and all devices." data-es="Damos vida a tu diseño. Optimizado para velocidad, posicionamiento en Google y todos los dispositivos.">We bring your design to life. Optimized for speed, Google ranking, and all devices.</p>
-    </div>
-    <div class="process-step reveal">
-      <h3 data-en="Launch" data-es="Lanzamiento">Launch</h3>
-      <p data-en="Final testing, domain setup, and we go live! Plus ongoing support to keep everything running." data-es="Pruebas finales, configuración de dominio y ¡salimos en vivo! Más soporte continuo.">Final testing, domain setup, and we go live! Plus ongoing support to keep everything running.</p>
-    </div>
+<div class="section-num">03</div>
+
+<h2
+  class="section-title reveal"
+  data-en="How We <span class='green-text'>Work</span>"
+  data-es="Cómo <span class='green-text'>Trabajamos</span>"
+>
+  How We <span class="green-text">Work</span>
+</h2>
+
+<p
+  class="section-desc reveal"
+  data-en="From idea to live website in 4 clear steps. No surprises, no hidden fees."
+  data-es="De la idea al sitio web en vivo en 4 pasos claros. Sin sorpresas, sin costos ocultos."
+>
+  From idea to live website in 4 clear steps. No surprises, no hidden fees.
+</p>
+
+<div class="process-grid">
+
+  <div class="process-step reveal">
+    <h3 data-en="Discovery" data-es="Descubrimiento">Discovery</h3>
+    <p
+      data-en="We learn about your business, goals, and audience to plan the perfect site."
+      data-es="Conocemos tu negocio, objetivos y audiencia para planificar el sitio perfecto."
+    >
+      We learn about your business, goals, and audience to plan the perfect site.
+    </p>
   </div>
+
+  <div class="process-step reveal">
+    <h3 data-en="Design" data-es="Diseño">Design</h3>
+    <p
+      data-en="We create mockups. You approve every detail before we start building your site."
+      data-es="Creamos bocetos. Apruebas cada detalle antes de que empecemos a construir tu sitio."
+    >
+      We create mockups. You approve every detail before we start building your site.
+    </p>
+  </div>
+
+  <div class="process-step reveal">
+    <h3 data-en="Build" data-es="Construcción">Build</h3>
+    <p
+      data-en="We bring your design to life. Optimized for speed, Google ranking, and all devices."
+      data-es="Damos vida a tu diseño. Optimizado para velocidad, posicionamiento en Google y todos los dispositivos."
+    >
+      We bring your design to life. Optimized for speed, Google ranking, and all devices.
+    </p>
+  </div>
+
+  <div class="process-step reveal">
+    <h3 data-en="Launch" data-es="Lanzamiento">Launch</h3>
+    <p
+      data-en="Final testing, domain setup, and we go live! Plus ongoing support to keep everything running."
+      data-es="Pruebas finales, configuración de dominio y ¡salimos en vivo! Más soporte continuo."
+    >
+      Final testing, domain setup, and we go live! Plus ongoing support to keep everything running.
+    </p>
+  </div>
+
+</div>
 </section>
 
 <!-- PRICING -->
 <section id="pricing">
-  <div class="section-num">04</div>
-  <h2 class="section-title reveal" data-en="Transparent <span class='green-text'>Pricing</span>" data-es="Precios <span class='green-text'>Transparentes</span>">Transparent <span class="green-text">Pricing</span></h2>
-  <p class="section-desc reveal" data-en="No hidden fees. Mobile responsive included in every plan. 100% custom design." data-es="Sin costos ocultos. Diseño responsivo incluido en cada plan. 100% diseño personalizado.">No hidden fees. Mobile responsive included in every plan. 100% custom design.</p>
-  
-  <div class="pricing-grid">
-    <div class="pricing-card reveal">
-      <h3 data-en="Starter" data-es="Básico">Starter</h3>
-      <p class="pricing-subtitle" data-en="Perfect for getting online fast" data-es="Perfecto para salir en línea rápido">Perfect for getting online fast</p>
-      <div class="pricing-price">$497</div>
-      <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
-      <ul class="pricing-features">
-        <li data-en="Single page (Landing Page)" data-es="Una página (Landing Page)">Single page (Landing Page)</li>
-        <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
-        <li data-en="Contact form integration" data-es="Formulario de contacto integrado">Contact form integration</li>
-        <li data-en="Basic Google ranking setup" data-es="Configuración básica para Google">Basic Google ranking setup</li>
-        <li data-en="Google Maps integration" data-es="Integración con Google Maps">Google Maps integration</li>
-        <li data-en="Delivery in 7 days" data-es="Entrega en 7 días">Delivery in 7 days</li>
-        <li data-en="1 round of revisions" data-es="1 ronda de revisiones">1 round of revisions</li>
-        <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
-      </ul>
-      <a href="#contact" class="btn btn-outline" data-en="Get Started" data-es="Comenzar">Get Started</a>
-    </div>
+<div class="section-num">04</div>
 
-    <div class="pricing-card featured reveal">
-      <div class="pricing-badge" data-en="Most Popular" data-es="Más Popular">Most Popular</div>
-      <h3 data-en="Professional" data-es="Profesional">Professional</h3>
-      <p class="pricing-subtitle" data-en="Complete site for growing businesses" data-es="Sitio completo para negocios en crecimiento">Complete site for growing businesses</p>
-      <div class="pricing-price">$1,497</div>
-      <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
-      <ul class="pricing-features">
-        <li data-en="Up to 5 custom pages" data-es="Hasta 5 páginas personalizadas">Up to 5 custom pages</li>
-        <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
-        <li data-en="Custom animations & effects" data-es="Animaciones y efectos personalizados">Custom animations & effects</li>
-        <li data-en="Google ranking optimization" data-es="Optimización para posicionar en Google">Google ranking optimization</li>
-        <li data-en="Social media integration" data-es="Integración con redes sociales">Social media integration</li>
-        <li data-en="Visitor tracking & analytics" data-es="Seguimiento de visitantes y analíticas">Visitor tracking & analytics</li>
-        <li data-en="Contact & lead forms" data-es="Formularios de contacto y leads">Contact & lead forms</li>
-        <li data-en="Delivery in 14 days" data-es="Entrega en 14 días">Delivery in 14 days</li>
-        <li data-en="3 rounds of revisions" data-es="3 rondas de revisiones">3 rounds of revisions</li>
-        <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
-      </ul>
-      <a href="#contact" class="btn btn-primary" data-en="Get Started" data-es="Comenzar">Get Started</a>
-    </div>
+<h2
+  class="section-title reveal"
+  data-en="Transparent <span class='green-text'>Pricing</span>"
+  data-es="Precios <span class='green-text'>Transparentes</span>"
+>
+  Transparent <span class="green-text">Pricing</span>
+</h2>
 
-    <div class="pricing-card reveal">
-      <h3>Premium</h3>
-      <p class="pricing-subtitle" data-en="Full digital presence for established brands" data-es="Presencia digital completa para marcas establecidas">Full digital presence for established brands</p>
-      <div class="pricing-price">$2,997</div>
-      <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
-      <ul class="pricing-features">
-        <li data-en="Unlimited custom pages" data-es="Páginas personalizadas ilimitadas">Unlimited custom pages</li>
-        <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
-        <li data-en="Advanced animations & scroll effects" data-es="Animaciones avanzadas y efectos de scroll">Advanced animations & scroll effects</li>
-        <li data-en="Google ranking + speed optimization" data-es="Posicionamiento en Google + optimización de velocidad">Google ranking + speed optimization</li>
-        <li data-en="E-commerce integration" data-es="Integración de e-commerce">E-commerce integration</li>
-        <li data-en="Blog / content section" data-es="Sección de blog / contenido">Blog / content section</li>
-        <li data-en="Easy content editor (update it yourself)" data-es="Editor de contenido fácil (actualízalo tú mismo)">Easy content editor (update it yourself)</li>
-        <li data-en="3 months free maintenance" data-es="3 meses de mantenimiento gratis">3 months free maintenance</li>
-        <li data-en="Unlimited revisions" data-es="Revisiones ilimitadas">Unlimited revisions</li>
-        <li data-en="Priority support" data-es="Soporte prioritario">Priority support</li>
-        <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
-      </ul>
-      <a href="#contact" class="btn btn-outline" data-en="Get Started" data-es="Comenzar">Get Started</a>
-    </div>
+<p
+  class="section-desc reveal"
+  data-en="No hidden fees. Mobile responsive included in every plan. 100% custom design."
+  data-es="Sin costos ocultos. Diseño responsivo incluido en cada plan. 100% diseño personalizado."
+>
+  No hidden fees. Mobile responsive included in every plan. 100% custom design.
+</p>
+
+<div class="pricing-grid">
+
+  <div class="pricing-card reveal">
+    <h3 data-en="Starter" data-es="Básico">Starter</h3>
+    <p
+      class="pricing-subtitle"
+      data-en="Perfect for getting online fast"
+      data-es="Perfecto para salir en línea rápido"
+    >
+      Perfect for getting online fast
+    </p>
+
+    <div class="pricing-price">$497</div>
+    <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+    <ul class="pricing-features">
+      <li data-en="Single page landing page" data-es="Landing page de una página">Single page landing page</li>
+      <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
+      <li data-en="Contact form integration" data-es="Formulario de contacto integrado">Contact form integration</li>
+      <li data-en="Basic Google ranking setup" data-es="Configuración básica para Google">Basic Google ranking setup</li>
+      <li data-en="Google Maps integration" data-es="Integración con Google Maps">Google Maps integration</li>
+      <li data-en="Delivery in 7 days" data-es="Entrega en 7 días">Delivery in 7 days</li>
+      <li data-en="1 round of revisions" data-es="1 ronda de revisiones">1 round of revisions</li>
+      <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
+    </ul>
+
+    <a href="#contact" class="btn btn-outline" data-en="Get Started" data-es="Comenzar">Get Started</a>
   </div>
 
-  <div class="addon-banner reveal">
-    <div class="addon-info">
-      <h3 data-en="🛡️ Monthly Maintenance Plan" data-es="🛡️ Plan de Mantenimiento Mensual">🛡️ Monthly Maintenance Plan</h3>
-      <p data-en="Updates, security, backups, small edits, and priority support — so your site stays fresh and secure." data-es="Actualizaciones, seguridad, respaldos, ediciones menores y soporte prioritario — para que tu sitio se mantenga fresco y seguro.">Updates, security, backups, small edits, and priority support — so your site stays fresh and secure.</p>
-    </div>
-    <div class="addon-price" data-en="$97 <span>/ month</span>" data-es="$97 <span>/ mes</span>">$97 <span>/ month</span></div>
+  <div class="pricing-card featured reveal">
+    <div class="pricing-badge" data-en="Most Popular" data-es="Más Popular">Most Popular</div>
+
+    <h3 data-en="Professional" data-es="Profesional">Professional</h3>
+    <p
+      class="pricing-subtitle"
+      data-en="Complete site for growing businesses"
+      data-es="Sitio completo para negocios en crecimiento"
+    >
+      Complete site for growing businesses
+    </p>
+
+    <div class="pricing-price">$1,497</div>
+    <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+    <ul class="pricing-features">
+      <li data-en="Up to 5 custom pages" data-es="Hasta 5 páginas personalizadas">Up to 5 custom pages</li>
+      <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
+      <li data-en="Custom animations and effects" data-es="Animaciones y efectos personalizados">Custom animations and effects</li>
+      <li data-en="Google ranking optimization" data-es="Optimización para posicionar en Google">Google ranking optimization</li>
+      <li data-en="Social media integration" data-es="Integración con redes sociales">Social media integration</li>
+      <li data-en="Visitor tracking and analytics" data-es="Seguimiento de visitantes y analíticas">Visitor tracking and analytics</li>
+      <li data-en="Contact and lead forms" data-es="Formularios de contacto y leads">Contact and lead forms</li>
+      <li data-en="Delivery in 14 days" data-es="Entrega en 14 días">Delivery in 14 days</li>
+      <li data-en="3 rounds of revisions" data-es="3 rondas de revisiones">3 rounds of revisions</li>
+      <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
+    </ul>
+
+    <a href="#contact" class="btn btn-primary" data-en="Get Started" data-es="Comenzar">Get Started</a>
   </div>
+
+  <div class="pricing-card reveal">
+    <h3>Premium</h3>
+    <p
+      class="pricing-subtitle"
+      data-en="Full digital presence for established brands"
+      data-es="Presencia digital completa para marcas establecidas"
+    >
+      Full digital presence for established brands
+    </p>
+
+    <div class="pricing-price">$2,997</div>
+    <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+    <ul class="pricing-features">
+      <li data-en="Unlimited custom pages" data-es="Páginas personalizadas ilimitadas">Unlimited custom pages</li>
+      <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
+      <li data-en="Advanced animations and scroll effects" data-es="Animaciones avanzadas y efectos de scroll">Advanced animations and scroll effects</li>
+      <li data-en="Google ranking and speed optimization" data-es="Posicionamiento en Google y velocidad">Google ranking and speed optimization</li>
+      <li data-en="E-commerce integration" data-es="Integración de e-commerce">E-commerce integration</li>
+      <li data-en="Blog or content section" data-es="Sección de blog o contenido">Blog or content section</li>
+      <li data-en="Easy content editor" data-es="Editor de contenido fácil">Easy content editor</li>
+      <li data-en="3 months free maintenance" data-es="3 meses de mantenimiento gratis">3 months free maintenance</li>
+      <li data-en="Unlimited revisions" data-es="Revisiones ilimitadas">Unlimited revisions</li>
+      <li data-en="Priority support" data-es="Soporte prioritario">Priority support</li>
+      <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
+    </ul>
+
+    <a href="#contact" class="btn btn-outline" data-en="Get Started" data-es="Comenzar">Get Started</a>
+  </div>
+
+</div>
+
+<div class="addon-banner reveal">
+  <div class="addon-info">
+    <h3 data-en="🛡️ Monthly Maintenance Plan" data-es="🛡️ Plan de Mantenimiento Mensual">🛡️ Monthly Maintenance Plan</h3>
+    <p
+      data-en="Updates, security, backups, small edits, and priority support — so your site stays fresh and secure."
+      data-es="Actualizaciones, seguridad, respaldos, ediciones menores y soporte prioritario — para que tu sitio se mantenga fresco y seguro."
+    >
+      Updates, security, backups, small edits, and priority support — so your site stays fresh and secure.
+    </p>
+  </div>
+
+  <div
+    class="addon-price"
+    data-en="$97 <span>/ month</span>"
+    data-es="$97 <span>/ mes</span>"
+  >
+    $97 <span>/ month</span>
+  </div>
+</div>
 </section>
 
 <!-- CONTACT -->
 <div style="padding: 0 24px 100px;">
-  <div class="contact-section" id="contact">
-    <div class="section-num" style="text-align:center;">05</div>
-    <h2 class="section-title reveal" style="text-align:center;" data-en="Let's Build <span class='green-text'>Together</span>" data-es="Construyamos <span class='green-text'>Juntos</span>">Let's Build <span class="green-text">Together</span></h2>
-    <p class="section-desc reveal" style="margin:12px auto 0;max-width:460px;text-align:center;" data-en="Ready to start your project? Reach out and let's make something amazing." data-es="¿Listo para empezar tu proyecto? Escríbenos y hagamos algo increíble.">Ready to start your project? Reach out and let's make something amazing.</p>
-    
-    <div class="contact-grid">
-      <div class="contact-item reveal">
-        <div class="icon">📧</div>
-        <h4>Email</h4>
-        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="28404d4444476845494c4d5e405d4a064b4745">[email&#160;protected]</a></p>
-      </div>
-      <div class="contact-item reveal">
-        <div class="icon">📱</div>
-        <h4>WhatsApp</h4>
-        <p>+1 (305) 555-0123</p>
-      </div>
-      <div class="contact-item reveal">
-        <div class="icon">📍</div>
-        <h4 data-en="Location" data-es="Ubicación">Location</h4>
-        <p>Miami Beach, FL</p>
-      </div>
-      <div class="contact-item reveal">
-        <div class="icon">📸</div>
-        <h4>Instagram</h4>
-        <p>@madevhub</p>
-      </div>
+<div class="contact-section" id="contact">
+  <div class="section-num" style="text-align:center;">05</div>
+
+  <h2
+    class="section-title reveal"
+    style="text-align:center;"
+    data-en="Let's Build <span class='green-text'>Together</span>"
+    data-es="Construyamos <span class='green-text'>Juntos</span>"
+  >
+    Let's Build <span class="green-text">Together</span>
+  </h2>
+
+  <p
+    class="section-desc reveal"
+    style="margin:12px auto 0;max-width:460px;text-align:center;"
+    data-en="Ready to start your project? Reach out and let's make something amazing."
+    data-es="¿Listo para empezar tu proyecto? Escríbenos y hagamos algo increíble."
+  >
+    Ready to start your project? Reach out and let's make something amazing.
+  </p>
+
+  <div class="contact-grid">
+
+    <div class="contact-item reveal">
+      <div class="icon">📧</div>
+      <h4>Email</h4>
+      <p><a href="mailto:hello@madevhub.com">hello@madevhub.com</a></p>
     </div>
+
+    <div class="contact-item reveal">
+      <div class="icon">📱</div>
+      <h4>WhatsApp</h4>
+      <p>+1 (305) 555-0123</p>
+    </div>
+
+    <div class="contact-item reveal">
+      <div class="icon">📍</div>
+      <h4 data-en="Location" data-es="Ubicación">Location</h4>
+      <p>Miami Beach, FL</p>
+    </div>
+
+    <div class="contact-item reveal">
+      <div class="icon">📸</div>
+      <h4>Instagram</h4>
+      <p>@madevhub</p>
+    </div>
+
   </div>
+</div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="brand"><span>MADEV</span>HUB</div>
-  <p data-en="© 2026 MADEVHUB. All rights reserved. Handcrafted in Miami Beach." data-es="© 2026 MADEVHUB. Todos los derechos reservados. Hecho a mano en Miami Beach.">© 2026 MADEVHUB. All rights reserved. Handcrafted in Miami Beach.</p>
+<div class="brand"><span>MADEV</span>HUB</div>
+<p
+  data-en="© 2026 MADEVHUB. All rights reserved. Handcrafted in Miami Beach."
+  data-es="© 2026 MADEVHUB. Todos los derechos reservados. Hecho a mano en Miami Beach."
+>
+  © 2026 MADEVHUB. All rights reserved. Handcrafted in Miami Beach.
+</p>
 </footer>
 
 <script src="script.js"></script>
