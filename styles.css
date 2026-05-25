@@ -1987,3 +1987,10 @@ footer {
     right: 16px !important;
   }
 }
+
+/* Hide city background on phones and tablets */
+@media (max-width: 1024px) {
+  .real-city-bg {
+    display: none !important;
+  }
+}
