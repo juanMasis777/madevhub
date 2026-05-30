@@ -49,6 +49,31 @@ function setLang(lang) {
   });
 }
 
+// === PRICING TIER TOGGLE (Express / Professional) ===
+function setTier(tier) {
+  // Update buttons
+  document.querySelectorAll('.tier-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-tier') === tier);
+  });
+
+  // Hide all tier contents
+  document.querySelectorAll('.pricing-tier-content').forEach(content => {
+    content.style.display = 'none';
+  });
+
+  // Show the selected tier
+  const selectedTier = document.getElementById('tier-' + tier);
+  if (selectedTier) {
+    selectedTier.style.display = 'block';
+
+    // Reveal cards inside the now-visible tier
+    selectedTier.querySelectorAll('.reveal').forEach((el, i) => {
+      el.classList.remove('visible');
+      setTimeout(() => el.classList.add('visible'), i * 70);
+    });
+  }
+}
+
 // === SMOOTH SCROLL ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {

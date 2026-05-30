@@ -17,6 +17,14 @@
 <div class="real-city-bg"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
 
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/13059754420?text=Hi%20MADEVHUB,%20I%27m%20interested%20in%20your%20web%20design%20services" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="whatsapp-tooltip" data-en="Chat with us" data-es="Chatea con nosotros">Chat with us</span>
+</a>
+
 <!-- LANGUAGE TOGGLE -->
 <div class="lang-toggle">
 <button class="lang-btn active" onclick="setLang('en')">EN</button>
@@ -636,96 +644,261 @@
   No hidden fees. Mobile responsive included in every plan. 100% custom design.
 </p>
 
-<div class="pricing-grid">
+<!-- PRICING TIER TOGGLE -->
+<div class="pricing-tier-toggle reveal">
+  <button class="tier-btn active" onclick="setTier('express')" data-tier="express">
+    <span class="tier-btn-label" data-en="Express" data-es="Express">Express</span>
+    <span class="tier-btn-sub" data-en="From $104.99" data-es="Desde $104.99">From $104.99</span>
+  </button>
+  <button class="tier-btn" onclick="setTier('professional')" data-tier="professional">
+    <span class="tier-btn-label" data-en="Professional" data-es="Profesional">Professional</span>
+    <span class="tier-btn-sub" data-en="From $497" data-es="Desde $497">From $497</span>
+  </button>
+</div>
 
-  <div class="pricing-card reveal">
-    <h3 data-en="Starter" data-es="Básico">Starter</h3>
-    <p
-      class="pricing-subtitle"
-      data-en="Perfect for getting online fast"
-      data-es="Perfecto para salir en línea rápido"
-    >
-      Perfect for getting online fast
-    </p>
+<!-- EXPRESS TIER (DEFAULT VISIBLE) -->
+<div class="pricing-tier-content" id="tier-express">
 
-    <div class="pricing-price">$497</div>
-    <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+  <p class="tier-intro reveal"
+    data-en="Affordable starter plans designed for small businesses, freelancers, and entrepreneurs who need a quality online presence — fast."
+    data-es="Planes accesibles diseñados para pequeños negocios, freelancers y emprendedores que necesitan presencia online de calidad — rápido."
+  >
+    Affordable starter plans designed for small businesses, freelancers, and entrepreneurs who need a quality online presence — fast.
+  </p>
 
-    <ul class="pricing-features">
-      <li data-en="Single page landing page" data-es="Landing page de una página">Single page landing page</li>
-      <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
-      <li data-en="Contact form integration" data-es="Formulario de contacto integrado">Contact form integration</li>
-      <li data-en="Basic Google ranking setup" data-es="Configuración básica para Google">Basic Google ranking setup</li>
-      <li data-en="Google Maps integration" data-es="Integración con Google Maps">Google Maps integration</li>
-      <li data-en="Delivery in 7 days" data-es="Entrega en 7 días">Delivery in 7 days</li>
-      <li data-en="1 round of revisions" data-es="1 ronda de revisiones">1 round of revisions</li>
-      <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
-    </ul>
+  <div class="pricing-grid pricing-grid-express">
 
-    <a href="#contact" class="btn btn-outline" data-en="Get Started" data-es="Comenzar">Get Started</a>
+    <!-- QUICK START -->
+    <div class="pricing-card reveal">
+      <h3 data-en="Quick Start" data-es="Inicio Rápido">Quick Start</h3>
+      <p
+        class="pricing-subtitle"
+        data-en="Just need to be online"
+        data-es="Solo necesitas estar online"
+      >
+        Just need to be online
+      </p>
+
+      <div class="pricing-price">$104.99</div>
+      <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+      <ul class="pricing-features">
+        <li data-en="1 page website (one-page)" data-es="1 página web (one-page)">1 page website (one-page)</li>
+        <li data-en="Mobile responsive design" data-es="Diseño responsivo">Mobile responsive design</li>
+        <li data-en="Up to 4 sections" data-es="Hasta 4 secciones">Up to 4 sections</li>
+        <li data-en="Basic contact form" data-es="Formulario de contacto básico">Basic contact form</li>
+        <li data-en="WhatsApp floating button" data-es="Botón flotante de WhatsApp">WhatsApp floating button</li>
+        <li data-en="Initial Google setup" data-es="Configuración inicial de Google">Initial Google setup</li>
+        <li data-en="Delivery in 5 days" data-es="Entrega en 5 días">Delivery in 5 days</li>
+        <li data-en="1 round of revisions" data-es="1 ronda de revisiones">1 round of revisions</li>
+        <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
+      </ul>
+
+      <a href="https://buy.stripe.com/3cIcN72Qu0sK5pP2L41wY00" target="_blank" rel="noopener" class="btn btn-outline" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</a>
+      <div class="stripe-badge" data-en="🔒 Secure checkout · Stripe" data-es="🔒 Pago seguro · Stripe">🔒 Secure checkout · Stripe</div>
+    </div>
+
+    <!-- LOCAL BUSINESS -->
+    <div class="pricing-card reveal">
+      <h3 data-en="Local Business" data-es="Negocio Local">Local Business</h3>
+      <p
+        class="pricing-subtitle"
+        data-en="Strong local presence"
+        data-es="Presencia local fuerte"
+      >
+        Strong local presence
+      </p>
+
+      <div class="pricing-price">$149.99</div>
+      <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+      <ul class="pricing-features">
+        <li data-en="Everything in Quick Start" data-es="Todo lo de Quick Start">Everything in Quick Start</li>
+        <li data-en="Up to 6 custom sections" data-es="Hasta 6 secciones personalizadas">Up to 6 custom sections</li>
+        <li data-en="Photo gallery (up to 12 images)" data-es="Galería de fotos (hasta 12)">Photo gallery (up to 12 images)</li>
+        <li data-en="Google Maps integration" data-es="Integración con Google Maps">Google Maps integration</li>
+        <li data-en="Social media links" data-es="Enlaces a redes sociales">Social media links</li>
+        <li data-en="WhatsApp + direct call buttons" data-es="WhatsApp + llamada directa">WhatsApp + direct call buttons</li>
+        <li data-en="Basic local SEO" data-es="SEO local básico">Basic local SEO</li>
+        <li data-en="Delivery in 7 days" data-es="Entrega en 7 días">Delivery in 7 days</li>
+        <li data-en="2 rounds of revisions" data-es="2 rondas de revisiones">2 rounds of revisions</li>
+      </ul>
+
+      <a href="https://buy.stripe.com/8x28wRcr44J03hHgBU1wY01" target="_blank" rel="noopener" class="btn btn-outline" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</a>
+      <div class="stripe-badge" data-en="🔒 Secure checkout · Stripe" data-es="🔒 Pago seguro · Stripe">🔒 Secure checkout · Stripe</div>
+    </div>
+
+    <!-- SMART LANDING -->
+    <div class="pricing-card featured reveal">
+      <div class="pricing-badge" data-en="Best Value" data-es="Mejor Valor">Best Value</div>
+
+      <h3 data-en="Smart Landing" data-es="Landing Inteligente">Smart Landing</h3>
+      <p
+        class="pricing-subtitle"
+        data-en="Built to convert visitors"
+        data-es="Hecha para convertir visitantes"
+      >
+        Built to convert visitors
+      </p>
+
+      <div class="pricing-price">$195.99</div>
+      <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+      <ul class="pricing-features">
+        <li data-en="Conversion-optimized landing page" data-es="Landing optimizada para conversión">Conversion-optimized landing page</li>
+        <li data-en="CTA-focused design" data-es="Diseño enfocado en CTA">CTA-focused design</li>
+        <li data-en="Smart lead capture forms" data-es="Formularios inteligentes con captura de leads">Smart lead capture forms</li>
+        <li data-en="Email integration (Mailchimp/Gmail)" data-es="Integración email (Mailchimp/Gmail)">Email integration (Mailchimp/Gmail)</li>
+        <li data-en="Facebook Pixel + Google Analytics" data-es="Pixel de Facebook + Google Analytics">Facebook Pixel + Google Analytics</li>
+        <li data-en="Testimonials + guarantee section" data-es="Testimonios + sección de garantía">Testimonials + guarantee section</li>
+        <li data-en="Initial A/B testing setup" data-es="A/B testing inicial">Initial A/B testing setup</li>
+        <li data-en="Delivery in 7 days" data-es="Entrega en 7 días">Delivery in 7 days</li>
+        <li data-en="2 rounds of revisions" data-es="2 rondas de revisiones">2 rounds of revisions</li>
+        <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
+      </ul>
+
+      <a href="https://buy.stripe.com/3cI28t0Im8ZgbOd1H01wY02" target="_blank" rel="noopener" class="btn btn-primary" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</a>
+      <div class="stripe-badge" data-en="🔒 Secure checkout · Stripe" data-es="🔒 Pago seguro · Stripe">🔒 Secure checkout · Stripe</div>
+    </div>
+
+    <!-- ESSENTIAL SITE -->
+    <div class="pricing-card reveal">
+      <h3 data-en="Essential Site" data-es="Sitio Esencial">Essential Site</h3>
+      <p
+        class="pricing-subtitle"
+        data-en="Multi-page small business site"
+        data-es="Sitio multi-página para pymes"
+      >
+        Multi-page small business site
+      </p>
+
+      <div class="pricing-price">$310.99</div>
+      <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+      <ul class="pricing-features">
+        <li data-en="Everything in Smart Landing" data-es="Todo lo de Smart Landing">Everything in Smart Landing</li>
+        <li data-en="Up to 4 pages" data-es="Hasta 4 páginas">Up to 4 pages</li>
+        <li data-en="Basic blog (up to 5 initial posts)" data-es="Blog básico (hasta 5 posts iniciales)">Basic blog (up to 5 initial posts)</li>
+        <li data-en="Portfolio / projects gallery" data-es="Galería de portafolio / proyectos">Portfolio / projects gallery</li>
+        <li data-en="Multiple contact forms" data-es="Múltiples formularios">Multiple contact forms</li>
+        <li data-en="Optimized on-page SEO" data-es="SEO on-page optimizado">Optimized on-page SEO</li>
+        <li data-en="Speed optimization (lazy loading)" data-es="Optimización de velocidad (lazy loading)">Speed optimization (lazy loading)</li>
+        <li data-en="Bonus: 'How to use your site' guide" data-es="Bonus: Guía 'Cómo usar tu sitio'">Bonus: 'How to use your site' guide</li>
+        <li data-en="Delivery in 10 days" data-es="Entrega en 10 días">Delivery in 10 days</li>
+        <li data-en="3 rounds of revisions" data-es="3 rondas de revisiones">3 rounds of revisions</li>
+      </ul>
+
+      <a href="https://buy.stripe.com/00waEZ76KdfwaK94Tc1wY03" target="_blank" rel="noopener" class="btn btn-outline" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</a>
+      <div class="stripe-badge" data-en="🔒 Secure checkout · Stripe" data-es="🔒 Pago seguro · Stripe">🔒 Secure checkout · Stripe</div>
+    </div>
+
   </div>
+</div>
 
-  <div class="pricing-card featured reveal">
-    <div class="pricing-badge" data-en="Most Popular" data-es="Más Popular">Most Popular</div>
+<!-- PROFESSIONAL TIER (HIDDEN BY DEFAULT) -->
+<div class="pricing-tier-content" id="tier-professional" style="display: none;">
 
-    <h3 data-en="Professional" data-es="Profesional">Professional</h3>
-    <p
-      class="pricing-subtitle"
-      data-en="Complete site for growing businesses"
-      data-es="Sitio completo para negocios en crecimiento"
-    >
-      Complete site for growing businesses
-    </p>
+  <p class="tier-intro reveal"
+    data-en="Full-scale custom websites for established businesses and growing brands ready to invest in their digital presence."
+    data-es="Sitios web personalizados a gran escala para negocios establecidos y marcas en crecimiento listas para invertir en su presencia digital."
+  >
+    Full-scale custom websites for established businesses and growing brands ready to invest in their digital presence.
+  </p>
 
-    <div class="pricing-price">$1,497</div>
-    <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+  <div class="pricing-grid">
 
-    <ul class="pricing-features">
-      <li data-en="Up to 5 custom pages" data-es="Hasta 5 páginas personalizadas">Up to 5 custom pages</li>
-      <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
-      <li data-en="Custom animations and effects" data-es="Animaciones y efectos personalizados">Custom animations and effects</li>
-      <li data-en="Google ranking optimization" data-es="Optimización para posicionar en Google">Google ranking optimization</li>
-      <li data-en="Social media integration" data-es="Integración con redes sociales">Social media integration</li>
-      <li data-en="Visitor tracking and analytics" data-es="Seguimiento de visitantes y analíticas">Visitor tracking and analytics</li>
-      <li data-en="Contact and lead forms" data-es="Formularios de contacto y leads">Contact and lead forms</li>
-      <li data-en="Delivery in 14 days" data-es="Entrega en 14 días">Delivery in 14 days</li>
-      <li data-en="3 rounds of revisions" data-es="3 rondas de revisiones">3 rounds of revisions</li>
-      <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
-    </ul>
+    <div class="pricing-card reveal">
+      <h3 data-en="Starter" data-es="Básico">Starter</h3>
+      <p
+        class="pricing-subtitle"
+        data-en="Perfect for getting online fast"
+        data-es="Perfecto para salir en línea rápido"
+      >
+        Perfect for getting online fast
+      </p>
 
-    <a href="#contact" class="btn btn-primary" data-en="Get Started" data-es="Comenzar">Get Started</a>
+      <div class="pricing-price">$497</div>
+      <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+      <ul class="pricing-features">
+        <li data-en="Single page landing page" data-es="Landing page de una página">Single page landing page</li>
+        <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
+        <li data-en="Contact form integration" data-es="Formulario de contacto integrado">Contact form integration</li>
+        <li data-en="Basic Google ranking setup" data-es="Configuración básica para Google">Basic Google ranking setup</li>
+        <li data-en="Google Maps integration" data-es="Integración con Google Maps">Google Maps integration</li>
+        <li data-en="Delivery in 7 days" data-es="Entrega en 7 días">Delivery in 7 days</li>
+        <li data-en="1 round of revisions" data-es="1 ronda de revisiones">1 round of revisions</li>
+        <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
+      </ul>
+
+      <a href="https://buy.stripe.com/00w14pcr4ejA7xXclE1wY04" target="_blank" rel="noopener" class="btn btn-outline" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</a>
+      <div class="stripe-badge" data-en="🔒 Secure checkout · Stripe" data-es="🔒 Pago seguro · Stripe">🔒 Secure checkout · Stripe</div>
+    </div>
+
+    <div class="pricing-card featured reveal">
+      <div class="pricing-badge" data-en="Most Popular" data-es="Más Popular">Most Popular</div>
+
+      <h3 data-en="Professional" data-es="Profesional">Professional</h3>
+      <p
+        class="pricing-subtitle"
+        data-en="Complete site for growing businesses"
+        data-es="Sitio completo para negocios en crecimiento"
+      >
+        Complete site for growing businesses
+      </p>
+
+      <div class="pricing-price">$1,497</div>
+      <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+      <ul class="pricing-features">
+        <li data-en="Up to 5 custom pages" data-es="Hasta 5 páginas personalizadas">Up to 5 custom pages</li>
+        <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
+        <li data-en="Custom animations and effects" data-es="Animaciones y efectos personalizados">Custom animations and effects</li>
+        <li data-en="Google ranking optimization" data-es="Optimización para posicionar en Google">Google ranking optimization</li>
+        <li data-en="Social media integration" data-es="Integración con redes sociales">Social media integration</li>
+        <li data-en="Visitor tracking and analytics" data-es="Seguimiento de visitantes y analíticas">Visitor tracking and analytics</li>
+        <li data-en="Contact and lead forms" data-es="Formularios de contacto y leads">Contact and lead forms</li>
+        <li data-en="Delivery in 14 days" data-es="Entrega en 14 días">Delivery in 14 days</li>
+        <li data-en="3 rounds of revisions" data-es="3 rondas de revisiones">3 rounds of revisions</li>
+        <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
+      </ul>
+
+      <a href="https://buy.stripe.com/6oUbJ362G7Vcg4tbhA1wY05" target="_blank" rel="noopener" class="btn btn-primary" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</a>
+      <div class="stripe-badge" data-en="🔒 Secure checkout · Stripe" data-es="🔒 Pago seguro · Stripe">🔒 Secure checkout · Stripe</div>
+    </div>
+
+    <div class="pricing-card reveal">
+      <h3>Premium</h3>
+      <p
+        class="pricing-subtitle"
+        data-en="Full digital presence for established brands"
+        data-es="Presencia digital completa para marcas establecidas"
+      >
+        Full digital presence for established brands
+      </p>
+
+      <div class="pricing-price">$2,997</div>
+      <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+      <ul class="pricing-features">
+        <li data-en="Unlimited custom pages" data-es="Páginas personalizadas ilimitadas">Unlimited custom pages</li>
+        <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
+        <li data-en="Advanced animations and scroll effects" data-es="Animaciones avanzadas y efectos de scroll">Advanced animations and scroll effects</li>
+        <li data-en="Google ranking and speed optimization" data-es="Posicionamiento en Google y velocidad">Google ranking and speed optimization</li>
+        <li data-en="E-commerce integration" data-es="Integración de e-commerce">E-commerce integration</li>
+        <li data-en="Blog or content section" data-es="Sección de blog o contenido">Blog or content section</li>
+        <li data-en="Easy content editor" data-es="Editor de contenido fácil">Easy content editor</li>
+        <li data-en="3 months free maintenance" data-es="3 meses de mantenimiento gratis">3 months free maintenance</li>
+        <li data-en="Unlimited revisions" data-es="Revisiones ilimitadas">Unlimited revisions</li>
+        <li data-en="Priority support" data-es="Soporte prioritario">Priority support</li>
+        <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
+      </ul>
+
+      <a href="https://buy.stripe.com/8x26oJfDgb7odWl1H01wY06" target="_blank" rel="noopener" class="btn btn-outline" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</a>
+      <div class="stripe-badge" data-en="🔒 Secure checkout · Stripe" data-es="🔒 Pago seguro · Stripe">🔒 Secure checkout · Stripe</div>
+    </div>
+
   </div>
-
-  <div class="pricing-card reveal">
-    <h3>Premium</h3>
-    <p
-      class="pricing-subtitle"
-      data-en="Full digital presence for established brands"
-      data-es="Presencia digital completa para marcas establecidas"
-    >
-      Full digital presence for established brands
-    </p>
-
-    <div class="pricing-price">$2,997</div>
-    <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
-
-    <ul class="pricing-features">
-      <li data-en="Unlimited custom pages" data-es="Páginas personalizadas ilimitadas">Unlimited custom pages</li>
-      <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
-      <li data-en="Advanced animations and scroll effects" data-es="Animaciones avanzadas y efectos de scroll">Advanced animations and scroll effects</li>
-      <li data-en="Google ranking and speed optimization" data-es="Posicionamiento en Google y velocidad">Google ranking and speed optimization</li>
-      <li data-en="E-commerce integration" data-es="Integración de e-commerce">E-commerce integration</li>
-      <li data-en="Blog or content section" data-es="Sección de blog o contenido">Blog or content section</li>
-      <li data-en="Easy content editor" data-es="Editor de contenido fácil">Easy content editor</li>
-      <li data-en="3 months free maintenance" data-es="3 meses de mantenimiento gratis">3 months free maintenance</li>
-      <li data-en="Unlimited revisions" data-es="Revisiones ilimitadas">Unlimited revisions</li>
-      <li data-en="Priority support" data-es="Soporte prioritario">Priority support</li>
-      <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
-    </ul>
-
-    <a href="#contact" class="btn btn-outline" data-en="Get Started" data-es="Comenzar">Get Started</a>
-  </div>
-
 </div>
 
 <div class="addon-banner reveal">
@@ -739,12 +912,15 @@
     </p>
   </div>
 
-  <div
-    class="addon-price"
-    data-en="$97 <span>/ month</span>"
-    data-es="$97 <span>/ mes</span>"
-  >
-    $97 <span>/ month</span>
+  <div class="addon-actions">
+    <div
+      class="addon-price"
+      data-en="$97 <span>/ month</span>"
+      data-es="$97 <span>/ mes</span>"
+    >
+      $97 <span>/ month</span>
+    </div>
+    <a href="https://buy.stripe.com/aFa3cxcr4b7of0pgBU1wY07" target="_blank" rel="noopener" class="btn btn-primary" data-en="Subscribe Monthly" data-es="Suscribirme">Subscribe Monthly</a>
   </div>
 </div>
 </section>
