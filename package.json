@@ -1,0 +1,24 @@
+{
+  "name": "madevhub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+  "dev": "vite --host 0.0.0.0"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanMasis777/madevhub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/juanMasis777/madevhub/issues"
+  },
+  "homepage": "https://github.com/juanMasis777/madevhub#readme",
+  "devDependencies": {
+    "vite": "^8.1.2"
+  }
+}
