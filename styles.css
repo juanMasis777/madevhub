@@ -2792,3 +2792,88 @@ footer p {
     font-size: 13px;
   }
 }
+
+/* ============================================
+   ★ TEXTO MÁS CLARO Y LEGIBLE
+   ============================================ */
+:root {
+  --white: #f5dc2d;
+  --white-bright: #ffffff;
+  --gray-100: #f5dc2d;
+  --gray-200: #f5dc2d;
+}
+
+.section-desc,
+.hero-sub,
+.tier-intro,
+.service-card p,
+.process-step p,
+.portfolio-info p,
+.pricing-subtitle,
+.pricing-period,
+.pricing-features li,
+.contact-item p,
+.contact-item a,
+.review-card p,
+.review-top span,
+.addon-banner .addon-info p,
+footer p {
+  color: #e8eef5 !important;
+}
+
+.pricing-features li {
+  color: #eef3f9 !important;
+}
+
+/* ============================================
+   ★ BOTONES DEL HERO EN LÍNEA (MÓVIL)
+   ============================================ */
+@media (max-width: 768px) {
+  .hero-cta {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100%;
+  }
+
+  .hero-cta .btn {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    padding: 13px 8px !important;
+    font-size: 13px !important;
+    white-space: nowrap;
+  }
+}
+
+/* ============================================
+   ★ HERO MÁS LEGIBLE + BOTÓN RESALTADO
+   ============================================ */
+.hero-badge {
+  color: #ffffff !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+}
+
+.hero-sub {
+  color: #ffffff !important;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.95);
+}
+
+.hero h1 {
+  text-shadow: 0 4px 24px rgba(162, 242, 232, 0.55);
+}
+
+/* Botón "View Our Work" más visible */
+.btn-outline {
+  background: rgba(9, 90, 90, 0.75) !important;
+  border: 2px solid var(--green) !important;
+  color: #ffffff !important;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.btn-outline:hover {
+  background: rgba(66, 10, 222, 0.18) !important;
+  border-color: var(--green) !important;
+  color: #ffffff !important;
+}
