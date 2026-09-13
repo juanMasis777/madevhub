@@ -9,7 +9,7 @@
 <meta name="description" content="MADEVHUB creates fast, custom websites for small businesses in Miami. Professional web design, landing pages, e-commerce, and local SEO." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="author" content="MADEVHUB" />
-<meta name="theme-color" content="#040608" />
+<meta name="theme-color" content="#050a14" />
 
 <link rel="canonical" href="https://www.madevhub.com/" />
 
@@ -55,23 +55,71 @@
 }
 </script>
 
-<style>
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-</style>
+<!-- FAQ for search engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I own the website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every package includes 100% ownership rights. The website, the design and the content are yours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the domain included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every website package includes a free domain and hosting for the first year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most projects are delivered in 7 to 14 days depending on the package you choose."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I request changes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every package includes revision rounds, from 1 round on Starter up to unlimited revisions on Premium."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work outside Miami?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We are based in Miami Beach and we work with businesses across the United States, fully remote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I pay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Payments are handled through Stripe secure checkout. You can pay by card directly from this website."
+      }
+    }
+  ]
+}
+</script>
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' rx='26' fill='%23040608'/><g transform='translate(60 60)' fill='none' stroke='%2300E88F' stroke-linejoin='round'><polygon points='0,-40 35,-20 35,20 0,40 -35,20 -35,-20' stroke-width='5'/><path d='M-19 18 -19 -18 0 4 19 -18 19 18' stroke-width='6.5' stroke-linecap='round'/></g></svg>" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' rx='26' fill='%23050a14'/><g transform='translate(60 60)' fill='none' stroke='%2300D4FF' stroke-linejoin='round'><polygon points='0,-40 35,-20 35,20 0,40 -35,20 -35,-20' stroke-width='5'/><path d='M-19 18 -19 -18 0 4 19 -18 19 18' stroke-width='6.5' stroke-linecap='round'/></g></svg>" />
 
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="./images/city-bg.jpeg" fetchpriority="high" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="styles.css" />
 
@@ -100,1046 +148,1133 @@
 <!-- End Meta Pixel Code -->
 </head>
 
-<body>
-
-<canvas id="particleCanvas"></canvas>
-<div class="real-city-bg"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
+<body id="top">
 
 <!-- WHATSAPP FLOATING BUTTON -->
 <a href="https://wa.me/13059754420?text=Hi%20MADEVHUB,%20I%27m%20interested%20in%20your%20web%20design%20services" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
   <span class="whatsapp-tooltip" data-en="Chat with us" data-es="Chatea con nosotros">Chat with us</span>
 </a>
 
-<!-- LANGUAGE TOGGLE -->
-<div class="lang-toggle">
-<button class="lang-btn active" onclick="setLang('en')">EN</button>
-<button class="lang-btn" onclick="setLang('es')">ES</button>
-</div>
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
 
-<!-- NAVIGATION -->
-<nav>
-<div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="cursor:pointer;"><span>MADEV</span>HUB</div>
-<a href="#services" data-en="Services" data-es="Servicios">Services</a>
-<a href="#portfolio" data-en="Work" data-es="Trabajo">Work</a>
-<a href="#process" data-en="Process" data-es="Proceso">Process</a>
-<a href="#pricing" data-en="Pricing" data-es="Precios">Pricing</a>
-<a href="#reviews" data-en="Reviews" data-es="Reseñas">Reviews</a>
-<a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
-</nav>
+    <a href="#top" class="brand" aria-label="MADEVHUB home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 120 120" width="38" height="38" fill="none">
+          <rect width="120" height="120" rx="28" fill="url(#brandGrad)" fill-opacity="0.14"/>
+          <rect x="1" y="1" width="118" height="118" rx="27" stroke="url(#brandGrad)" stroke-opacity="0.5" stroke-width="2"/>
+          <g transform="translate(60 60)" stroke="url(#brandGrad)" stroke-linejoin="round">
+            <polygon points="0,-38 33,-19 33,19 0,38 -33,19 -33,-19" stroke-width="5"/>
+            <path d="M-18 17 -18 -17 0 4 18 -17 18 17" stroke-width="7" stroke-linecap="round"/>
+          </g>
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00D4FF"/>
+              <stop offset="1" stop-color="#00E88F"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong><span class="grad-text">MADEV</span>HUB</strong>
+        <small>WEB. AUTOMATE. GROW.</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main">
+      <a href="#top" data-en="Home" data-es="Inicio">Home</a>
+      <a href="#services" data-en="Services" data-es="Servicios">Services</a>
+      <a href="#portfolio" data-en="Work" data-es="Trabajo">Work</a>
+      <a href="#process" data-en="Process" data-es="Proceso">Process</a>
+      <a href="#pricing" data-en="Pricing" data-es="Precios">Pricing</a>
+      <a href="#reviews" data-en="Reviews" data-es="Reseñas">Reviews</a>
+      <a href="#faq" data-en="FAQ" data-es="Preguntas">FAQ</a>
+      <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+      <a href="#contact" class="btn btn-primary nav-cta-mobile" data-en="Get a Free Quote" data-es="Cotización Gratis">Get a Free Quote</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="es">ES</button>
+      </div>
+
+      <a href="#contact" class="btn btn-primary btn-sm nav-cta" data-en="Get a Free Quote" data-es="Cotización Gratis">Get a Free Quote</a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
 
 <!-- HERO -->
 <section class="hero">
-<div class="hero-bg"></div>
+  <div class="hero-bg" aria-hidden="true"></div>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
 
-<div
-  class="hero-badge"
-  data-en="Web Design & Development · Miami Beach"
-  data-es="Diseño & Desarrollo Web · Miami Beach"
->
-  Web Design & Development · Miami Beach
-</div>
+  <div class="hero-inner">
 
-<h1><span class="green-text">MADEV</span>HUB<span class="sr-only"> — Custom Web Design and Development in Miami</span></h1>
+    <div class="hero-copy">
+      <span class="eyebrow" data-en="Professional websites for real businesses" data-es="Sitios web profesionales para negocios reales">Professional websites for real businesses</span>
 
-<p
-  class="hero-sub"
-  data-en="We design and develop stunning websites that turn visitors into customers. Fast, modern, and built to grow."
-  data-es="Diseñamos y desarrollamos sitios web impactantes que convierten visitantes en clientes. Rápidos, modernos y hechos para crecer."
->
-  We design and develop stunning websites that turn visitors into customers. Fast, modern, and built to grow.
-</p>
+      <h1
+        data-en="Your Business Deserves a Website <span class='grad-text'>That Works</span>"
+        data-es="Tu Negocio Merece un Sitio Web <span class='grad-text'>Que Funcione</span>"
+      >
+        Your Business Deserves a Website <span class="grad-text">That Works</span>
+      </h1>
 
-<div class="hero-cta">
-  <a href="#pricing" class="btn btn-primary" data-en="See Pricing" data-es="Ver Precios">See Pricing</a>
-  <a href="#portfolio" class="btn btn-outline" data-en="View Our Work" data-es="Ver Nuestro Trabajo">View Our Work</a>
-</div>
+      <p
+        class="hero-sub"
+        data-en="We design and build fast, modern websites for small and medium businesses in Miami and across the U.S. — built to attract customers, build trust, and grow your business."
+        data-es="Diseñamos y construimos sitios web rápidos y modernos para pequeñas y medianas empresas en Miami y todo EE.UU. — hechos para atraer clientes, generar confianza y hacer crecer tu negocio."
+      >
+        We design and build fast, modern websites for small and medium businesses in Miami and across the U.S. — built to attract customers, build trust, and grow your business.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary btn-lg" data-en="Get a Free Quote" data-es="Cotización Gratis">Get a Free Quote</a>
+        <a href="https://wa.me/13059754420?text=Hi%20MADEVHUB,%20I%27m%20interested%20in%20your%20web%20design%20services" target="_blank" rel="noopener" class="btn btn-ghost btn-lg btn-whatsapp">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413A11.815 11.815 0 0012.05 0zm5.422 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          <span data-en="Chat on WhatsApp" data-es="Chatear por WhatsApp">Chat on WhatsApp</span>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <span class="hero-script">From Miami<br />to the World</span>
+
+      <div class="device-laptop">
+        <div class="laptop-screen">
+          <div class="mini-site">
+            <div class="mini-bar">
+              <span class="mini-logo">SABOR</span>
+              <span class="mini-links"><i></i><i></i><i></i><i></i></span>
+            </div>
+            <div class="mini-body">
+              <p class="mini-kicker">FAVORITE</p>
+              <h3 class="mini-title">GOOD FOOD<br />BRIGHTER DAYS</h3>
+              <span class="mini-btn">Book a Table</span>
+            </div>
+          </div>
+        </div>
+        <div class="laptop-base"></div>
+      </div>
+
+      <div class="device-phone">
+        <div class="phone-screen">
+          <div class="mini-site mini-site-phone">
+            <div class="mini-bar">
+              <span class="mini-logo">SABOR</span>
+            </div>
+            <div class="mini-body">
+              <h3 class="mini-title">GOOD FOOD<br />BRIGHTER DAYS</h3>
+              <span class="mini-btn">Book a Table</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="hero-trust">
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5z"/></svg>
+        <span data-en="Delivered in 7–14 days" data-es="Entrega en 7–14 días">Delivered in 7–14 days</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+        <span data-en="Free domain + hosting (1 year)" data-es="Dominio + hosting gratis (1 año)">Free domain + hosting (1 year)</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg>
+        <span data-en="Mobile responsive and SEO-ready" data-es="Responsivo y listo para SEO">Mobile responsive and SEO-ready</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 20 6v6c0 5-3.4 8.3-8 9.5C7.4 20.3 4 17 4 12V6l8-3.5z"/><path d="m8.8 12.2 2.2 2.2 4.2-4.6"/></svg>
+        <span data-en="100% ownership of your site" data-es="100% propiedad de tu sitio">100% ownership of your site</span>
+      </li>
+    </ul>
+
+  </div>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee-wrap">
-<div class="marquee">
-  <span>Web Design</span>
-  <span class="hl">Branding</span>
-  <span>Responsive</span>
-  <span class="hl">SEO Ready</span>
-  <span>Fast Loading</span>
-  <span class="hl">UI/UX</span>
-  <span>E-Commerce</span>
-  <span class="hl">Mobile First</span>
-  <span>100% Custom</span>
-  <span class="hl">No Templates</span>
-
-  <span>Web Design</span>
-  <span class="hl">Branding</span>
-  <span>Responsive</span>
-  <span class="hl">SEO Ready</span>
-  <span>Fast Loading</span>
-  <span class="hl">UI/UX</span>
-  <span>E-Commerce</span>
-  <span class="hl">Mobile First</span>
-  <span>100% Custom</span>
-  <span class="hl">No Templates</span>
-</div>
+  <div class="marquee">
+    <span>Web Design</span><span class="hl">Branding</span><span>Responsive</span><span class="hl">SEO Ready</span><span>Fast Loading</span><span class="hl">UI/UX</span><span>E-Commerce</span><span class="hl">Mobile First</span><span>100% Custom</span><span class="hl">No Templates</span>
+    <span>Web Design</span><span class="hl">Branding</span><span>Responsive</span><span class="hl">SEO Ready</span><span>Fast Loading</span><span class="hl">UI/UX</span><span>E-Commerce</span><span class="hl">Mobile First</span><span>100% Custom</span><span class="hl">No Templates</span>
+  </div>
 </div>
 
 <!-- SERVICES -->
-<section id="services">
-<div class="section-num">01</div>
+<section id="services" class="section section-dark">
+  <div class="container">
 
-<h2
-  class="section-title reveal"
-  data-en="What We <span class='green-text'>Build</span>"
-  data-es="Lo Que <span class='green-text'>Creamos</span>"
->
-  What We <span class="green-text">Build</span>
-</h2>
+    <div class="section-head">
+      <div>
+        <span class="kicker" data-en="What we do" data-es="Lo que hacemos">What we do</span>
+        <h2
+          class="section-title reveal"
+          data-en="Our <span class='grad-text'>Services</span>"
+          data-es="Nuestros <span class='grad-text'>Servicios</span>"
+        >
+          Our <span class="grad-text">Services</span>
+        </h2>
+        <p
+          class="section-desc reveal"
+          data-en="Complete web solutions to help your business stand out, attract more customers, and grow. 100% custom-made — no generic templates."
+          data-es="Soluciones web completas para que tu negocio destaque, atraiga más clientes y crezca. 100% personalizado — sin plantillas genéricas."
+        >
+          Complete web solutions to help your business stand out, attract more customers, and grow. 100% custom-made — no generic templates.
+        </p>
+      </div>
 
-<p
-  class="section-desc reveal"
-  data-en="100% custom-made websites — no generic templates. Designed and built exclusively for your business."
-  data-es="Sitios web 100% personalizados — sin plantillas genéricas. Diseñados y construidos exclusivamente para tu negocio."
->
-  100% custom-made websites — no generic templates. Designed and built exclusively for your business.
-</p>
+      <a href="#pricing" class="btn btn-ghost btn-sm reveal" data-en="View All Packages →" data-es="Ver Todos los Paquetes →">View All Packages →</a>
+    </div>
 
-<div class="services-grid">
+    <div class="services-grid">
 
-  <div class="service-card reveal">
-    <div class="service-icon">🎨</div>
-    <h3 data-en="Custom Web Design" data-es="Diseño Web Personalizado">Custom Web Design</h3>
-    <p
-      data-en="Unique designs that reflect your brand. Every pixel is intentional — no cookie-cutter layouts."
-      data-es="Diseños únicos que reflejan tu marca. Cada píxel es intencional — sin diseños genéricos."
-    >
-      Unique designs that reflect your brand. Every pixel is intentional — no cookie-cutter layouts.
+      <article class="service-card reveal">
+        <span class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </span>
+        <h3 data-en="Business Website" data-es="Sitio Web Empresarial">Business Website</h3>
+        <p
+          data-en="Modern, professional multi-page websites for local businesses that want to be taken seriously online."
+          data-es="Sitios web modernos y profesionales de varias páginas para negocios locales que quieren destacar en línea."
+        >
+          Modern, professional multi-page websites for local businesses that want to be taken seriously online.
+        </p>
+      </article>
+
+      <article class="service-card reveal">
+        <span class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.3a2 2 0 0 0 2-1.5L20 7H6.2"/><circle cx="10" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg>
+        </span>
+        <h3 data-en="E-Commerce Store" data-es="Tienda E-Commerce">E-Commerce Store</h3>
+        <p
+          data-en="Sell your products online with a fast, secure store and a checkout experience customers trust."
+          data-es="Vende tus productos en línea con una tienda rápida, segura y un checkout en el que los clientes confían."
+        >
+          Sell your products online with a fast, secure store and a checkout experience customers trust.
+        </p>
+      </article>
+
+      <article class="service-card reveal">
+        <span class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg>
+        </span>
+        <h3 data-en="Custom Development" data-es="Desarrollo a Medida">Custom Development</h3>
+        <p
+          data-en="Tailored features built from scratch — booking systems, forms, integrations and everything in between."
+          data-es="Funcionalidades hechas a la medida — sistemas de reservas, formularios, integraciones y mucho más."
+        >
+          Tailored features built from scratch — booking systems, forms, integrations and everything in between.
+        </p>
+      </article>
+
+      <article class="service-card reveal">
+        <span class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/><circle cx="12" cy="12" r="3"/></svg>
+        </span>
+        <h3 data-en="Landing Pages That Convert" data-es="Landing Pages Que Convierten">Landing Pages That Convert</h3>
+        <p
+          data-en="CTA-focused pages with smart lead capture, Facebook Pixel and Google Analytics ready from day one."
+          data-es="Páginas enfocadas en conversión con captura de leads, Pixel de Facebook y Google Analytics desde el día uno."
+        >
+          CTA-focused pages with smart lead capture, Facebook Pixel and Google Analytics ready from day one.
+        </p>
+      </article>
+
+      <article class="service-card reveal">
+        <span class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        </span>
+        <h3 data-en="SEO & Google Ranking" data-es="SEO y Posicionamiento" >SEO &amp; Google Ranking</h3>
+        <p
+          data-en="Clean structure, fast load times and on-page SEO so local customers actually find you on Google."
+          data-es="Estructura limpia, carga rápida y SEO on-page para que los clientes locales te encuentren en Google."
+        >
+          Clean structure, fast load times and on-page SEO so local customers actually find you on Google.
+        </p>
+      </article>
+
+      <article class="service-card reveal">
+        <span class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 20 6v6c0 5-3.4 8.3-8 9.5C7.4 20.3 4 17 4 12V6l8-3.5z"/><path d="m8.8 12.2 2.2 2.2 4.2-4.6"/></svg>
+        </span>
+        <h3 data-en="Maintenance & Support" data-es="Mantenimiento y Soporte">Maintenance &amp; Support</h3>
+        <p
+          data-en="Updates, security, backups and small edits handled for you — so your site stays fresh and secure."
+          data-es="Actualizaciones, seguridad, respaldos y ediciones menores — para que tu sitio siga fresco y seguro."
+        >
+          Updates, security, backups and small edits handled for you — so your site stays fresh and secure.
+        </p>
+      </article>
+
+    </div>
+
+    <p class="services-note reveal">
+      <span data-en="Website packages start at" data-es="Los paquetes web comienzan desde">Website packages start at</span>
+      <strong>$195.99</strong>
+      <span data-en="— free domain and hosting included for the first year." data-es="— dominio y hosting gratis el primer año.">— free domain and hosting included for the first year.</span>
     </p>
-  </div>
 
-  <div class="service-card reveal">
-    <div class="service-icon">📱</div>
-    <h3 data-en="Mobile Responsive" data-es="Diseño Responsivo">Mobile Responsive</h3>
-    <p
-      data-en="Every site we build looks perfect on all devices — included in every package, always."
-      data-es="Cada sitio que creamos se ve perfecto en todos los dispositivos — incluido en cada paquete, siempre."
-    >
-      Every site we build looks perfect on all devices — included in every package, always.
-    </p>
   </div>
-
-  <div class="service-card reveal">
-    <div class="service-icon">🔍</div>
-    <h3 data-en="Google Ranking" data-es="Posicionamiento en Google">Google Ranking</h3>
-    <p
-      data-en="Built to rank on Google from day one. Fast load times, proper structure, and best practices."
-      data-es="Construido para posicionar en Google desde el día uno. Carga rápida, estructura correcta y mejores prácticas."
-    >
-      Built to rank on Google from day one. Fast load times, proper structure, and best practices.
-    </p>
-  </div>
-
-  <div class="service-card reveal">
-    <div class="service-icon">⚡</div>
-    <h3 data-en="Lightning Fast" data-es="Ultra Rápido">Lightning Fast</h3>
-    <p
-      data-en="Speed matters. Our websites load in under 2 seconds, keeping visitors engaged and boosting sales."
-      data-es="La velocidad importa. Nuestros sitios cargan en menos de 2 segundos, manteniendo visitantes y aumentando ventas."
-    >
-      Speed matters. Our websites load in under 2 seconds, keeping visitors engaged and boosting sales.
-    </p>
-  </div>
-
-</div>
 </section>
 
 <!-- PORTFOLIO -->
-<section id="portfolio">
-<div class="section-num">02</div>
+<section id="portfolio" class="section section-light">
+  <div class="container">
 
-<h2
-  class="section-title reveal"
-  data-en="Featured <span class='green-text'>Work</span>"
-  data-es="Trabajo <span class='green-text'>Destacado</span>"
->
-  Featured <span class="green-text">Work</span>
-</h2>
-
-<p
-  class="section-desc reveal"
-  data-en="Explore our live demo websites. Click any project to view the full website."
-  data-es="Explora nuestras páginas demo en vivo. Haz clic en cualquier proyecto para ver la página completa."
->
-  Explore our live demo websites. Click any project to view the full website.
-</p>
-
-<div class="portfolio-grid">
-
-  <!-- RELYXAI / NECK MASSAGER -->
-<a href="https://relyxai.com" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
-<div class="portfolio-preview">
-<div
-  class="mock-preview"
-  style="background-image:
-  linear-gradient(rgba(3, 8, 20, 0.10), rgba(3, 8, 20, 0.45)),
-  url('./images/massager-6-heads.jpeg');"
-></div>
-
-<div class="portfolio-overlay">
-  <span
-    class="portfolio-tag"
-    data-en="Product Landing Page"
-    data-es="Landing Page de Producto"
-  >
-    Product Landing Page
-  </span>
-  <h3>RelyxAI — Neck Massager</h3>
-</div>
-</div>
-
-<div class="portfolio-info">
-<h3>RelyxAI — Neck Massager</h3>
-<p
-  data-en="Product landing page created to showcase a neck massager with a clean, modern, and conversion-focused layout."
-  data-es="Landing page de producto creada para mostrar un masajeador de cuello con diseño limpio, moderno y enfocado en conversiones."
->
-  Product landing page created to showcase a neck massager with a clean, modern, and conversion-focused layout.
-</p>
-</div>
-
-<div class="portfolio-techs">
-<span class="tech-pill">Product Page</span>
-<span class="tech-pill">Neck Massager</span>
-<span class="tech-pill">Landing Page</span>
-<span class="tech-pill">E-Commerce Ready</span>
-</div>
-</a>
-
-  <!-- CHINESE RESTAURANT -->
-  <a href="https://madevhub-chinese-restaurant-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
-    <div class="portfolio-preview">
-      <div
-        class="mock-preview"
-        style="background-image:
-        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
-        url('https://images.unsplash.com/photo-1552611052-33e04de081de?w=800&h=500&fit=crop');"
-      ></div>
-
-      <div class="portfolio-overlay">
-        <span
-          class="portfolio-tag"
-          data-en="Chinese Restaurant"
-          data-es="Restaurante Chino"
+    <div class="section-head">
+      <div>
+        <span class="kicker" data-en="Featured work" data-es="Trabajo destacado">Featured work</span>
+        <h2
+          class="section-title reveal"
+          data-en="Real Businesses. <span class='grad-text'>Real Results.</span>"
+          data-es="Negocios Reales. <span class='grad-text'>Resultados Reales.</span>"
         >
-          Chinese Restaurant
-        </span>
-        <h3>Canton Ma</h3>
-      </div>
-    </div>
-
-    <div class="portfolio-info">
-      <h3>Canton Ma — Chinese Restaurant</h3>
-      <p
-        data-en="Premium Chinese restaurant website with menu, story, gallery, and online order call to action."
-        data-es="Sitio premium para restaurante chino con menú, historia, galería y llamada para ordenar online."
-      >
-        Premium Chinese restaurant website with menu, story, gallery, and online order call to action.
-      </p>
-    </div>
-
-    <div class="portfolio-techs">
-      <span class="tech-pill">Restaurant</span>
-      <span class="tech-pill">Menu</span>
-      <span class="tech-pill">Gallery</span>
-      <span class="tech-pill">Order Now</span>
-    </div>
-  </a>
-
-  <!-- BEAUTY SALON -->
-  <a href="https://madevhub-beauty-salon-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
-    <div class="portfolio-preview">
-      <div
-        class="mock-preview"
-        style="background-image:
-        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
-        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=500&fit=crop');"
-      ></div>
-
-      <div class="portfolio-overlay">
-        <span
-          class="portfolio-tag"
-          data-en="Beauty Salon"
-          data-es="Salón de Belleza"
+          Real Businesses. <span class="grad-text">Real Results.</span>
+        </h2>
+        <p
+          class="section-desc reveal"
+          data-en="Explore our live demo websites. Click any project to open the full site."
+          data-es="Explora nuestras páginas demo en vivo. Haz clic en cualquier proyecto para ver el sitio completo."
         >
-          Beauty Salon
-        </span>
-        <h3>Glow Beauty Studio</h3>
+          Explore our live demo websites. Click any project to open the full site.
+        </p>
       </div>
+
+      <a href="#contact" class="btn btn-dark btn-sm reveal" data-en="Start Your Project →" data-es="Empieza Tu Proyecto →">Start Your Project →</a>
     </div>
 
-    <div class="portfolio-info">
-      <h3>Glow Beauty Studio</h3>
-      <p
-        data-en="Elegant beauty salon website with services, team, booking, and premium visual design."
-        data-es="Sitio elegante para salón de belleza con servicios, equipo, reservas y diseño premium."
-      >
-        Elegant beauty salon website with services, team, booking, and premium visual design.
-      </p>
+    <div class="work-grid">
+
+      <a href="https://relyxai.com" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+        <div class="work-thumb" style="background-image:url('./images/massager-6-heads.jpeg')">
+          <span class="work-tag" data-en="Product Landing Page" data-es="Landing de Producto">Product Landing Page</span>
+          <span class="work-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="work-body">
+          <h3>RelyxAI — Neck Massager</h3>
+          <p
+            data-en="Product landing page built to showcase a neck massager with a clean, modern, conversion-focused layout."
+            data-es="Landing de producto creada para mostrar un masajeador de cuello con diseño limpio, moderno y enfocado en conversiones."
+          >
+            Product landing page built to showcase a neck massager with a clean, modern, conversion-focused layout.
+          </p>
+          <div class="work-tech"><span>Product Page</span><span>Landing Page</span><span>E-Commerce Ready</span></div>
+        </div>
+      </a>
+
+      <a href="https://madevhub-chinese-restaurant-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1552611052-33e04de081de?w=900&h=600&fit=crop')">
+          <span class="work-tag" data-en="Chinese Restaurant" data-es="Restaurante Chino">Chinese Restaurant</span>
+          <span class="work-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="work-body">
+          <h3>Canton Ma — Chinese Restaurant</h3>
+          <p
+            data-en="Premium Chinese restaurant website with menu, story, gallery and online order call to action."
+            data-es="Sitio premium para restaurante chino con menú, historia, galería y llamada para ordenar online."
+          >
+            Premium Chinese restaurant website with menu, story, gallery and online order call to action.
+          </p>
+          <div class="work-tech"><span>Restaurant</span><span>Menu</span><span>Gallery</span></div>
+        </div>
+      </a>
+
+      <a href="https://madevhub-beauty-salon-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&h=600&fit=crop')">
+          <span class="work-tag" data-en="Beauty Salon" data-es="Salón de Belleza">Beauty Salon</span>
+          <span class="work-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="work-body">
+          <h3>Glow Beauty Studio</h3>
+          <p
+            data-en="Elegant beauty salon website with services, team, booking and premium visual design."
+            data-es="Sitio elegante para salón de belleza con servicios, equipo, reservas y diseño premium."
+          >
+            Elegant beauty salon website with services, team, booking and premium visual design.
+          </p>
+          <div class="work-tech"><span>Beauty</span><span>Booking</span><span>Premium UI</span></div>
+        </div>
+      </a>
+
+      <a href="https://madevhub-cleaning-company-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&h=600&fit=crop')">
+          <span class="work-tag" data-en="Cleaning Service" data-es="Servicio de Limpieza">Cleaning Service</span>
+          <span class="work-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="work-body">
+          <h3>Cleaning Company</h3>
+          <p
+            data-en="Professional cleaning service website with residential, commercial, quote and booking sections."
+            data-es="Sitio profesional de limpieza con secciones residencial, comercial, cotizaciones y reservas."
+          >
+            Professional cleaning service website with residential, commercial, quote and booking sections.
+          </p>
+          <div class="work-tech"><span>Cleaning</span><span>Quote Form</span><span>Local Business</span></div>
+        </div>
+      </a>
+
+      <a href="https://madevhub-blade-co-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&h=600&fit=crop')">
+          <span class="work-tag" data-en="Barbershop" data-es="Barbería">Barbershop</span>
+          <span class="work-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="work-body">
+          <h3>BLADE &amp; CO. — Barbershop</h3>
+          <p
+            data-en="Premium barbershop website with services, pricing, booking and a strong modern brand style."
+            data-es="Demo premium para barbería con servicios, precios, reservas y una marca moderna con estilo fuerte."
+          >
+            Premium barbershop website with services, pricing, booking and a strong modern brand style.
+          </p>
+          <div class="work-tech"><span>Barbershop</span><span>Booking</span><span>Pricing</span></div>
+        </div>
+      </a>
+
+      <a href="https://madevhub-fitness-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&h=600&fit=crop')">
+          <span class="work-tag" data-en="Fitness Brand" data-es="Marca Fitness">Fitness Brand</span>
+          <span class="work-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="work-body">
+          <h3>TITAN Fitness</h3>
+          <p
+            data-en="High-energy fitness website with classes, trainers, gallery, reviews and a join now call to action."
+            data-es="Sitio fitness dinámico con clases, entrenadores, galería, reseñas y llamada para inscribirse."
+          >
+            High-energy fitness website with classes, trainers, gallery, reviews and a join now call to action.
+          </p>
+          <div class="work-tech"><span>Fitness</span><span>Classes</span><span>Trainers</span></div>
+        </div>
+      </a>
+
+      <a href="https://madevhub-bright-smile-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900&h=600&fit=crop')">
+          <span class="work-tag" data-en="Dental Clinic" data-es="Clínica Dental">Dental Clinic</span>
+          <span class="work-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="work-body">
+          <h3>BrightSmile Dental</h3>
+          <p
+            data-en="Modern dental clinic website with services, doctors, reviews and appointment booking."
+            data-es="Sitio moderno para clínica dental con servicios, doctores, reseñas y citas online."
+          >
+            Modern dental clinic website with services, doctors, reviews and appointment booking.
+          </p>
+          <div class="work-tech"><span>Dental</span><span>Appointments</span><span>Team</span></div>
+        </div>
+      </a>
+
+      <a href="https://madevhub-restaurant-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&h=600&fit=crop')">
+          <span class="work-tag" data-en="Restaurant" data-es="Restaurante">Restaurant</span>
+          <span class="work-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="work-body">
+          <h3>La Mesa — Fine Dining</h3>
+          <p
+            data-en="Full restaurant website with menu, reservations, gallery and an elegant dining experience."
+            data-es="Sitio completo para restaurante con menú, reservas, galería y experiencia elegante."
+          >
+            Full restaurant website with menu, reservations, gallery and an elegant dining experience.
+          </p>
+          <div class="work-tech"><span>Restaurant</span><span>Reservations</span><span>Menu</span></div>
+        </div>
+      </a>
+
+      <a href="#contact" class="work-card work-card-cta reveal">
+        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&h=600&fit=crop')">
+          <span class="work-tag" data-en="Your Project?" data-es="¿Tu Proyecto?">Your Project?</span>
+          <span class="work-arrow" aria-hidden="true">→</span>
+        </div>
+        <div class="work-body">
+          <h3 data-en="Your Project Could Be Next" data-es="Tu Proyecto Podría Ser el Siguiente">Your Project Could Be Next</h3>
+          <p
+            data-en="Have a business that needs a website? Let's talk and make it happen."
+            data-es="¿Tienes un negocio que necesita sitio web? Hablemos y hagámoslo realidad."
+          >
+            Have a business that needs a website? Let's talk and make it happen.
+          </p>
+          <div class="work-tech">
+            <span data-en="Get a Quote" data-es="Pedir Cotización">Get a Quote</span>
+            <span data-en="Free Consultation" data-es="Consulta Gratis">Free Consultation</span>
+          </div>
+        </div>
+      </a>
+
     </div>
 
-    <div class="portfolio-techs">
-      <span class="tech-pill">Beauty</span>
-      <span class="tech-pill">Booking</span>
-      <span class="tech-pill">Services</span>
-      <span class="tech-pill">Premium UI</span>
-    </div>
-  </a>
-
-  <!-- CLEANING COMPANY -->
-  <a href="https://madevhub-cleaning-company-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
-    <div class="portfolio-preview">
-      <div
-        class="mock-preview"
-        style="background-image:
-        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
-        url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=500&fit=crop');"
-      ></div>
-
-      <div class="portfolio-overlay">
-        <span
-          class="portfolio-tag"
-          data-en="Cleaning Service"
-          data-es="Servicio de Limpieza"
-        >
-          Cleaning Service
-        </span>
-        <h3>Cleaning Company</h3>
-      </div>
-    </div>
-
-    <div class="portfolio-info">
-      <h3>Cleaning Company</h3>
-      <p
-        data-en="Professional cleaning service website with residential, commercial, quote, and booking sections."
-        data-es="Sitio profesional para limpieza con secciones residencial, comercial, cotizaciones y reservas."
-      >
-        Professional cleaning service website with residential, commercial, quote, and booking sections.
-      </p>
-    </div>
-
-    <div class="portfolio-techs">
-      <span class="tech-pill">Cleaning</span>
-      <span class="tech-pill">Quote Form</span>
-      <span class="tech-pill">Local Business</span>
-      <span class="tech-pill">Mobile Ready</span>
-    </div>
-  </a>
-
-  <!-- BLADE CO -->
-<a href="https://madevhub-blade-co-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
-<div class="portfolio-preview">
-  <div
-    class="mock-preview"
-    style="background-image:
-    linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.50)),
-    url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&h=600&fit=crop');"
-  ></div>
-
-  <div class="portfolio-overlay">
-    <span
-      class="portfolio-tag"
-      data-en="Barbershop"
-      data-es="Barbería"
-    >
-      Barbershop
-    </span>
-    <h3>BLADE &amp; CO.</h3>
   </div>
-</div>
-
-<div class="portfolio-info">
-  <h3>BLADE &amp; CO. — Barbershop</h3>
-  <p
-    data-en="Premium barbershop website demo with services, pricing, booking, and a strong modern brand style."
-    data-es="Demo premium para barbería con servicios, precios, reservas y una marca moderna con estilo fuerte."
-  >
-    Premium barbershop website demo with services, pricing, booking, and a strong modern brand style.
-  </p>
-</div>
-
-<div class="portfolio-techs">
-  <span class="tech-pill">Barbershop</span>
-  <span class="tech-pill">Booking</span>
-  <span class="tech-pill">Pricing</span>
-  <span class="tech-pill">Premium Brand</span>
-</div>
-</a>
-
-  <!-- FITNESS -->
-  <a href="https://madevhub-fitness-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
-    <div class="portfolio-preview">
-      <div
-        class="mock-preview"
-        style="background-image:
-        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
-        url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=500&fit=crop');"
-      ></div>
-
-      <div class="portfolio-overlay">
-        <span
-          class="portfolio-tag"
-          data-en="Fitness Brand"
-          data-es="Marca Fitness"
-        >
-          Fitness Brand
-        </span>
-        <h3>TITAN Fitness</h3>
-      </div>
-    </div>
-
-    <div class="portfolio-info">
-      <h3>TITAN Fitness</h3>
-      <p
-        data-en="High-energy fitness website with classes, trainers, gallery, reviews, and join now call to action."
-        data-es="Sitio fitness dinámico con clases, entrenadores, galería, reseñas y llamada para inscribirse."
-      >
-        High-energy fitness website with classes, trainers, gallery, reviews, and join now call to action.
-      </p>
-    </div>
-
-    <div class="portfolio-techs">
-      <span class="tech-pill">Fitness</span>
-      <span class="tech-pill">Classes</span>
-      <span class="tech-pill">Trainers</span>
-      <span class="tech-pill">Join Now</span>
-    </div>
-  </a>
-
-  <!-- BRIGHT SMILE -->
-  <a href="https://madevhub-bright-smile-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
-    <div class="portfolio-preview">
-      <div
-        class="mock-preview"
-        style="background-image:
-        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
-        url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=500&fit=crop');"
-      ></div>
-
-      <div class="portfolio-overlay">
-        <span
-          class="portfolio-tag"
-          data-en="Dental Clinic"
-          data-es="Clínica Dental"
-        >
-          Dental Clinic
-        </span>
-        <h3>BrightSmile Dental</h3>
-      </div>
-    </div>
-
-    <div class="portfolio-info">
-      <h3>BrightSmile Dental</h3>
-      <p
-        data-en="Modern dental clinic website with services, doctors, reviews, and appointment booking."
-        data-es="Sitio moderno para clínica dental con servicios, doctores, reseñas y citas online."
-      >
-        Modern dental clinic website with services, doctors, reviews, and appointment booking.
-      </p>
-    </div>
-
-    <div class="portfolio-techs">
-      <span class="tech-pill">Dental</span>
-      <span class="tech-pill">Appointments</span>
-      <span class="tech-pill">Reviews</span>
-      <span class="tech-pill">Team</span>
-    </div>
-  </a>
-
-  <!-- LA MESA RESTAURANT -->
-  <a href="https://madevhub-restaurant-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-card reveal">
-    <div class="portfolio-preview">
-      <div
-        class="mock-preview"
-        style="background-image:
-        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
-        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=500&fit=crop');"
-      ></div>
-
-      <div class="portfolio-overlay">
-        <span
-          class="portfolio-tag"
-          data-en="Restaurant"
-          data-es="Restaurante"
-        >
-          Restaurant
-        </span>
-        <h3>La Mesa — Fine Dining</h3>
-      </div>
-    </div>
-
-    <div class="portfolio-info">
-      <h3>La Mesa — Fine Dining</h3>
-      <p
-        data-en="Full restaurant website with menu, reservations, gallery, and elegant dining experience."
-        data-es="Sitio completo para restaurante con menú, reservas, galería y experiencia elegante."
-      >
-        Full restaurant website with menu, reservations, gallery, and elegant dining experience.
-      </p>
-    </div>
-
-    <div class="portfolio-techs">
-      <span class="tech-pill">Restaurant</span>
-      <span class="tech-pill">Reservations</span>
-      <span class="tech-pill">Menu</span>
-      <span class="tech-pill">Gallery</span>
-    </div>
-  </a>
-
-  <!-- YOUR PROJECT -->
-  <a href="#contact" class="portfolio-card reveal">
-    <div class="portfolio-preview">
-      <div
-        class="mock-preview"
-        style="background-image:
-        linear-gradient(rgba(3, 8, 20, 0.15), rgba(3, 8, 20, 0.55)),
-        url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=500&fit=crop');"
-      ></div>
-
-      <div class="portfolio-overlay">
-        <span
-          class="portfolio-tag"
-          data-en="Your Project?"
-          data-es="¿Tu Proyecto?"
-        >
-          Your Project?
-        </span>
-        <h3
-          data-en="Let's Build Yours"
-          data-es="Construyamos el Tuyo"
-        >
-          Let's Build Yours
-        </h3>
-      </div>
-    </div>
-
-    <div class="portfolio-info">
-      <h3
-        data-en="Your Project Could Be Next"
-        data-es="Tu Proyecto Podría Ser el Siguiente"
-      >
-        Your Project Could Be Next
-      </h3>
-
-      <p
-        data-en="Have a business that needs a website? Let's talk and make it happen."
-        data-es="¿Tienes un negocio que necesita sitio web? Hablemos y hagámoslo realidad."
-      >
-        Have a business that needs a website? Let's talk and make it happen.
-      </p>
-    </div>
-
-    <div class="portfolio-techs">
-      <span class="tech-pill" data-en="Get a Quote" data-es="Pedir Cotización">Get a Quote</span>
-      <span class="tech-pill" data-en="Free Consultation" data-es="Consulta Gratis">Free Consultation</span>
-    </div>
-  </a>
-
-</div>
 </section>
 
 <!-- PROCESS -->
-<section id="process">
-<div class="section-num">03</div>
+<section id="process" class="section section-light section-light-alt">
+  <div class="container">
 
-<h2
-  class="section-title reveal"
-  data-en="How We <span class='green-text'>Work</span>"
-  data-es="Cómo <span class='green-text'>Trabajamos</span>"
->
-  How We <span class="green-text">Work</span>
-</h2>
+    <div class="process-layout">
+      <div class="process-intro">
+        <span class="kicker" data-en="Simple process" data-es="Proceso simple">Simple process</span>
+        <h2
+          class="section-title reveal"
+          data-en="How It <span class='grad-text'>Works</span>"
+          data-es="Cómo <span class='grad-text'>Funciona</span>"
+        >
+          How It <span class="grad-text">Works</span>
+        </h2>
+        <p
+          class="section-desc reveal"
+          data-en="A simple and transparent process to get your website up and running. No surprises, no hidden fees."
+          data-es="Un proceso simple y transparente para poner tu sitio en marcha. Sin sorpresas, sin costos ocultos."
+        >
+          A simple and transparent process to get your website up and running. No surprises, no hidden fees.
+        </p>
+      </div>
 
-<p
-  class="section-desc reveal"
-  data-en="From idea to live website in 4 clear steps. No surprises, no hidden fees."
-  data-es="De la idea al sitio web en vivo en 4 pasos claros. Sin sorpresas, sin costos ocultos."
->
-  From idea to live website in 4 clear steps. No surprises, no hidden fees.
-</p>
+      <ol class="process-steps">
+        <li class="process-step reveal">
+          <span class="step-num">01</span>
+          <h3 data-en="Consultation" data-es="Consulta">Consultation</h3>
+          <p
+            data-en="We learn about your business, goals and audience to plan the perfect site."
+            data-es="Conocemos tu negocio, objetivos y audiencia para planificar el sitio perfecto."
+          >
+            We learn about your business, goals and audience to plan the perfect site.
+          </p>
+        </li>
 
-<div class="process-grid">
+        <li class="process-step reveal">
+          <span class="step-num">02</span>
+          <h3 data-en="Design & Development" data-es="Diseño y Desarrollo">Design &amp; Development</h3>
+          <p
+            data-en="We create your website with your feedback. You approve every detail before we build."
+            data-es="Creamos tu sitio con tu retroalimentación. Apruebas cada detalle antes de construir."
+          >
+            We create your website with your feedback. You approve every detail before we build.
+          </p>
+        </li>
 
-  <div class="process-step reveal">
-    <h3 data-en="Discovery" data-es="Descubrimiento">Discovery</h3>
-    <p
-      data-en="We learn about your business, goals, and audience to plan the perfect site."
-      data-es="Conocemos tu negocio, objetivos y audiencia para planificar el sitio perfecto."
-    >
-      We learn about your business, goals, and audience to plan the perfect site.
-    </p>
+        <li class="process-step reveal">
+          <span class="step-num">03</span>
+          <h3 data-en="Review & Launch" data-es="Revisión y Lanzamiento">Review &amp; Launch</h3>
+          <p
+            data-en="You approve, we make the final adjustments, set up your domain and go live."
+            data-es="Apruebas, hacemos los ajustes finales, configuramos tu dominio y salimos en vivo."
+          >
+            You approve, we make the final adjustments, set up your domain and go live.
+          </p>
+        </li>
+
+        <li class="process-step reveal">
+          <span class="step-num">04</span>
+          <h3 data-en="Grow Your Business" data-es="Haz Crecer Tu Negocio">Grow Your Business</h3>
+          <p
+            data-en="Your website is live and ready to bring results — plus ongoing support when you need it."
+            data-es="Tu sitio está en vivo y listo para traer resultados — más soporte continuo cuando lo necesites."
+          >
+            Your website is live and ready to bring results — plus ongoing support when you need it.
+          </p>
+        </li>
+      </ol>
+    </div>
+
   </div>
-
-  <div class="process-step reveal">
-    <h3 data-en="Design" data-es="Diseño">Design</h3>
-    <p
-      data-en="We create mockups. You approve every detail before we start building your site."
-      data-es="Creamos bocetos. Apruebas cada detalle antes de que empecemos a construir tu sitio."
-    >
-      We create mockups. You approve every detail before we start building your site.
-    </p>
-  </div>
-
-  <div class="process-step reveal">
-    <h3 data-en="Build" data-es="Construcción">Build</h3>
-    <p
-      data-en="We bring your design to life. Optimized for speed, Google ranking, and all devices."
-      data-es="Damos vida a tu diseño. Optimizado para velocidad, posicionamiento en Google y todos los dispositivos."
-    >
-      We bring your design to life. Optimized for speed, Google ranking, and all devices.
-    </p>
-  </div>
-
-  <div class="process-step reveal">
-    <h3 data-en="Launch" data-es="Lanzamiento">Launch</h3>
-    <p
-      data-en="Final testing, domain setup, and we go live! Plus ongoing support to keep everything running."
-      data-es="Pruebas finales, configuración de dominio y ¡salimos en vivo! Más soporte continuo."
-    >
-      Final testing, domain setup, and we go live! Plus ongoing support to keep everything running.
-    </p>
-  </div>
-
-</div>
 </section>
 
 <!-- PRICING -->
-<section id="pricing">
-<div class="section-num">04</div>
+<section id="pricing" class="section section-dark section-pricing">
+  <div class="container">
 
-<h2
-  class="section-title reveal"
-  data-en="Website Packages <span class='green-text'>Built to Grow</span>"
-  data-es="Paquetes Web <span class='green-text'>Hechos para Crecer</span>"
->
-  Website Packages <span class="green-text">Built to Grow</span>
-</h2>
-
-<p
-  class="section-desc reveal"
-  data-en="Choose the right website package for your business. Plans start at $195.99 and include mobile responsive design, clean visuals, and a professional online presence."
-  data-es="Elige el paquete web correcto para tu negocio. Los planes comienzan desde $195.99 e incluyen diseño responsivo, visuales profesionales y presencia online moderna."
->
-  Choose the right website package for your business. Plans start at $195.99 and include mobile responsive design, clean visuals, and a professional online presence.
-</p>
-
-<!-- UNIFIED PRICING GRID -->
-<p
-  class="tier-intro reveal"
-  data-en="All website packages are shown together so you can compare options clearly. Every plan includes mobile responsive design, professional visuals, and a clean online presence built for your business."
-  data-es="Todos los paquetes web aparecen juntos para que puedas comparar las opciones claramente. Cada plan incluye diseño responsivo, visuales profesionales y una presencia online moderna para tu negocio."
->
-  All website packages are shown together so you can compare options clearly. Every plan includes mobile responsive design, professional visuals, and a clean online presence built for your business.
-</p>
-
-<div class="pricing-grid pricing-grid-unified">
-
-  <!-- SMART LANDING -->
-  <div class="pricing-card featured reveal">
-    <div class="pricing-badge" data-en="Best Value" data-es="Mejor Valor">Best Value</div>
-
-    <h3 data-en="Smart Landing" data-es="Landing Inteligente">Smart Landing</h3>
-    <p
-      class="pricing-subtitle"
-      data-en="Built to convert visitors"
-      data-es="Hecha para convertir visitantes"
-    >
-      Built to convert visitors
-    </p>
-
-    <div class="pricing-price">$195.99</div>
-    <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
-
-    <ul class="pricing-features">
-      <li style="color:var(--green);font-weight:700;" data-en="🎁 FREE domain + hosting for 1 year" data-es="🎁 Dominio + hosting GRATIS por 1 año">🎁 FREE domain + hosting for 1 year</li>
-      <li data-en="Conversion-optimized landing page" data-es="Landing optimizada para conversión">Conversion-optimized landing page</li>
-      <li data-en="CTA-focused design" data-es="Diseño enfocado en CTA">CTA-focused design</li>
-      <li data-en="Smart lead capture forms" data-es="Formularios inteligentes con captura de leads">Smart lead capture forms</li>
-      <li data-en="Email integration (Mailchimp/Gmail)" data-es="Integración email (Mailchimp/Gmail)">Email integration (Mailchimp/Gmail)</li>
-      <li data-en="Facebook Pixel + Google Analytics" data-es="Pixel de Facebook + Google Analytics">Facebook Pixel + Google Analytics</li>
-      <li data-en="Testimonials + guarantee section" data-es="Testimonios + sección de garantía">Testimonials + guarantee section</li>
-      <li data-en="Delivery in 7 days" data-es="Entrega en 7 días">Delivery in 7 days</li>
-      <li data-en="2 rounds of revisions" data-es="2 rondas de revisiones">2 rounds of revisions</li>
-      <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
-    </ul>
-
-    <a href="https://buy.stripe.com/3cI28t0Im8ZgbOd1H01wY02" target="_blank" rel="noopener" class="btn btn-primary" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</a>
-    <div class="stripe-badge" data-en="🔒 Secure checkout · Stripe" data-es="🔒 Pago seguro · Stripe">🔒 Secure checkout · Stripe</div>
-  </div>
-
-  <!-- ESSENTIAL WEBSITE -->
-  <div class="pricing-card reveal">
-    <h3 data-en="Essential Website" data-es="Sitio Esencial">Essential Website</h3>
-    <p
-      class="pricing-subtitle"
-      data-en="Multi-page business website"
-      data-es="Sitio multi-página para pymes"
-    >
-      Multi-page business website
-    </p>
-
-    <div class="pricing-price">$310.99</div>
-    <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
-
-    <ul class="pricing-features">
-      <li style="color:var(--green);font-weight:700;" data-en="🎁 FREE domain + hosting for 1 year" data-es="🎁 Dominio + hosting GRATIS por 1 año">🎁 FREE domain + hosting for 1 year</li>
-      <li data-en="Everything in Smart Landing" data-es="Todo lo de Smart Landing">Everything in Smart Landing</li>
-      <li data-en="Up to 4 pages" data-es="Hasta 4 páginas">Up to 4 pages</li>
-      <li data-en="Basic blog (up to 5 initial posts)" data-es="Blog básico (hasta 5 posts iniciales)">Basic blog (up to 5 initial posts)</li>
-      <li data-en="Portfolio / projects gallery" data-es="Galería de portafolio / proyectos">Portfolio / projects gallery</li>
-      <li data-en="Multiple contact forms" data-es="Múltiples formularios">Multiple contact forms</li>
-      <li data-en="Optimized on-page SEO" data-es="SEO on-page optimizado">Optimized on-page SEO</li>
-      <li data-en="Speed optimization (lazy loading)" data-es="Optimización de velocidad (lazy loading)">Speed optimization (lazy loading)</li>
-      <li data-en="Bonus: 'How to use your site' guide" data-es="Bonus: Guía 'Cómo usar tu sitio'">Bonus: 'How to use your site' guide</li>
-      <li data-en="Delivery in 10 days" data-es="Entrega en 10 días">Delivery in 10 days</li>
-      <li data-en="3 rounds of revisions" data-es="3 rondas de revisiones">3 rounds of revisions</li>
-      <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
-    </ul>
-
-    <a href="https://buy.stripe.com/00waEZ76KdfwaK94Tc1wY03" target="_blank" rel="noopener" class="btn btn-outline" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</a>
-    <div class="stripe-badge" data-en="🔒 Secure checkout · Stripe" data-es="🔒 Pago seguro · Stripe">🔒 Secure checkout · Stripe</div>
-  </div>
-
-  <!-- STARTER WEBSITE -->
-  <div class="pricing-card reveal">
-    <h3 data-en="Starter Website" data-es="Sitio Básico">Starter Website</h3>
-    <p
-      class="pricing-subtitle"
-      data-en="Perfect for getting online fast"
-      data-es="Perfecto para salir en línea rápido"
-    >
-      Perfect for getting online fast
-    </p>
-
-    <div class="pricing-price">$497</div>
-    <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
-
-    <ul class="pricing-features">
-      <li style="color:var(--green);font-weight:700;" data-en="🎁 FREE domain + hosting for 1 year" data-es="🎁 Dominio + hosting GRATIS por 1 año">🎁 FREE domain + hosting for 1 year</li>
-      <li data-en="Single page landing page" data-es="Landing page de una página">Single page landing page</li>
-      <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
-      <li data-en="Contact form integration" data-es="Formulario de contacto integrado">Contact form integration</li>
-      <li data-en="Basic Google ranking setup" data-es="Configuración básica para Google">Basic Google ranking setup</li>
-      <li data-en="Google Maps integration" data-es="Integración con Google Maps">Google Maps integration</li>
-      <li data-en="Delivery in 7 days" data-es="Entrega en 7 días">Delivery in 7 days</li>
-      <li data-en="1 round of revisions" data-es="1 ronda de revisiones">1 round of revisions</li>
-      <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
-    </ul>
-
-    <a href="https://buy.stripe.com/00w14pcr4ejA7xXclE1wY04" target="_blank" rel="noopener" class="btn btn-outline" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</a>
-    <div class="stripe-badge" data-en="🔒 Secure checkout · Stripe" data-es="🔒 Pago seguro · Stripe">🔒 Secure checkout · Stripe</div>
-  </div>
-
-  <!-- PROFESSIONAL WEBSITE -->
-  <div class="pricing-card featured reveal">
-    <div class="pricing-badge" data-en="Most Popular" data-es="Más Popular">Most Popular</div>
-
-    <h3 data-en="Professional Website" data-es="Sitio Profesional">Professional Website</h3>
-    <p
-      class="pricing-subtitle"
-      data-en="Complete site for growing businesses"
-      data-es="Sitio completo para negocios en crecimiento"
-    >
-      Complete site for growing businesses
-    </p>
-
-    <div class="pricing-price">$1,497</div>
-    <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
-
-    <ul class="pricing-features">
-      <li style="color:var(--green);font-weight:700;" data-en="🎁 FREE domain + hosting for 1 year" data-es="🎁 Dominio + hosting GRATIS por 1 año">🎁 FREE domain + hosting for 1 year</li>
-      <li data-en="Up to 5 custom pages" data-es="Hasta 5 páginas personalizadas">Up to 5 custom pages</li>
-      <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
-      <li data-en="Custom animations and effects" data-es="Animaciones y efectos personalizados">Custom animations and effects</li>
-      <li data-en="Google ranking optimization" data-es="Optimización para posicionar en Google">Google ranking optimization</li>
-      <li data-en="Social media integration" data-es="Integración con redes sociales">Social media integration</li>
-      <li data-en="Visitor tracking and analytics" data-es="Seguimiento de visitantes y analíticas">Visitor tracking and analytics</li>
-      <li data-en="Contact and lead forms" data-es="Formularios de contacto y leads">Contact and lead forms</li>
-      <li data-en="Delivery in 14 days" data-es="Entrega en 14 días">Delivery in 14 days</li>
-      <li data-en="3 rounds of revisions" data-es="3 rondas de revisiones">3 rounds of revisions</li>
-      <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
-    </ul>
-
-    <a href="https://buy.stripe.com/6oUbJ362G7Vcg4tbhA1wY05" target="_blank" rel="noopener" class="btn btn-primary" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</a>
-    <div class="stripe-badge" data-en="🔒 Secure checkout · Stripe" data-es="🔒 Pago seguro · Stripe">🔒 Secure checkout · Stripe</div>
-  </div>
-
-  <!-- PREMIUM WEBSITE -->
-  <div class="pricing-card reveal">
-    <h3 data-en="Premium Website" data-es="Sitio Premium">Premium Website</h3>
-    <p
-      class="pricing-subtitle"
-      data-en="Full digital presence for established brands"
-      data-es="Presencia digital completa para marcas establecidas"
-    >
-      Full digital presence for established brands
-    </p>
-
-    <div class="pricing-price">$2,997</div>
-    <div class="pricing-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
-
-    <ul class="pricing-features">
-      <li style="color:var(--green);font-weight:700;" data-en="🎁 FREE domain + hosting for 1 year" data-es="🎁 Dominio + hosting GRATIS por 1 año">🎁 FREE domain + hosting for 1 year</li>
-      <li data-en="Unlimited custom pages" data-es="Páginas personalizadas ilimitadas">Unlimited custom pages</li>
-      <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
-      <li data-en="Advanced animations and scroll effects" data-es="Animaciones avanzadas y efectos de scroll">Advanced animations and scroll effects</li>
-      <li data-en="Google ranking and speed optimization" data-es="Posicionamiento en Google y velocidad">Google ranking and speed optimization</li>
-      <li data-en="E-commerce integration" data-es="Integración de e-commerce">E-commerce integration</li>
-      <li data-en="Blog or content section" data-es="Sección de blog o contenido">Blog or content section</li>
-      <li data-en="Easy content editor" data-es="Editor de contenido fácil">Easy content editor</li>
-      <li data-en="3 months free maintenance" data-es="3 meses de mantenimiento gratis">3 months free maintenance</li>
-      <li data-en="Unlimited revisions" data-es="Revisiones ilimitadas">Unlimited revisions</li>
-      <li data-en="Priority support" data-es="Soporte prioritario">Priority support</li>
-      <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
-    </ul>
-
-    <a href="https://buy.stripe.com/8x26oJfDgb7odWl1H01wY06" target="_blank" rel="noopener" class="btn btn-outline" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</a>
-    <div class="stripe-badge" data-en="🔒 Secure checkout · Stripe" data-es="🔒 Pago seguro · Stripe">🔒 Secure checkout · Stripe</div>
-  </div>
-
-</div>
-
-<div class="addon-banner reveal">
-  <div class="addon-info">
-    <h3 data-en="🛡️ Monthly Maintenance Plan" data-es="🛡️ Plan de Mantenimiento Mensual">🛡️ Monthly Maintenance Plan</h3>
-    <p
-      data-en="Updates, security, backups, small edits, and priority support — so your site stays fresh and secure."
-      data-es="Actualizaciones, seguridad, respaldos, ediciones menores y soporte prioritario — para que tu sitio se mantenga fresco y seguro."
-    >
-      Updates, security, backups, small edits, and priority support — so your site stays fresh and secure.
-    </p>
-  </div>
-
-  <div class="addon-actions">
-    <div
-      class="addon-price"
-      data-en="$97 <span>/ month</span>"
-      data-es="$97 <span>/ mes</span>"
-    >
-      $97 <span>/ month</span>
+    <div class="section-head section-head-center">
+      <div>
+        <span class="kicker" data-en="Pricing" data-es="Precios">Pricing</span>
+        <h2
+          class="section-title reveal"
+          data-en="Invest in <span class='grad-text'>Your Growth</span>"
+          data-es="Invierte en <span class='grad-text'>Tu Crecimiento</span>"
+        >
+          Invest in <span class="grad-text">Your Growth</span>
+        </h2>
+        <p
+          class="section-desc reveal"
+          data-en="Transparent pricing. No hidden fees. Plans start at $195.99 and every package includes mobile responsive design, professional visuals and 100% ownership of your website."
+          data-es="Precios transparentes. Sin costos ocultos. Los planes comienzan desde $195.99 e incluyen diseño responsivo, visuales profesionales y 100% propiedad de tu sitio web."
+        >
+          Transparent pricing. No hidden fees. Plans start at $195.99 and every package includes mobile responsive design, professional visuals and 100% ownership of your website.
+        </p>
+      </div>
     </div>
-    <a href="https://buy.stripe.com/aFa3cxcr4b7of0pgBU1wY07" target="_blank" rel="noopener" class="btn btn-primary" data-en="Subscribe Monthly" data-es="Suscribirme">Subscribe Monthly</a>
+
+    <div class="pricing-grid">
+
+      <!-- SMART LANDING -->
+      <div class="price-card reveal is-highlight">
+        <span class="price-badge" data-en="Best Value" data-es="Mejor Valor">Best Value</span>
+
+        <h3 data-en="Smart Landing" data-es="Landing Inteligente">Smart Landing</h3>
+        <p class="price-sub" data-en="Built to convert visitors" data-es="Hecha para convertir visitantes">Built to convert visitors</p>
+
+        <div class="price-amount">$195<span class="price-cents">.99</span></div>
+        <div class="price-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+        <ul class="price-features">
+          <li class="is-gift" data-en="FREE domain + hosting for 1 year" data-es="Dominio + hosting GRATIS por 1 año">FREE domain + hosting for 1 year</li>
+          <li data-en="Conversion-optimized landing page" data-es="Landing optimizada para conversión">Conversion-optimized landing page</li>
+          <li data-en="CTA-focused design" data-es="Diseño enfocado en CTA">CTA-focused design</li>
+          <li data-en="Smart lead capture forms" data-es="Formularios inteligentes con captura de leads">Smart lead capture forms</li>
+          <li data-en="Email integration (Mailchimp/Gmail)" data-es="Integración email (Mailchimp/Gmail)">Email integration (Mailchimp/Gmail)</li>
+          <li data-en="Facebook Pixel + Google Analytics" data-es="Pixel de Facebook + Google Analytics">Facebook Pixel + Google Analytics</li>
+          <li data-en="Testimonials + guarantee section" data-es="Testimonios + sección de garantía">Testimonials + guarantee section</li>
+          <li data-en="Delivery in 7 days" data-es="Entrega en 7 días">Delivery in 7 days</li>
+          <li data-en="2 rounds of revisions" data-es="2 rondas de revisiones">2 rounds of revisions</li>
+          <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
+        </ul>
+
+        <a href="https://buy.stripe.com/3cI28t0Im8ZgbOd1H01wY02" target="_blank" rel="noopener" class="btn btn-primary btn-block" data-en="Get Started" data-es="Empezar">Get Started</a>
+        <div class="stripe-badge" data-en="Secure checkout · Stripe" data-es="Pago seguro · Stripe">Secure checkout · Stripe</div>
+      </div>
+
+      <!-- ESSENTIAL WEBSITE -->
+      <div class="price-card reveal">
+        <h3 data-en="Essential Website" data-es="Sitio Esencial">Essential Website</h3>
+        <p class="price-sub" data-en="Multi-page business website" data-es="Sitio multi-página para pymes">Multi-page business website</p>
+
+        <div class="price-amount">$310<span class="price-cents">.99</span></div>
+        <div class="price-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+        <ul class="price-features">
+          <li class="is-gift" data-en="FREE domain + hosting for 1 year" data-es="Dominio + hosting GRATIS por 1 año">FREE domain + hosting for 1 year</li>
+          <li data-en="Everything in Smart Landing" data-es="Todo lo de Smart Landing">Everything in Smart Landing</li>
+          <li data-en="Up to 4 pages" data-es="Hasta 4 páginas">Up to 4 pages</li>
+          <li data-en="Basic blog (up to 5 initial posts)" data-es="Blog básico (hasta 5 posts iniciales)">Basic blog (up to 5 initial posts)</li>
+          <li data-en="Portfolio / projects gallery" data-es="Galería de portafolio / proyectos">Portfolio / projects gallery</li>
+          <li data-en="Multiple contact forms" data-es="Múltiples formularios">Multiple contact forms</li>
+          <li data-en="Optimized on-page SEO" data-es="SEO on-page optimizado">Optimized on-page SEO</li>
+          <li data-en="Speed optimization (lazy loading)" data-es="Optimización de velocidad (lazy loading)">Speed optimization (lazy loading)</li>
+          <li data-en="Bonus: 'How to use your site' guide" data-es="Bonus: Guía 'Cómo usar tu sitio'">Bonus: 'How to use your site' guide</li>
+          <li data-en="Delivery in 10 days" data-es="Entrega en 10 días">Delivery in 10 days</li>
+          <li data-en="3 rounds of revisions" data-es="3 rondas de revisiones">3 rounds of revisions</li>
+          <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
+        </ul>
+
+        <a href="https://buy.stripe.com/00waEZ76KdfwaK94Tc1wY03" target="_blank" rel="noopener" class="btn btn-outline btn-block" data-en="Get Started" data-es="Empezar">Get Started</a>
+        <div class="stripe-badge" data-en="Secure checkout · Stripe" data-es="Pago seguro · Stripe">Secure checkout · Stripe</div>
+      </div>
+
+      <!-- STARTER WEBSITE -->
+      <div class="price-card reveal">
+        <h3 data-en="Starter Website" data-es="Sitio Básico">Starter Website</h3>
+        <p class="price-sub" data-en="Perfect for getting online fast" data-es="Perfecto para salir en línea rápido">Perfect for getting online fast</p>
+
+        <div class="price-amount">$497</div>
+        <div class="price-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+        <ul class="price-features">
+          <li class="is-gift" data-en="FREE domain + hosting for 1 year" data-es="Dominio + hosting GRATIS por 1 año">FREE domain + hosting for 1 year</li>
+          <li data-en="Single page landing page" data-es="Landing page de una página">Single page landing page</li>
+          <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
+          <li data-en="Contact form integration" data-es="Formulario de contacto integrado">Contact form integration</li>
+          <li data-en="Basic Google ranking setup" data-es="Configuración básica para Google">Basic Google ranking setup</li>
+          <li data-en="Google Maps integration" data-es="Integración con Google Maps">Google Maps integration</li>
+          <li data-en="Delivery in 7 days" data-es="Entrega en 7 días">Delivery in 7 days</li>
+          <li data-en="1 round of revisions" data-es="1 ronda de revisiones">1 round of revisions</li>
+          <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
+        </ul>
+
+        <a href="https://buy.stripe.com/00w14pcr4ejA7xXclE1wY04" target="_blank" rel="noopener" class="btn btn-outline btn-block" data-en="Get Started" data-es="Empezar">Get Started</a>
+        <div class="stripe-badge" data-en="Secure checkout · Stripe" data-es="Pago seguro · Stripe">Secure checkout · Stripe</div>
+      </div>
+
+      <!-- PROFESSIONAL WEBSITE -->
+      <div class="price-card reveal is-highlight">
+        <span class="price-badge" data-en="Most Popular" data-es="Más Popular">Most Popular</span>
+
+        <h3 data-en="Professional Website" data-es="Sitio Profesional">Professional Website</h3>
+        <p class="price-sub" data-en="Complete site for growing businesses" data-es="Sitio completo para negocios en crecimiento">Complete site for growing businesses</p>
+
+        <div class="price-amount">$1,497</div>
+        <div class="price-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+        <ul class="price-features">
+          <li class="is-gift" data-en="FREE domain + hosting for 1 year" data-es="Dominio + hosting GRATIS por 1 año">FREE domain + hosting for 1 year</li>
+          <li data-en="Up to 5 custom pages" data-es="Hasta 5 páginas personalizadas">Up to 5 custom pages</li>
+          <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
+          <li data-en="Custom animations and effects" data-es="Animaciones y efectos personalizados">Custom animations and effects</li>
+          <li data-en="Google ranking optimization" data-es="Optimización para posicionar en Google">Google ranking optimization</li>
+          <li data-en="Social media integration" data-es="Integración con redes sociales">Social media integration</li>
+          <li data-en="Visitor tracking and analytics" data-es="Seguimiento de visitantes y analíticas">Visitor tracking and analytics</li>
+          <li data-en="Contact and lead forms" data-es="Formularios de contacto y leads">Contact and lead forms</li>
+          <li data-en="Delivery in 14 days" data-es="Entrega en 14 días">Delivery in 14 days</li>
+          <li data-en="3 rounds of revisions" data-es="3 rondas de revisiones">3 rounds of revisions</li>
+          <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
+        </ul>
+
+        <a href="https://buy.stripe.com/6oUbJ362G7Vcg4tbhA1wY05" target="_blank" rel="noopener" class="btn btn-primary btn-block" data-en="Get Started" data-es="Empezar">Get Started</a>
+        <div class="stripe-badge" data-en="Secure checkout · Stripe" data-es="Pago seguro · Stripe">Secure checkout · Stripe</div>
+      </div>
+
+      <!-- PREMIUM WEBSITE -->
+      <div class="price-card reveal">
+        <h3 data-en="Premium Website" data-es="Sitio Premium">Premium Website</h3>
+        <p class="price-sub" data-en="Full digital presence for established brands" data-es="Presencia digital completa para marcas establecidas">Full digital presence for established brands</p>
+
+        <div class="price-amount">$2,997</div>
+        <div class="price-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
+
+        <ul class="price-features">
+          <li class="is-gift" data-en="FREE domain + hosting for 1 year" data-es="Dominio + hosting GRATIS por 1 año">FREE domain + hosting for 1 year</li>
+          <li data-en="Unlimited custom pages" data-es="Páginas personalizadas ilimitadas">Unlimited custom pages</li>
+          <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
+          <li data-en="Advanced animations and scroll effects" data-es="Animaciones avanzadas y efectos de scroll">Advanced animations and scroll effects</li>
+          <li data-en="Google ranking and speed optimization" data-es="Posicionamiento en Google y velocidad">Google ranking and speed optimization</li>
+          <li data-en="E-commerce integration" data-es="Integración de e-commerce">E-commerce integration</li>
+          <li data-en="Blog or content section" data-es="Sección de blog o contenido">Blog or content section</li>
+          <li data-en="Easy content editor" data-es="Editor de contenido fácil">Easy content editor</li>
+          <li data-en="3 months free maintenance" data-es="3 meses de mantenimiento gratis">3 months free maintenance</li>
+          <li data-en="Unlimited revisions" data-es="Revisiones ilimitadas">Unlimited revisions</li>
+          <li data-en="Priority support" data-es="Soporte prioritario">Priority support</li>
+          <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
+        </ul>
+
+        <a href="https://buy.stripe.com/8x26oJfDgb7odWl1H01wY06" target="_blank" rel="noopener" class="btn btn-outline btn-block" data-en="Get Started" data-es="Empezar">Get Started</a>
+        <div class="stripe-badge" data-en="Secure checkout · Stripe" data-es="Pago seguro · Stripe">Secure checkout · Stripe</div>
+      </div>
+
+    </div>
+
+    <div class="addon-banner reveal">
+      <div class="addon-info">
+        <span class="addon-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2.5 20 6v6c0 5-3.4 8.3-8 9.5C7.4 20.3 4 17 4 12V6l8-3.5z"/><path d="m8.8 12.2 2.2 2.2 4.2-4.6"/></svg>
+        </span>
+        <div>
+          <h3 data-en="Monthly Maintenance Plan" data-es="Plan de Mantenimiento Mensual">Monthly Maintenance Plan</h3>
+          <p
+            data-en="Updates, security, backups, small edits and priority support — so your site stays fresh and secure."
+            data-es="Actualizaciones, seguridad, respaldos, ediciones menores y soporte prioritario — para que tu sitio se mantenga fresco y seguro."
+          >
+            Updates, security, backups, small edits and priority support — so your site stays fresh and secure.
+          </p>
+        </div>
+      </div>
+
+      <div class="addon-actions">
+        <div class="addon-price" data-en="$97 <span>/ month</span>" data-es="$97 <span>/ mes</span>">$97 <span>/ month</span></div>
+        <a href="https://buy.stripe.com/aFa3cxcr4b7of0pgBU1wY07" target="_blank" rel="noopener" class="btn btn-primary" data-en="Subscribe Monthly" data-es="Suscribirme">Subscribe Monthly</a>
+      </div>
+    </div>
+
   </div>
-</div>
 </section>
+
 <!-- REVIEWS -->
-<section id="reviews" class="reviews-section">
-  <div class="section-num">05</div>
+<section id="reviews" class="section section-light">
+  <div class="container">
 
-  <h2
-    class="section-title reveal"
-    data-en="What Clients <span class='green-text'>Say</span>"
-    data-es="Lo Que Dicen Nuestros <span class='green-text'>Clientes</span>"
-  >
-    What Clients <span class="green-text">Say</span>
-  </h2>
-
-  <p
-    class="section-desc reveal"
-    data-en="Real experiences from business owners who trusted MADEVHUB to build their online presence."
-    data-es="Experiencias de dueños de negocios que confiaron en MADEVHUB para construir su presencia online."
-  >
-    Real experiences from business owners who trusted MADEVHUB to build their online presence.
-  </p>
-
-  <div class="reviews-grid">
-
-    <div class="review-card reveal">
-      <div class="review-top">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Daniel R. review" class="review-img">
-        <div>
-          <h3>Daniel R.</h3>
-          <span data-en="Restaurant Owner" data-es="Dueño de Restaurante">Restaurant Owner</span>
-        </div>
+    <div class="section-head">
+      <div>
+        <span class="kicker" data-en="Client feedback" data-es="Opiniones de clientes">Client feedback</span>
+        <h2
+          class="section-title reveal"
+          data-en="What Business <span class='grad-text'>Owners Say</span>"
+          data-es="Lo Que Dicen Los <span class='grad-text'>Dueños de Negocios</span>"
+        >
+          What Business <span class="grad-text">Owners Say</span>
+        </h2>
+        <p
+          class="section-desc reveal"
+          data-en="Real experiences from business owners who trusted MADEVHUB to build their online presence."
+          data-es="Experiencias de dueños de negocios que confiaron en MADEVHUB para construir su presencia online."
+        >
+          Real experiences from business owners who trusted MADEVHUB to build their online presence.
+        </p>
       </div>
-
-      <div class="review-stars">★★★★★</div>
-
-      <p
-        data-en="MADEVHUB created a beautiful website for my restaurant. The design looks premium, loads fast, and makes it easy for customers to see our menu and contact us."
-        data-es="MADEVHUB creó una página hermosa para mi restaurante. El diseño se mira premium, carga rápido y facilita que los clientes vean el menú y nos contacten."
-      >
-        MADEVHUB created a beautiful website for my restaurant. The design looks premium, loads fast, and makes it easy for customers to see our menu and contact us.
-      </p>
     </div>
 
-    <div class="review-card reveal">
-      <div class="review-top">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Melissa G. review" class="review-img">
-        <div>
-          <h3>Melissa G.</h3>
-          <span data-en="Beauty Studio Founder" data-es="Fundadora de Beauty Studio">Beauty Studio Founder</span>
-        </div>
-      </div>
+    <div class="reviews-grid">
 
-      <div class="review-stars">★★★★★</div>
+      <figure class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote
+          data-en="MADEVHUB created a beautiful website for my restaurant. The design looks premium, loads fast, and makes it easy for customers to see our menu and contact us."
+          data-es="MADEVHUB creó una página hermosa para mi restaurante. El diseño se mira premium, carga rápido y facilita que los clientes vean el menú y nos contacten."
+        >
+          MADEVHUB created a beautiful website for my restaurant. The design looks premium, loads fast, and makes it easy for customers to see our menu and contact us.
+        </blockquote>
+        <figcaption class="review-author">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" loading="lazy" width="46" height="46" />
+          <span>
+            <strong>Daniel R.</strong>
+            <small data-en="Restaurant Owner" data-es="Dueño de Restaurante">Restaurant Owner</small>
+          </span>
+        </figcaption>
+      </figure>
 
-      <p
-        data-en="The website feels elegant, clean, and professional. I wanted something that matched my brand, and MADEVHUB delivered exactly that."
-        data-es="La página se siente elegante, limpia y profesional. Quería algo que combinara con mi marca, y MADEVHUB entregó exactamente eso."
-      >
-        The website feels elegant, clean, and professional. I wanted something that matched my brand, and MADEVHUB delivered exactly that.
-      </p>
-    </div>
+      <figure class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote
+          data-en="The website feels elegant, clean, and professional. I wanted something that matched my brand, and MADEVHUB delivered exactly that."
+          data-es="La página se siente elegante, limpia y profesional. Quería algo que combinara con mi marca, y MADEVHUB entregó exactamente eso."
+        >
+          The website feels elegant, clean, and professional. I wanted something that matched my brand, and MADEVHUB delivered exactly that.
+        </blockquote>
+        <figcaption class="review-author">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" loading="lazy" width="46" height="46" />
+          <span>
+            <strong>Melissa G.</strong>
+            <small data-en="Beauty Studio Founder" data-es="Fundadora de Beauty Studio">Beauty Studio Founder</small>
+          </span>
+        </figcaption>
+      </figure>
 
-    <div class="review-card reveal">
-      <div class="review-top">
-        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Jonathan P. review" class="review-img">
-        <div>
-          <h3>Jonathan P.</h3>
-          <span data-en="Barbershop Owner" data-es="Dueño de Barbería">Barbershop Owner</span>
-        </div>
-      </div>
+      <figure class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote
+          data-en="The process was simple and fast. My new site looks modern, works perfectly on mobile, and gives my business a much stronger image."
+          data-es="El proceso fue simple y rápido. Mi nueva página se mira moderna, funciona perfecto en móvil y le da a mi negocio una imagen mucho más fuerte."
+        >
+          The process was simple and fast. My new site looks modern, works perfectly on mobile, and gives my business a much stronger image.
+        </blockquote>
+        <figcaption class="review-author">
+          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="" loading="lazy" width="46" height="46" />
+          <span>
+            <strong>Jonathan P.</strong>
+            <small data-en="Barbershop Owner" data-es="Dueño de Barbería">Barbershop Owner</small>
+          </span>
+        </figcaption>
+      </figure>
 
-      <div class="review-stars">★★★★★</div>
+      <figure class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote
+          data-en="I needed a website that looked trustworthy and professional. MADEVHUB helped me present my services clearly and attract better leads."
+          data-es="Necesitaba una página que se mirara confiable y profesional. MADEVHUB me ayudó a presentar mis servicios claramente y atraer mejores clientes."
+        >
+          I needed a website that looked trustworthy and professional. MADEVHUB helped me present my services clearly and attract better leads.
+        </blockquote>
+        <figcaption class="review-author">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" loading="lazy" width="46" height="46" />
+          <span>
+            <strong>Sofia M.</strong>
+            <small data-en="Cleaning Business Owner" data-es="Dueña de Empresa de Limpieza">Cleaning Business Owner</small>
+          </span>
+        </figcaption>
+      </figure>
 
-      <p
-        data-en="The process was simple and fast. My new site looks modern, works perfectly on mobile, and gives my business a much stronger image."
-        data-es="El proceso fue simple y rápido. Mi nueva página se mira moderna, funciona perfecto en móvil y le da a mi negocio una imagen mucho más fuerte."
-      >
-        The process was simple and fast. My new site looks modern, works perfectly on mobile, and gives my business a much stronger image.
-      </p>
-    </div>
+      <figure class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote
+          data-en="My landing page now looks like a real brand. The design is clean, powerful, and makes it easy for people to book a session."
+          data-es="Mi landing page ahora se mira como una marca real. El diseño es limpio, fuerte y hace fácil que las personas reserven una sesión."
+        >
+          My landing page now looks like a real brand. The design is clean, powerful, and makes it easy for people to book a session.
+        </blockquote>
+        <figcaption class="review-author">
+          <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="" loading="lazy" width="46" height="46" />
+          <span>
+            <strong>Anthony C.</strong>
+            <small data-en="Fitness Coach" data-es="Entrenador Fitness">Fitness Coach</small>
+          </span>
+        </figcaption>
+      </figure>
 
-    <div class="review-card reveal">
-      <div class="review-top">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sofia M. review" class="review-img">
-        <div>
-          <h3>Sofia M.</h3>
-          <span data-en="Cleaning Business Owner" data-es="Dueña de Empresa de Limpieza">Cleaning Business Owner</span>
-        </div>
-      </div>
+      <figure class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote
+          data-en="Professional, responsive, and very easy to work with. The website looks premium and gives our clinic a stronger digital presence."
+          data-es="Profesional, responsable y muy fácil de trabajar. La página se mira premium y le da a nuestra clínica una presencia digital más fuerte."
+        >
+          Professional, responsive, and very easy to work with. The website looks premium and gives our clinic a stronger digital presence.
+        </blockquote>
+        <figcaption class="review-author">
+          <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="" loading="lazy" width="46" height="46" />
+          <span>
+            <strong>Camila T.</strong>
+            <small data-en="Dental Clinic Manager" data-es="Manager de Clínica Dental">Dental Clinic Manager</small>
+          </span>
+        </figcaption>
+      </figure>
 
-      <div class="review-stars">★★★★★</div>
-
-      <p
-        data-en="I needed a website that looked trustworthy and professional. MADEVHUB helped me present my services clearly and attract better leads."
-        data-es="Necesitaba una página que se mirara confiable y profesional. MADEVHUB me ayudó a presentar mis servicios claramente y atraer mejores clientes."
-      >
-        I needed a website that looked trustworthy and professional. MADEVHUB helped me present my services clearly and attract better leads.
-      </p>
-    </div>
-
-    <div class="review-card reveal">
-      <div class="review-top">
-        <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Anthony C. review" class="review-img">
-        <div>
-          <h3>Anthony C.</h3>
-          <span data-en="Fitness Coach" data-es="Entrenador Fitness">Fitness Coach</span>
-        </div>
-      </div>
-
-      <div class="review-stars">★★★★★</div>
-
-      <p
-        data-en="My landing page now looks like a real brand. The design is clean, powerful, and makes it easy for people to book a session."
-        data-es="Mi landing page ahora se mira como una marca real. El diseño es limpio, fuerte y hace fácil que las personas reserven una sesión."
-      >
-        My landing page now looks like a real brand. The design is clean, powerful, and makes it easy for people to book a session.
-      </p>
-    </div>
-
-    <div class="review-card reveal">
-      <div class="review-top">
-        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Camila T. review" class="review-img">
-        <div>
-          <h3>Camila T.</h3>
-          <span data-en="Dental Clinic Manager" data-es="Manager de Clínica Dental">Dental Clinic Manager</span>
-        </div>
-      </div>
-
-      <div class="review-stars">★★★★★</div>
-
-      <p
-        data-en="Professional, responsive, and very easy to work with. The website looks premium and gives our clinic a stronger digital presence."
-        data-es="Profesional, responsable y muy fácil de trabajar. La página se mira premium y le da a nuestra clínica una presencia digital más fuerte."
-      >
-        Professional, responsive, and very easy to work with. The website looks premium and gives our clinic a stronger digital presence.
-      </p>
     </div>
 
   </div>
 </section>
 
-<!-- CONTACT -->
-<div style="padding: 0 24px 100px;">
-<div class="contact-section" id="contact">
-  <div class="section-num" style="text-align:center;">06</div>
+<!-- FAQ -->
+<section id="faq" class="section section-light section-light-alt">
+  <div class="container">
 
-  <h2
-    class="section-title reveal"
-    style="text-align:center;"
-    data-en="Ready to Launch <span class='green-text'>Your Website?</span>"
-    data-es="¿Listo para Lanzar <span class='green-text'>Tu Website?</span>"
-  >
-    Ready to Launch <span class="green-text">Your Website?</span>
-  </h2>
+    <div class="faq-layout">
+      <div class="faq-intro">
+        <span class="kicker">FAQ</span>
+        <h2
+          class="section-title reveal"
+          data-en="Frequently Asked <span class='grad-text'>Questions</span>"
+          data-es="Preguntas <span class='grad-text'>Frecuentes</span>"
+        >
+          Frequently Asked <span class="grad-text">Questions</span>
+        </h2>
+        <p
+          class="section-desc reveal"
+          data-en="Still have doubts? Send us a message on WhatsApp and we'll answer in less than 24 hours."
+          data-es="¿Aún tienes dudas? Escríbenos por WhatsApp y respondemos en menos de 24 horas."
+        >
+          Still have doubts? Send us a message on WhatsApp and we'll answer in less than 24 hours.
+        </p>
+        <a href="https://wa.me/13059754420?text=Hi%20MADEVHUB,%20I%20have%20a%20question" target="_blank" rel="noopener" class="btn btn-dark btn-sm reveal" data-en="Ask a Question" data-es="Hacer una Pregunta">Ask a Question</a>
+      </div>
 
-  <p
-    class="section-desc reveal"
-    style="margin:12px auto 0;max-width:460px;text-align:center;"
-    data-en="Tell us what kind of business you have and we’ll recommend the right website package for your goals."
-    data-es="Cuéntanos qué tipo de negocio tienes y te recomendaremos el paquete web correcto para tus objetivos."
-  >
-    Tell us what kind of business you have and we’ll recommend the right website package for your goals.
-  </p>
+      <div class="faq-list">
 
-  <div class="contact-grid">
+        <div class="faq-item reveal">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span data-en="Do I own the website?" data-es="¿La página es mía?">Do I own the website?</span>
+            <strong aria-hidden="true">+</strong>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="Yes. Every package includes 100% ownership rights — the website, the design and the content are yours."
+              data-es="Sí. Cada paquete incluye 100% de derechos de propiedad — el sitio, el diseño y el contenido son tuyos."
+            >
+              Yes. Every package includes 100% ownership rights — the website, the design and the content are yours.
+            </p>
+          </div>
+        </div>
 
-    <div class="contact-item reveal">
-      <div class="icon">📧</div>
-      <h4>Email</h4>
-      <p><a href="mailto:hello@madevhub.com">hello@madevhub.com</a></p>
+        <div class="faq-item reveal">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span data-en="Is the domain included?" data-es="¿El dominio está incluido?">Is the domain included?</span>
+            <strong aria-hidden="true">+</strong>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="Yes. Every website package includes a free domain and hosting for the first year."
+              data-es="Sí. Cada paquete web incluye dominio y hosting gratis durante el primer año."
+            >
+              Yes. Every website package includes a free domain and hosting for the first year.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span data-en="How long does it take?" data-es="¿Cuánto tiempo toma?">How long does it take?</span>
+            <strong aria-hidden="true">+</strong>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="Most projects are delivered in 7 to 14 days, depending on the package you choose and how fast we get your content."
+              data-es="La mayoría de los proyectos se entregan en 7 a 14 días, según el paquete que elijas y qué tan rápido recibamos tu contenido."
+            >
+              Most projects are delivered in 7 to 14 days, depending on the package you choose and how fast we get your content.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span data-en="Can I request changes?" data-es="¿Puedo pedir cambios?">Can I request changes?</span>
+            <strong aria-hidden="true">+</strong>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="Of course. Every package includes revision rounds — from 1 round on Starter up to unlimited revisions on Premium."
+              data-es="Claro. Cada paquete incluye rondas de revisiones — desde 1 ronda en Básico hasta revisiones ilimitadas en Premium."
+            >
+              Of course. Every package includes revision rounds — from 1 round on Starter up to unlimited revisions on Premium.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span data-en="Do you work outside Miami?" data-es="¿Trabajan fuera de Miami?">Do you work outside Miami?</span>
+            <strong aria-hidden="true">+</strong>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="Yes. We are based in Miami Beach and work with businesses across the United States — the whole process is remote."
+              data-es="Sí. Estamos en Miami Beach y trabajamos con negocios en todo Estados Unidos — todo el proceso es remoto."
+            >
+              Yes. We are based in Miami Beach and work with businesses across the United States — the whole process is remote.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span data-en="How do I pay?" data-es="¿Cómo puedo pagar?">How do I pay?</span>
+            <strong aria-hidden="true">+</strong>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="Payments are handled through Stripe secure checkout. You can pay by card directly from the pricing section above."
+              data-es="Los pagos se procesan con el checkout seguro de Stripe. Puedes pagar con tarjeta directamente desde la sección de precios."
+            >
+              Payments are handled through Stripe secure checkout. You can pay by card directly from the pricing section above.
+            </p>
+          </div>
+        </div>
+
+      </div>
     </div>
-
-    <div class="contact-item reveal">
-      <div class="icon">📱</div>
-      <h4>WhatsApp</h4>
-      <p>+1 (305) 975-4420</p>
-    </div>
-
-    <div class="contact-item reveal">
-      <div class="icon">📍</div>
-      <h4 data-en="Location" data-es="Ubicación">Location</h4>
-      <p>Miami Beach, FL</p>
-    </div>
-
-    <a href="https://www.instagram.com/madevhub/" target="_blank" rel="noopener" class="contact-item reveal" style="text-decoration:none;color:inherit;">
-      <div class="icon">📸</div>
-      <h4>Instagram</h4>
-      <p>@madevhub</p>
-    </a>
-
-    <a href="https://www.facebook.com/madevhub" target="_blank" rel="noopener" class="contact-item reveal" style="text-decoration:none;color:inherit;">
-      <div class="icon">📘</div>
-      <h4>Facebook</h4>
-      <p>@madevhub</p>
-    </a>
 
   </div>
-</div>
-</div>
+</section>
+
+<!-- CONTACT / FINAL CTA -->
+<section id="contact" class="section section-dark section-cta">
+  <div class="cta-bg" aria-hidden="true"></div>
+  <div class="container">
+
+    <div class="cta-panel reveal">
+      <div class="cta-copy">
+        <h2
+          data-en="Ready to Launch <span class='grad-text'>Your Website?</span>"
+          data-es="¿Listo para Lanzar <span class='grad-text'>Tu Sitio Web?</span>"
+        >
+          Ready to Launch <span class="grad-text">Your Website?</span>
+        </h2>
+        <p
+          data-en="Tell us what kind of business you have and we'll recommend the right package for your goals. Let's build something amazing."
+          data-es="Cuéntanos qué tipo de negocio tienes y te recomendaremos el paquete correcto para tus objetivos. Construyamos algo increíble."
+        >
+          Tell us what kind of business you have and we'll recommend the right package for your goals. Let's build something amazing.
+        </p>
+      </div>
+
+      <div class="cta-actions">
+        <a href="mailto:hello@madevhub.com?subject=Free%20Quote%20Request" class="btn btn-primary btn-lg" data-en="Get a Free Quote" data-es="Cotización Gratis">Get a Free Quote</a>
+        <a href="https://wa.me/13059754420?text=Hi%20MADEVHUB,%20I%27m%20interested%20in%20your%20web%20design%20services" target="_blank" rel="noopener" class="btn btn-ghost btn-lg btn-whatsapp">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413A11.815 11.815 0 0012.05 0zm5.422 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          <span data-en="Chat on WhatsApp" data-es="Chatear por WhatsApp">Chat on WhatsApp</span>
+        </a>
+      </div>
+
+      <ul class="cta-chips">
+        <li data-en="Usually reply within 24 hours" data-es="Respondemos en menos de 24 horas">Usually reply within 24 hours</li>
+        <li data-en="Free consultation" data-es="Consulta gratis">Free consultation</li>
+        <li data-en="No obligation" data-es="Sin compromiso">No obligation</li>
+      </ul>
+    </div>
+
+    <div class="contact-grid">
+
+      <a href="mailto:hello@madevhub.com" class="contact-item reveal">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+        </span>
+        <h4>Email</h4>
+        <p>hello@madevhub.com</p>
+      </a>
+
+      <a href="https://wa.me/13059754420" target="_blank" rel="noopener" class="contact-item reveal">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg>
+        </span>
+        <h4>WhatsApp</h4>
+        <p>+1 (305) 975-4420</p>
+      </a>
+
+      <div class="contact-item reveal">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </span>
+        <h4 data-en="Location" data-es="Ubicación">Location</h4>
+        <p>Miami Beach, FL</p>
+      </div>
+
+      <a href="https://www.instagram.com/madevhub/" target="_blank" rel="noopener" class="contact-item reveal">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </span>
+        <h4>Instagram</h4>
+        <p>@madevhub</p>
+      </a>
+
+      <a href="https://www.facebook.com/madevhub" target="_blank" rel="noopener" class="contact-item reveal">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M14.5 8.5V6.8c0-.8.5-1.3 1.3-1.3h1.7V2.5h-2.6c-2.4 0-3.9 1.6-3.9 3.9v2.1H8.5V12H11v9.5h3.5V12h2.6l.4-3.5h-3z"/></svg>
+        </span>
+        <h4>Facebook</h4>
+        <p>@madevhub</p>
+      </a>
+
+    </div>
+
+  </div>
+</section>
 
 <!-- FOOTER -->
-<footer>
-<div class="brand"><span>MADEV</span>HUB</div>
-<p
-  data-en="© 2026 MADEVHUB. All rights reserved. Handcrafted in Miami Beach."
-  data-es="© 2026 MADEVHUB. Todos los derechos reservados. Hecho a mano en Miami Beach."
->
-  © 2026 MADEVHUB. All rights reserved. Handcrafted in Miami Beach.
-</p>
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <a href="#top" class="brand" aria-label="MADEVHUB home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 120 120" width="34" height="34" fill="none">
+          <rect width="120" height="120" rx="28" fill="url(#footGrad)" fill-opacity="0.14"/>
+          <rect x="1" y="1" width="118" height="118" rx="27" stroke="url(#footGrad)" stroke-opacity="0.5" stroke-width="2"/>
+          <g transform="translate(60 60)" stroke="url(#footGrad)" stroke-linejoin="round">
+            <polygon points="0,-38 33,-19 33,19 0,38 -33,19 -33,-19" stroke-width="5"/>
+            <path d="M-18 17 -18 -17 0 4 18 -17 18 17" stroke-width="7" stroke-linecap="round"/>
+          </g>
+          <defs>
+            <linearGradient id="footGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00D4FF"/>
+              <stop offset="1" stop-color="#00E88F"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong><span class="grad-text">MADEV</span>HUB</strong>
+        <small>WEB. AUTOMATE. GROW.</small>
+      </span>
+    </a>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#top" data-en="Home" data-es="Inicio">Home</a>
+      <a href="#services" data-en="Services" data-es="Servicios">Services</a>
+      <a href="#portfolio" data-en="Work" data-es="Trabajo">Work</a>
+      <a href="#pricing" data-en="Pricing" data-es="Precios">Pricing</a>
+      <a href="#reviews" data-en="Reviews" data-es="Reseñas">Reviews</a>
+      <a href="#faq" data-en="FAQ" data-es="Preguntas">FAQ</a>
+      <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+    </nav>
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com/madevhub/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/madevhub" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="none"><path d="M14.5 8.5V6.8c0-.8.5-1.3 1.3-1.3h1.7V2.5h-2.6c-2.4 0-3.9 1.6-3.9 3.9v2.1H8.5V12H11v9.5h3.5V12h2.6l.4-3.5h-3z"/></svg>
+      </a>
+      <a href="https://wa.me/13059754420" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="none"><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413A11.815 11.815 0 0012.05 0zm5.422 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <p class="footer-copy"
+    data-en="© 2026 MADEVHUB. All rights reserved. Handcrafted in Miami Beach."
+    data-es="© 2026 MADEVHUB. Todos los derechos reservados. Hecho a mano en Miami Beach."
+  >
+    © 2026 MADEVHUB. All rights reserved. Handcrafted in Miami Beach.
+  </p>
 </footer>
 
 <script src="script.js"></script>
