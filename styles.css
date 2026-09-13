@@ -310,6 +310,7 @@ ul, ol { list-style: none; }
 
 .main-nav > a:not(.btn) {
   position: relative;
+  white-space: nowrap;
   padding: 8px 13px;
   border-radius: 999px;
   font-size: 0.9rem;
@@ -467,8 +468,8 @@ ul, ol { list-style: none; }
 .hero h1 {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.4rem, 5.6vw, 4.15rem);
-  line-height: 1.03;
+  font-size: clamp(2.15rem, 4.5vw, 3.6rem);
+  line-height: 1.05;
   letter-spacing: -0.035em;
   color: #fff;
   margin-bottom: 20px;
@@ -1418,6 +1419,56 @@ ul, ol { list-style: none; }
 }
 
 /* ============================================
+   PLANES DE AGENTE DE IA
+   ============================================ */
+
+.section-plans {
+  background: #050f1b;
+  border-block: 1px solid var(--line-dark);
+}
+
+.plan-notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 30px;
+  margin-top: 32px;
+}
+
+.plan-notes li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.88rem;
+  color: var(--muted-on-dark);
+}
+
+.plan-notes li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(0, 232, 143, 0.14);
+  border: 1px solid rgba(0, 232, 143, 0.45);
+}
+
+.plan-notes li::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 9px;
+  margin-left: 6.5px;
+  border: solid var(--accent2);
+  border-width: 0 1.8px 1.8px 0;
+  transform: rotate(43deg) translateY(-1px);
+}
+
+.plan-notes li {
+  position: relative;
+}
+
+/* ============================================
    REVIEWS
    ============================================ */
 
@@ -1880,8 +1931,12 @@ ul, ol { list-style: none; }
 }
 
 /* Palabra rotativa del titular */
-.rotator {
+.h1-line {
   display: block;
+  white-space: nowrap;
+}
+
+.rotator {
   color: var(--accent2);
   white-space: nowrap;
 }
@@ -1903,13 +1958,16 @@ ul, ol { list-style: none; }
 }
 
 /* Luz que sigue al cursor sobre las tarjetas */
-.spotlight { position: relative; }
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
 
 .spotlight::after {
   content: '';
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   border-radius: inherit;
   background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 0%), rgba(0, 212, 255, 0.16), transparent 62%);
   opacity: 0;
@@ -1918,8 +1976,6 @@ ul, ol { list-style: none; }
 }
 
 .spotlight:hover::after { opacity: 1; }
-
-.spotlight > * { position: relative; z-index: 1; }
 
 /* Flotación suave del mockup del hero */
 .device-laptop { animation: float 7s ease-in-out infinite; }
@@ -2251,12 +2307,12 @@ ul, ol { list-style: none; }
    RESPONSIVE
    ============================================ */
 
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
   .main-nav > a:not(.btn) { padding: 8px 10px; font-size: 0.86rem; }
   .brand-text small { display: none; }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
   .nav-toggle { display: flex; }
   .nav-cta { display: none; }
   .nav-cta-mobile { display: inline-flex; margin-top: 10px; }
@@ -2289,7 +2345,9 @@ ul, ol { list-style: none; }
   }
 
   .main-nav > a:not(.btn) { padding: 12px 14px; font-size: 0.95rem; }
+}
 
+@media (max-width: 960px) {
   .hero-inner { grid-template-columns: 1fr; }
 
   .hero-visual {
@@ -2376,6 +2434,14 @@ ul, ol { list-style: none; }
   .header-actions { gap: 8px; }
   .whatsapp-float { width: 52px; height: 52px; right: 14px; bottom: 14px; }
   .whatsapp-tooltip { display: none; }
+}
+
+@media (max-width: 380px) {
+  .hero h1 { font-size: 1.8rem; }
+}
+
+@media (max-width: 340px) {
+  .hero h1 { font-size: 1.6rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
