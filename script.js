@@ -253,7 +253,7 @@ class Particle {
   draw() {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = this.isIce ? 'rgba(0, 212, 255, 0.62)' : 'rgba(0, 232, 143, 0.55)';
+    ctx.fillStyle = this.isIce ? 'rgba(167, 139, 250, 0.7)' : 'rgba(34, 211, 238, 0.6)';
     ctx.fill();
   }
 }
@@ -288,7 +288,7 @@ function drawConnections() {
       ctx.beginPath();
       ctx.moveTo(particles[i].x, particles[i].y);
       ctx.lineTo(particles[j].x, particles[j].y);
-      ctx.strokeStyle = 'rgba(0, 212, 255, ' + alpha + ')';
+      ctx.strokeStyle = 'rgba(167, 139, 250, ' + alpha + ')';
       ctx.lineWidth = isSmall ? 0.45 : 0.7;
       ctx.stroke();
     }
@@ -305,7 +305,7 @@ function drawConnections() {
     ctx.beginPath();
     ctx.moveTo(particles[i].x, particles[i].y);
     ctx.lineTo(mouseX, mouseY);
-    ctx.strokeStyle = 'rgba(0, 232, 143, ' + alpha + ')';
+    ctx.strokeStyle = 'rgba(34, 211, 238, ' + alpha + ')';
     ctx.lineWidth = isSmall ? 0.5 : 0.85;
     ctx.stroke();
   }
