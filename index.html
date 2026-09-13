@@ -9,7 +9,7 @@
 <meta name="description" content="MADEVHUB builds fast custom websites plus AI chatbots, AI agents and business automation for small businesses in Miami and across the U.S." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="author" content="MADEVHUB" />
-<meta name="theme-color" content="#06050f" />
+<meta name="theme-color" content="#040608" />
 
 <link rel="canonical" href="https://www.madevhub.com/" />
 
@@ -131,7 +131,7 @@
 }
 </script>
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' rx='26' fill='%2306050f'/><g transform='translate(60 60)' fill='none' stroke='%23A78BFA' stroke-linejoin='round'><polygon points='0,-40 35,-20 35,20 0,40 -35,20 -35,-20' stroke-width='5'/><path d='M-19 18 -19 -18 0 4 19 -18 19 18' stroke-width='6.5' stroke-linecap='round'/></g></svg>" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' rx='26' fill='%23040608'/><g transform='translate(60 60)' fill='none' stroke='%2300D4FF' stroke-linejoin='round'><polygon points='0,-40 35,-20 35,20 0,40 -35,20 -35,-20' stroke-width='5'/><path d='M-19 18 -19 -18 0 4 19 -18 19 18' stroke-width='6.5' stroke-linecap='round'/></g></svg>" />
 
 <link rel="preload" as="image" href="./images/city-bg.jpeg" fetchpriority="high" />
 
@@ -168,6 +168,8 @@
 
 <body id="top">
 
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+
 <!-- WHATSAPP FLOATING BUTTON -->
 <a href="https://wa.me/13059754420?text=Hi%20MADEVHUB,%20I%27m%20interested%20in%20your%20web%20design%20services" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -191,8 +193,8 @@
           </g>
           <defs>
             <linearGradient id="brandGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#A78BFA"/>
-              <stop offset="1" stop-color="#22D3EE"/>
+              <stop stop-color="#00D4FF"/>
+              <stop offset="1" stop-color="#00E88F"/>
             </linearGradient>
           </defs>
         </svg>
@@ -245,10 +247,10 @@
       <span class="eyebrow" data-en="Web design, AI &amp; automation · Miami" data-es="Diseño web, IA y automatización · Miami">Web design, AI &amp; automation · Miami</span>
 
       <h1
-        data-en="Websites and AI <span class='grad-text'>That Work</span> for Your Business"
-        data-es="Sitios Web e IA <span class='grad-text'>Que Trabajan</span> para Tu Negocio"
+        data-en="Websites and AI <span class='grad-text'>That Work</span> for <span class='rotator' id='heroRotator'>Your Business</span>"
+        data-es="Sitios Web e IA <span class='grad-text'>Que Trabajan</span> para <span class='rotator' id='heroRotator'>Tu Negocio</span>"
       >
-        Websites and AI <span class="grad-text">That Work</span> for Your Business
+        Websites and AI <span class="grad-text">That Work</span> for <span class="rotator" id="heroRotator">Your Business</span>
       </h1>
 
       <p
@@ -600,6 +602,46 @@
 
     </div>
 
+
+    <div class="ai-demo reveal">
+      <div class="ai-demo-copy">
+        <h3
+          data-en="See it answering, right now"
+          data-es="Míralo respondiendo, ahora mismo"
+        >
+          See it answering, right now
+        </h3>
+        <p
+          data-en="This is the same kind of assistant we build for your business — trained on your services, your prices and your hours. Tap a question and watch it reply."
+          data-es="Este es el mismo tipo de asistente que construimos para tu negocio — entrenado con tus servicios, tus precios y tus horarios. Toca una pregunta y míralo responder."
+        >
+          This is the same kind of assistant we build for your business — trained on your services, your prices and your hours. Tap a question and watch it reply.
+        </p>
+        <ul class="ai-demo-points">
+          <li data-en="Answers on your website and WhatsApp" data-es="Responde en tu web y por WhatsApp">Answers on your website and WhatsApp</li>
+          <li data-en="Works 24/7, also while you sleep" data-es="Trabaja 24/7, también mientras duermes">Works 24/7, also while you sleep</li>
+          <li data-en="Sends you the lead when it matters" data-es="Te pasa el cliente cuando hace falta">Sends you the lead when it matters</li>
+        </ul>
+      </div>
+
+      <div class="ai-demo-chat">
+        <div class="ai-demo-head">
+          <span class="ai-demo-avatar" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3.5" y="8" width="17" height="12" rx="3.5"/><path d="M12 4.2V8M9 13h.01M15 13h.01M9.8 16.6h4.4"/><circle cx="12" cy="3" r="1.3"/></svg>
+          </span>
+          <span class="ai-demo-name">
+            <strong>MADEVHUB Assistant</strong>
+            <small data-en="Online now" data-es="En línea ahora">Online now</small>
+          </span>
+          <span class="ai-demo-badge">DEMO</span>
+        </div>
+
+        <div class="ai-demo-log" id="aiDemoLog" role="log" aria-live="polite"></div>
+
+        <div class="ai-demo-chips" id="aiDemoChips"></div>
+      </div>
+    </div>
+
     <div class="ai-cta reveal">
       <p
         data-en="Not sure which one you need? Tell us what eats the most time in your business and we'll tell you what can be automated — free, with no obligation."
@@ -639,9 +681,19 @@
       <a href="#contact" class="btn btn-dark btn-sm reveal" data-en="Start Your Project →" data-es="Empieza Tu Proyecto →">Start Your Project →</a>
     </div>
 
+    <div class="work-filters reveal" role="group" aria-label="Filter projects">
+      <button type="button" class="filter-btn is-active" data-filter="all" data-en="All" data-es="Todos">All</button>
+      <button type="button" class="filter-btn" data-filter="food" data-en="Restaurants" data-es="Restaurantes">Restaurants</button>
+      <button type="button" class="filter-btn" data-filter="beauty" data-en="Beauty &amp; Grooming" data-es="Belleza">Beauty &amp; Grooming</button>
+      <button type="button" class="filter-btn" data-filter="health" data-en="Health &amp; Fitness" data-es="Salud y Fitness">Health &amp; Fitness</button>
+      <button type="button" class="filter-btn" data-filter="services" data-en="Local Services" data-es="Servicios">Local Services</button>
+      <button type="button" class="filter-btn" data-filter="retail" data-en="Retail" data-es="Retail">Retail</button>
+      <span class="filter-count" id="filterCount"></span>
+    </div>
+
     <div class="work-grid">
 
-      <a href="https://relyxai.com" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+      <a data-cat="retail" href="https://relyxai.com" target="_blank" rel="noopener noreferrer" class="work-card reveal">
         <div class="work-thumb" style="background-image:url('./images/massager-6-heads.jpeg')">
           <span class="work-tag" data-en="Product Landing Page" data-es="Landing de Producto">Product Landing Page</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
@@ -658,7 +710,7 @@
         </div>
       </a>
 
-      <a href="https://madevhub-chinese-restaurant-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+      <a href="https://madevhub-chinese-restaurant-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="food">
         <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1552611052-33e04de081de?w=900&h=600&fit=crop')">
           <span class="work-tag" data-en="Chinese Restaurant" data-es="Restaurante Chino">Chinese Restaurant</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
@@ -675,7 +727,7 @@
         </div>
       </a>
 
-      <a href="https://madevhub-beauty-salon-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+      <a href="https://madevhub-beauty-salon-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="beauty">
         <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&h=600&fit=crop')">
           <span class="work-tag" data-en="Beauty Salon" data-es="Salón de Belleza">Beauty Salon</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
@@ -692,7 +744,7 @@
         </div>
       </a>
 
-      <a href="https://madevhub-cleaning-company-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+      <a href="https://madevhub-cleaning-company-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="services">
         <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&h=600&fit=crop')">
           <span class="work-tag" data-en="Cleaning Service" data-es="Servicio de Limpieza">Cleaning Service</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
@@ -709,7 +761,7 @@
         </div>
       </a>
 
-      <a href="https://madevhub-blade-co-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+      <a href="https://madevhub-blade-co-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="beauty">
         <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&h=600&fit=crop')">
           <span class="work-tag" data-en="Barbershop" data-es="Barbería">Barbershop</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
@@ -726,7 +778,7 @@
         </div>
       </a>
 
-      <a href="https://madevhub-fitness-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+      <a href="https://madevhub-fitness-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="health">
         <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&h=600&fit=crop')">
           <span class="work-tag" data-en="Fitness Brand" data-es="Marca Fitness">Fitness Brand</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
@@ -743,7 +795,7 @@
         </div>
       </a>
 
-      <a href="https://madevhub-bright-smile-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+      <a href="https://madevhub-bright-smile-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="health">
         <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900&h=600&fit=crop')">
           <span class="work-tag" data-en="Dental Clinic" data-es="Clínica Dental">Dental Clinic</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
@@ -760,7 +812,7 @@
         </div>
       </a>
 
-      <a href="https://madevhub-restaurant-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+      <a href="https://madevhub-restaurant-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="food">
         <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&h=600&fit=crop')">
           <span class="work-tag" data-en="Restaurant" data-es="Restaurante">Restaurant</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
@@ -777,7 +829,7 @@
         </div>
       </a>
 
-      <a href="#contact" class="work-card work-card-cta reveal">
+      <a href="#contact" class="work-card work-card-cta reveal" data-cat="all">
         <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&h=600&fit=crop')">
           <span class="work-tag" data-en="Your Project?" data-es="¿Tu Proyecto?">Your Project?</span>
           <span class="work-arrow" aria-hidden="true">→</span>
@@ -1414,8 +1466,8 @@
           </g>
           <defs>
             <linearGradient id="footGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#A78BFA"/>
-              <stop offset="1" stop-color="#22D3EE"/>
+              <stop stop-color="#00D4FF"/>
+              <stop offset="1" stop-color="#00E88F"/>
             </linearGradient>
           </defs>
         </svg>

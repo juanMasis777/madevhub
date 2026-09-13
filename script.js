@@ -253,7 +253,7 @@ class Particle {
   draw() {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = this.isIce ? 'rgba(167, 139, 250, 0.7)' : 'rgba(34, 211, 238, 0.6)';
+    ctx.fillStyle = this.isIce ? 'rgba(0, 212, 255, 0.68)' : 'rgba(0, 232, 143, 0.6)';
     ctx.fill();
   }
 }
@@ -288,7 +288,7 @@ function drawConnections() {
       ctx.beginPath();
       ctx.moveTo(particles[i].x, particles[i].y);
       ctx.lineTo(particles[j].x, particles[j].y);
-      ctx.strokeStyle = 'rgba(167, 139, 250, ' + alpha + ')';
+      ctx.strokeStyle = 'rgba(0, 212, 255, ' + alpha + ')';
       ctx.lineWidth = isSmall ? 0.45 : 0.7;
       ctx.stroke();
     }
@@ -305,7 +305,7 @@ function drawConnections() {
     ctx.beginPath();
     ctx.moveTo(particles[i].x, particles[i].y);
     ctx.lineTo(mouseX, mouseY);
-    ctx.strokeStyle = 'rgba(34, 211, 238, ' + alpha + ')';
+    ctx.strokeStyle = 'rgba(0, 232, 143, ' + alpha + ')';
     ctx.lineWidth = isSmall ? 0.5 : 0.85;
     ctx.stroke();
   }
@@ -380,4 +380,237 @@ if (canvas && ctx && heroSection && !prefersReducedMotion) {
       startAnimation();
     }
   });
+}
+
+/* === BARRA DE PROGRESO DE LECTURA === */
+const progressBar = document.getElementById('scrollProgressBar');
+
+if (progressBar) {
+  const updateProgress = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+    progressBar.style.width = Math.min(ratio, 1) * 100 + '%';
+  };
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+}
+
+/* === PALABRA ROTATIVA DEL TITULAR === */
+const rotatorWords = {
+  en: ['Restaurants', 'Barbershops', 'Clinics', 'Gyms', 'Cleaning Crews', 'Your Business'],
+  es: ['Restaurantes', 'Barberías', 'Clínicas', 'Gimnasios', 'Empresas de Limpieza', 'Tu Negocio']
+};
+
+if (!prefersReducedMotion) {
+  let wordIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  const typeLoop = () => {
+    const rotator = document.getElementById('heroRotator');
+
+    if (!rotator) {
+      setTimeout(typeLoop, 600);
+      return;
+    }
+
+    const words = rotatorWords[document.documentElement.lang] || rotatorWords.en;
+    const word = words[wordIndex % words.length];
+
+    charIndex += deleting ? -1 : 1;
+    rotator.textContent = word.slice(0, charIndex);
+
+    let delay = deleting ? 45 : 85;
+
+    if (!deleting && charIndex === word.length) {
+      deleting = true;
+      delay = 2200;
+    } else if (deleting && charIndex === 0) {
+      deleting = false;
+      wordIndex++;
+      delay = 350;
+    }
+
+    setTimeout(typeLoop, delay);
+  };
+
+  setTimeout(typeLoop, 1400);
+}
+
+/* === LUZ QUE SIGUE AL CURSOR EN LAS TARJETAS === */
+const spotlightSelector = '.service-card, .ai-card, .price-card, .contact-item';
+
+document.querySelectorAll(spotlightSelector).forEach(card => card.classList.add('spotlight'));
+
+document.addEventListener('pointermove', event => {
+  const card = event.target.closest(spotlightSelector);
+
+  if (!card) return;
+
+  const rect = card.getBoundingClientRect();
+  card.style.setProperty('--mx', event.clientX - rect.left + 'px');
+  card.style.setProperty('--my', event.clientY - rect.top + 'px');
+}, { passive: true });
+
+/* === FILTROS DEL PORTAFOLIO === */
+const filterButtons = document.querySelectorAll('.filter-btn');
+const workCards = document.querySelectorAll('.work-card');
+const filterCount = document.getElementById('filterCount');
+
+function applyFilter(filter) {
+  let shown = 0;
+
+  workCards.forEach(card => {
+    const cat = card.dataset.cat;
+    const match = filter === 'all' || cat === filter || cat === 'all';
+
+    card.classList.toggle('is-hidden', !match);
+
+    if (!match) return;
+
+    shown++;
+
+    if (prefersReducedMotion) return;
+
+    card.classList.add('is-entering');
+    requestAnimationFrame(() => requestAnimationFrame(() => card.classList.remove('is-entering')));
+  });
+
+  if (filterCount) {
+    filterCount.textContent = shown + (document.documentElement.lang === 'es' ? ' proyectos' : ' projects');
+  }
+}
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach(other => other.classList.toggle('is-active', other === button));
+    applyFilter(button.dataset.filter);
+  });
+});
+
+if (filterButtons.length) {
+  applyFilter('all');
+}
+
+/* === DEMO DE CHATBOT === */
+const demoScript = {
+  en: {
+    greeting: "Hi! I'm the MADEVHUB assistant. Ask me anything — this is exactly how a chatbot would answer for your own business.",
+    qa: [
+      ['How much is a website?', 'Packages start at $195.99 for a landing page and go up to $2,997 for a full site. Every one includes a free domain and hosting for the first year, plus 100% ownership. Want me to recommend the right one for your business?'],
+      ['How long does it take?', 'Between 7 and 14 days, depending on the package. The Smart Landing ships in 7 days and the Professional in 14. The clock starts once we have your content.'],
+      ['Do you build chatbots?', "Yes — that's what I am. We train an assistant on your services, prices and hours, and it answers on your website and WhatsApp 24/7. It can also book appointments and pass hot leads straight to you."],
+      ['Can you automate my work?', 'Usually, yes. Forms, quotes, invoices, follow-ups and reports can run on their own by connecting the tools you already use. Tell us what eats the most time and we will tell you what can be automated.'],
+      ['I want to talk to a human', "Of course — that's the right call for a real quote. Tap 'Get a Free Quote' or write to us on WhatsApp at +1 (305) 975-4420 and a person replies, usually within 24 hours."]
+    ]
+  },
+  es: {
+    greeting: '¡Hola! Soy el asistente de MADEVHUB. Pregúntame lo que quieras — así de rápido respondería un chatbot para tu propio negocio.',
+    qa: [
+      ['¿Cuánto cuesta una página?', 'Los paquetes van desde $195.99 por una landing hasta $2,997 por un sitio completo. Todos incluyen dominio y hosting gratis el primer año, más el 100% de la propiedad. ¿Te recomiendo el indicado para tu negocio?'],
+      ['¿Cuánto tarda?', 'Entre 7 y 14 días, según el paquete. La Landing Inteligente sale en 7 días y el Sitio Profesional en 14. El conteo empieza cuando tenemos tu contenido.'],
+      ['¿Hacen chatbots?', 'Sí — soy uno. Entrenamos un asistente con tus servicios, precios y horarios, y responde en tu web y por WhatsApp 24/7. También puede agendar citas y pasarte los clientes interesados.'],
+      ['¿Pueden automatizar mi trabajo?', 'Casi siempre sí. Formularios, cotizaciones, facturas, seguimientos y reportes pueden funcionar solos conectando las herramientas que ya usas. Cuéntanos qué te consume más tiempo y te decimos qué se puede automatizar.'],
+      ['Quiero hablar con una persona', 'Claro, y para una cotización real es lo correcto. Toca "Cotización Gratis" o escríbenos por WhatsApp al +1 (305) 975-4420 y te responde una persona, normalmente en menos de 24 horas.']
+    ]
+  }
+};
+
+const demoLog = document.getElementById('aiDemoLog');
+const demoChips = document.getElementById('aiDemoChips');
+
+if (demoLog && demoChips) {
+  let demoBusy = false;
+
+  const demoLang = () => (demoScript[document.documentElement.lang] ? document.documentElement.lang : 'en');
+
+  const addMessage = (text, who) => {
+    const bubble = document.createElement('div');
+    bubble.className = 'chat-msg is-' + who;
+    bubble.textContent = text;
+    demoLog.appendChild(bubble);
+    demoLog.scrollTop = demoLog.scrollHeight;
+    return bubble;
+  };
+
+  const addTyping = () => {
+    const dots = document.createElement('div');
+    dots.className = 'chat-typing';
+    dots.innerHTML = '<i></i><i></i><i></i>';
+    demoLog.appendChild(dots);
+    demoLog.scrollTop = demoLog.scrollHeight;
+    return dots;
+  };
+
+  const answer = (question, reply, chip) => {
+    if (demoBusy) return;
+
+    demoBusy = true;
+    chip.disabled = true;
+    addMessage(question, 'user');
+
+    const dots = addTyping();
+
+    setTimeout(() => {
+      dots.remove();
+      addMessage(reply, 'bot');
+      demoBusy = false;
+    }, prefersReducedMotion ? 200 : 900 + Math.min(reply.length * 4, 900));
+  };
+
+  const renderDemo = () => {
+    const script = demoScript[demoLang()];
+
+    demoLog.innerHTML = '';
+    demoChips.innerHTML = '';
+    demoBusy = false;
+
+    addMessage(script.greeting, 'bot');
+
+    script.qa.forEach(([question, reply]) => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'chat-chip';
+      chip.textContent = question;
+      chip.addEventListener('click', () => answer(question, reply, chip));
+      demoChips.appendChild(chip);
+    });
+  };
+
+  renderDemo();
+
+  // El demo se vuelve a armar cuando cambia el idioma.
+  document.querySelectorAll('.lang-btn').forEach(button => {
+    button.addEventListener('click', () => setTimeout(renderDemo, 60));
+  });
+}
+
+/* El contador de proyectos sigue el idioma activo. */
+if (filterButtons.length) {
+  document.querySelectorAll('.lang-btn').forEach(button => {
+    button.addEventListener('click', () => setTimeout(() => {
+      const active = document.querySelector('.filter-btn.is-active');
+      applyFilter(active ? active.dataset.filter : 'all');
+    }, 60));
+  });
+}
+
+/* === PARALLAX SUAVE DEL FONDO DEL HERO === */
+const heroBg = document.querySelector('.hero-bg');
+
+if (heroBg && !prefersReducedMotion) {
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+
+    ticking = true;
+    requestAnimationFrame(() => {
+      const offset = Math.min(window.scrollY, window.innerHeight) * 0.18;
+      heroBg.style.transform = 'translate3d(0, ' + offset + 'px, 0)';
+      ticking = false;
+    });
+  }, { passive: true });
 }
