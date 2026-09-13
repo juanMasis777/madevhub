@@ -818,6 +818,168 @@ ul, ol { list-style: none; }
 }
 
 /* ============================================
+   AI & AUTOMATION
+   ============================================ */
+
+.section-ai {
+  background: #060a16;
+  border-block: 1px solid var(--line-dark);
+  overflow: hidden;
+}
+
+.section-ai::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(780px 440px at 16% -5%, rgba(139, 92, 246, 0.24), transparent 68%),
+    radial-gradient(720px 420px at 88% 105%, rgba(0, 212, 255, 0.16), transparent 68%);
+  pointer-events: none;
+}
+
+.section-ai::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(139, 92, 246, 0.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.075) 1px, transparent 1px);
+  background-size: 58px 58px;
+  -webkit-mask-image: radial-gradient(circle at 50% 35%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(circle at 50% 35%, #000 0%, transparent 72%);
+  pointer-events: none;
+}
+
+.section-ai .kicker { color: #a78bfa; }
+
+.section-ai .grad-text {
+  background-image: linear-gradient(120deg, #a78bfa 0%, #00d4ff 100%);
+}
+
+.ai-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.ai-pills li {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #c9b8fd;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  padding: 6px 13px;
+  border-radius: 999px;
+}
+
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  gap: 20px;
+}
+
+.ai-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 26px 28px;
+  border-radius: var(--radius);
+  background: linear-gradient(165deg, rgba(139, 92, 246, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+  overflow: hidden;
+  transition: transform var(--t), border-color var(--t), box-shadow var(--t);
+}
+
+.ai-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, #a78bfa, #00d4ff);
+  opacity: 0;
+  transition: opacity var(--t);
+}
+
+.ai-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(167, 139, 250, 0.55);
+  box-shadow: 0 30px 62px -34px rgba(139, 92, 246, 0.75);
+}
+
+.ai-card:hover::before { opacity: 1; }
+
+.ai-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  background: linear-gradient(140deg, rgba(139, 92, 246, 0.22), rgba(0, 212, 255, 0.14));
+  border: 1px solid rgba(167, 139, 250, 0.32);
+  margin-bottom: 20px;
+}
+
+.ai-icon svg {
+  width: 24px; height: 24px;
+  fill: none;
+  stroke: #c4b5fd;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ai-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.16rem;
+  letter-spacing: -0.015em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.ai-card p {
+  font-size: 0.93rem;
+  color: var(--muted-on-dark);
+  flex: 1;
+}
+
+.ai-term {
+  display: block;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(139, 92, 246, 0.18);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8f7fd0;
+}
+
+.ai-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin-top: 30px;
+  padding: 26px 30px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(120deg, rgba(139, 92, 246, 0.16), rgba(0, 212, 255, 0.08));
+  border: 1px solid rgba(139, 92, 246, 0.32);
+}
+
+.ai-cta p {
+  font-size: 0.97rem;
+  color: #c8d6ea;
+  max-width: 60ch;
+}
+
+/* ============================================
    PORTFOLIO
    ============================================ */
 
@@ -1794,7 +1956,16 @@ ul, ol { list-style: none; }
   .cta-actions .btn { flex: 1 1 220px; }
   .work-grid,
   .services-grid,
+  .ai-grid,
   .reviews-grid { grid-template-columns: 1fr; }
+
+  .ai-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px 20px;
+  }
+
+  .ai-cta .btn { width: 100%; }
 
   .process-steps { grid-template-columns: 1fr; }
   .price-card { max-width: none; }
