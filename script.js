@@ -1,5 +1,6 @@
 /* ============================================
    MADEVHUB — JavaScript
+   Unified pricing version
    ============================================ */
 
 // === CURSOR GLOW ===
@@ -49,31 +50,6 @@ function setLang(lang) {
   });
 }
 
-// === PRICING TIER TOGGLE (Express / Professional) ===
-function setTier(tier) {
-  // Update buttons
-  document.querySelectorAll('.tier-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('data-tier') === tier);
-  });
-
-  // Hide all tier contents
-  document.querySelectorAll('.pricing-tier-content').forEach(content => {
-    content.style.display = 'none';
-  });
-
-  // Show the selected tier
-  const selectedTier = document.getElementById('tier-' + tier);
-  if (selectedTier) {
-    selectedTier.style.display = 'block';
-
-    // Reveal cards inside the now-visible tier
-    selectedTier.querySelectorAll('.reveal').forEach((el, i) => {
-      el.classList.remove('visible');
-      setTimeout(() => el.classList.add('visible'), i * 70);
-    });
-  }
-}
-
 // === SMOOTH SCROLL ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
@@ -89,7 +65,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // === PARTICLE NETWORK ===
 const canvas = document.getElementById('particleCanvas');
-const ctx = canvas.getContext('2d');
+const ctx = canvas ? canvas.getContext('2d') : null;
 
 let particles = [];
 let mouseX = -1000;
@@ -97,52 +73,48 @@ let mouseY = -1000;
 
 function getParticleCount() {
   if (window.innerWidth <= 480) {
-    return 35; // teléfonos pequeños
+    return 35;
   } else if (window.innerWidth <= 768) {
-    return 50; // teléfonos grandes / tablets pequeñas
+    return 50;
   } else if (window.innerWidth <= 1024) {
-    return 90; // tablets
+    return 90;
   } else {
-    return 220; // desktop
+    return 220;
   }
 }
 
 function getConnectionDistance() {
   if (window.innerWidth <= 480) {
-    return 95; // menos líneas en teléfonos pequeños
+    return 95;
   } else if (window.innerWidth <= 768) {
-    return 110; // menos líneas en móviles
+    return 110;
   } else if (window.innerWidth <= 1024) {
-    return 140; // tablets
+    return 140;
   } else {
-    return 180; // desktop
+    return 180;
   }
 }
 
 function getMouseDistance() {
-  if (window.innerWidth <= 768) {
-    return 120; // menos efecto del mouse en móvil
-  } else {
-    return 250; // desktop
-  }
+  return window.innerWidth <= 768 ? 120 : 250;
 }
 
 function resizeCanvas() {
+  if (!canvas) return;
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
 
 function createParticles() {
-  particles = [];
+  if (!canvas) return;
 
+  particles = [];
   const particleCount = getParticleCount();
 
   for (let i = 0; i < particleCount; i++) {
     particles.push(new Particle());
   }
 }
-
-resizeCanvas();
 
 window.addEventListener('resize', () => {
   resizeCanvas();
@@ -163,16 +135,9 @@ class Particle {
   constructor() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-
     this.vx = (Math.random() - 0.5) * 0.5;
     this.vy = (Math.random() - 0.5) * 0.5;
-
-    if (window.innerWidth <= 768) {
-      this.radius = Math.random() * 1.8 + 0.8; // puntos más pequeños en móvil
-    } else {
-      this.radius = Math.random() * 2.5 + 1.2;
-    }
-
+    this.radius = window.innerWidth <= 768 ? Math.random() * 1.8 + 0.8 : Math.random() * 2.5 + 1.2;
     this.isIce = Math.random() > 0.65;
   }
 
@@ -209,6 +174,8 @@ class Particle {
   }
 
   draw() {
+    if (!ctx) return;
+
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     ctx.fillStyle = this.isIce ? 'rgba(0, 194, 255, 0.7)' : 'rgba(0, 232, 143, 0.65)';
@@ -217,6 +184,8 @@ class Particle {
 }
 
 function drawConnections() {
+  if (!ctx) return;
+
   const connectionDist = getConnectionDistance();
   const mouseDist = getMouseDistance();
 
@@ -230,7 +199,7 @@ function drawConnections() {
         let alpha = (1 - dist / connectionDist) * 0.25;
 
         if (window.innerWidth <= 768) {
-          alpha = alpha * 0.55; // líneas más suaves en móvil
+          alpha = alpha * 0.55;
         }
 
         ctx.beginPath();
@@ -264,6 +233,8 @@ function drawConnections() {
 }
 
 function animate() {
+  if (!canvas || !ctx) return;
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   particles.forEach(p => {
@@ -275,5 +246,6 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
+resizeCanvas();
 createParticles();
 animate();
