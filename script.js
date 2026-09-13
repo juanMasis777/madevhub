@@ -1,93 +1,102 @@
 /* ============================================
-   MADEVHUB — Mockup V2 JavaScript
+   MADEVHUB — JavaScript
+   Unified pricing version
    ============================================ */
 
+// === CURSOR GLOW ===
 const glow = document.getElementById('cursorGlow');
 
-document.addEventListener('mousemove', event => {
-  if (!glow) return;
-  glow.style.left = event.clientX + 'px';
-  glow.style.top = event.clientY + 'px';
+document.addEventListener('mousemove', e => {
+  if (glow) {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  }
 });
 
+// === SCROLL REVEAL ===
 const reveals = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver(entries => {
-  entries.forEach((entry, index) => {
-    if (!entry.isIntersecting) return;
-    setTimeout(() => entry.target.classList.add('visible'), index * 70);
-    observer.unobserve(entry.target);
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 70);
+      observer.unobserve(entry.target);
+    }
   });
 }, { threshold: 0.12 });
 
-reveals.forEach(element => observer.observe(element));
+reveals.forEach(el => observer.observe(el));
 
+// === LANGUAGE TOGGLE ===
 let currentLang = 'en';
 
 function setLang(lang) {
   currentLang = lang;
 
-  document.querySelectorAll('.lang-btn').forEach(button => {
-    button.classList.toggle('active', button.textContent.trim().toLowerCase() === lang);
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
   });
 
-  document.querySelectorAll('[data-' + lang + ']').forEach(element => {
-    const value = element.getAttribute('data-' + lang);
-    if (!value) return;
+  document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
 
-    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-      element.placeholder = value;
-    } else {
-      element.innerHTML = value;
+    if (val) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = val;
+      } else {
+        el.innerHTML = val;
+      }
     }
   });
 }
 
-window.setLang = setLang;
-
+// === SMOOTH SCROLL ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', event => {
-    const targetSelector = anchor.getAttribute('href');
-    const target = document.querySelector(targetSelector);
-    if (!target) return;
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
 
-    event.preventDefault();
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
+    const target = document.querySelector(this.getAttribute('href'));
 
-document.querySelectorAll('.faq-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const isActive = item.classList.contains('active');
-
-    document.querySelectorAll('.faq-item').forEach(otherItem => {
-      otherItem.classList.remove('active');
-    });
-
-    if (!isActive) {
-      item.classList.add('active');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 });
 
+// === PARTICLE NETWORK ===
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas ? canvas.getContext('2d') : null;
+
 let particles = [];
 let mouseX = -1000;
 let mouseY = -1000;
 
 function getParticleCount() {
-  if (window.innerWidth <= 480) return 28;
-  if (window.innerWidth <= 768) return 38;
-  if (window.innerWidth <= 1024) return 60;
-  return 125;
+  if (window.innerWidth <= 480) {
+    return 35;
+  } else if (window.innerWidth <= 768) {
+    return 50;
+  } else if (window.innerWidth <= 1024) {
+    return 90;
+  } else {
+    return 220;
+  }
 }
 
 function getConnectionDistance() {
-  if (window.innerWidth <= 480) return 80;
-  if (window.innerWidth <= 768) return 95;
-  if (window.innerWidth <= 1024) return 120;
-  return 150;
+  if (window.innerWidth <= 480) {
+    return 95;
+  } else if (window.innerWidth <= 768) {
+    return 110;
+  } else if (window.innerWidth <= 1024) {
+    return 140;
+  } else {
+    return 180;
+  }
+}
+
+function getMouseDistance() {
+  return window.innerWidth <= 768 ? 120 : 250;
 }
 
 function resizeCanvas() {
@@ -96,84 +105,15 @@ function resizeCanvas() {
   canvas.height = window.innerHeight;
 }
 
-class Particle {
-  constructor() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.vx = (Math.random() - 0.5) * 0.35;
-    this.vy = (Math.random() - 0.5) * 0.35;
-    this.radius = window.innerWidth <= 768 ? Math.random() * 1.5 + 0.7 : Math.random() * 2 + 1;
-    this.isBlue = Math.random() > 0.5;
-  }
-
-  update() {
-    this.x += this.vx;
-    this.y += this.vy;
-
-    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-
-    const dx = this.x - mouseX;
-    const dy = this.y - mouseY;
-    const distance = Math.sqrt(dx * dx + dy * dy);
-    const mouseDistance = window.innerWidth <= 768 ? 100 : 220;
-
-    if (distance < mouseDistance) {
-      const force = ((mouseDistance - distance) / mouseDistance) * 0.012;
-      this.vx += dx * force;
-      this.vy += dy * force;
-    }
-  }
-
-  draw() {
-    if (!ctx) return;
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = this.isBlue ? 'rgba(56, 213, 255, 0.55)' : 'rgba(72, 242, 213, 0.5)';
-    ctx.fill();
-  }
-}
-
 function createParticles() {
   if (!canvas) return;
+
   particles = [];
-  for (let i = 0; i < getParticleCount(); i++) {
+  const particleCount = getParticleCount();
+
+  for (let i = 0; i < particleCount; i++) {
     particles.push(new Particle());
   }
-}
-
-function drawConnections() {
-  if (!ctx) return;
-  const connectionDistance = getConnectionDistance();
-
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx = particles[i].x - particles[j].x;
-      const dy = particles[i].y - particles[j].y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-
-      if (distance < connectionDistance) {
-        const alpha = (1 - distance / connectionDistance) * 0.18;
-        ctx.beginPath();
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = `rgba(56, 213, 255, ${alpha})`;
-        ctx.lineWidth = window.innerWidth <= 768 ? 0.5 : 0.8;
-        ctx.stroke();
-      }
-    }
-  }
-}
-
-function animate() {
-  if (!canvas || !ctx) return;
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(particle => {
-    particle.update();
-    particle.draw();
-  });
-  drawConnections();
-  requestAnimationFrame(animate);
 }
 
 window.addEventListener('resize', () => {
@@ -181,15 +121,130 @@ window.addEventListener('resize', () => {
   createParticles();
 });
 
-document.addEventListener('mousemove', event => {
-  mouseX = event.clientX;
-  mouseY = event.clientY;
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 });
 
 document.addEventListener('mouseleave', () => {
   mouseX = -1000;
   mouseY = -1000;
 });
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.vx = (Math.random() - 0.5) * 0.5;
+    this.vy = (Math.random() - 0.5) * 0.5;
+    this.radius = window.innerWidth <= 768 ? Math.random() * 1.8 + 0.8 : Math.random() * 2.5 + 1.2;
+    this.isIce = Math.random() > 0.65;
+  }
+
+  update() {
+    const mouseDist = getMouseDistance();
+
+    this.x += this.vx;
+    this.y += this.vy;
+
+    if (this.x < 0 || this.x > canvas.width) {
+      this.vx *= -1;
+    }
+
+    if (this.y < 0 || this.y > canvas.height) {
+      this.vy *= -1;
+    }
+
+    const dx = this.x - mouseX;
+    const dy = this.y - mouseY;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (dist < mouseDist) {
+      const force = ((mouseDist - dist) / mouseDist) * 0.02;
+      this.vx += dx * force;
+      this.vy += dy * force;
+    }
+
+    const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+
+    if (speed > 1.2) {
+      this.vx *= 0.98;
+      this.vy *= 0.98;
+    }
+  }
+
+  draw() {
+    if (!ctx) return;
+
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = this.isIce ? 'rgba(0, 194, 255, 0.7)' : 'rgba(0, 232, 143, 0.65)';
+    ctx.fill();
+  }
+}
+
+function drawConnections() {
+  if (!ctx) return;
+
+  const connectionDist = getConnectionDistance();
+  const mouseDist = getMouseDistance();
+
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < connectionDist) {
+        let alpha = (1 - dist / connectionDist) * 0.25;
+
+        if (window.innerWidth <= 768) {
+          alpha = alpha * 0.55;
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(0, 232, 143, ${alpha})`;
+        ctx.lineWidth = window.innerWidth <= 768 ? 0.5 : 0.8;
+        ctx.stroke();
+      }
+    }
+
+    const dxM = particles[i].x - mouseX;
+    const dyM = particles[i].y - mouseY;
+    const distM = Math.sqrt(dxM * dxM + dyM * dyM);
+
+    if (distM < mouseDist) {
+      let alpha = (1 - distM / mouseDist) * 0.45;
+
+      if (window.innerWidth <= 768) {
+        alpha = alpha * 0.45;
+      }
+
+      ctx.beginPath();
+      ctx.moveTo(particles[i].x, particles[i].y);
+      ctx.lineTo(mouseX, mouseY);
+      ctx.strokeStyle = `rgba(0, 232, 143, ${alpha})`;
+      ctx.lineWidth = window.innerWidth <= 768 ? 0.6 : 1;
+      ctx.stroke();
+    }
+  }
+}
+
+function animate() {
+  if (!canvas || !ctx) return;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach(p => {
+    p.update();
+    p.draw();
+  });
+
+  drawConnections();
+  requestAnimationFrame(animate);
+}
 
 resizeCanvas();
 createParticles();
