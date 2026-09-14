@@ -134,6 +134,8 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' rx='26' fill='%23040608'/><g transform='translate(60 60)' fill='none' stroke='%2300D4FF' stroke-linejoin='round'><polygon points='0,-40 35,-20 35,20 0,40 -35,20 -35,-20' stroke-width='5'/><path d='M-19 18 -19 -18 0 4 19 -18 19 18' stroke-width='6.5' stroke-linecap='round'/></g></svg>" />
 
 <link rel="preload" as="image" href="./images/city-bg.jpeg" fetchpriority="high" />
+<link rel="preload" as="image" href="./images/hero.jpg" media="(min-width: 721px)" fetchpriority="high" />
+<link rel="preload" as="image" href="./images/hero-mobile.jpg" media="(max-width: 720px)" fetchpriority="high" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -270,10 +272,24 @@
 
     </div>
 
-    <div class="hero-visual" aria-hidden="true">
+    <div class="hero-visual" id="heroVisual" aria-hidden="true">
       <span class="hero-script">From Miami<br />to the World</span>
 
-      <div class="device-laptop">
+      <picture class="hero-picture">
+        <source media="(max-width: 720px)" srcset="./images/hero-mobile.jpg" />
+        <img
+          class="hero-photo"
+          id="heroPhoto"
+          src="./images/hero.jpg"
+          alt=""
+          width="1600"
+          height="900"
+          fetchpriority="high"
+        />
+      </picture>
+
+      <div class="hero-devices">
+        <div class="device-laptop">
         <div class="laptop-screen">
           <div class="mini-site">
             <div class="mini-bar">
@@ -287,10 +303,10 @@
             </div>
           </div>
         </div>
-        <div class="laptop-base"></div>
-      </div>
+          <div class="laptop-base"></div>
+        </div>
 
-      <div class="device-phone">
+        <div class="device-phone">
         <div class="phone-screen">
           <div class="mini-site mini-site-phone">
             <div class="mini-bar">
@@ -300,6 +316,7 @@
               <h3 class="mini-title">GOOD FOOD<br />BRIGHTER DAYS</h3>
               <span class="mini-btn">Book a Table</span>
             </div>
+          </div>
           </div>
         </div>
       </div>

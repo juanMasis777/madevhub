@@ -559,6 +559,28 @@ ul, ol { list-style: none; }
   transform: rotate(-3deg);
 }
 
+
+/* Foto del hero: se usa si el archivo existe; si no, quedan los dispositivos CSS */
+.hero-photo {
+  display: none;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.85), 0 0 70px -30px rgba(0, 212, 255, 0.45);
+}
+
+.hero-picture { display: contents; }
+
+.hero-visual.has-photo .hero-photo { display: block; }
+.hero-visual.has-photo .hero-devices { display: none; }
+
+.hero-devices {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .device-laptop {
   width: min(100%, 560px);
   transform: perspective(1600px) rotateY(-7deg) rotateX(4deg);
@@ -2389,6 +2411,13 @@ ul, ol { list-style: none; }
     flex-direction: column;
     max-width: 420px;
     padding-block: 30px 26px;
+  }
+
+  .hero-photo {
+    width: auto;
+    max-width: 100%;
+    max-height: 62vh;
+    margin-inline: auto;
   }
 
   .hero-script {
