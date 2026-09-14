@@ -275,18 +275,48 @@
     <div class="hero-visual" id="heroVisual" aria-hidden="true">
       <span class="hero-script">From Miami<br />to the World</span>
 
-      <picture class="hero-picture">
-        <source media="(max-width: 720px)" srcset="./images/hero-mobile.jpg" />
-        <img
-          class="hero-photo"
-          id="heroPhoto"
-          src="./images/hero.jpg"
-          alt=""
-          width="1600"
-          height="900"
-          fetchpriority="high"
-        />
-      </picture>
+      <div class="hero-slider" id="heroSlider">
+        <picture class="hero-slide is-active">
+          <source media="(max-width: 720px)" srcset="./images/hero-mobile.jpg" />
+          <img
+            class="hero-photo"
+            id="heroPhoto"
+            src="./images/hero.jpg"
+            alt=""
+            width="1672"
+            height="941"
+            fetchpriority="high"
+          />
+        </picture>
+
+        <picture class="hero-slide">
+          <source media="(max-width: 720px)" srcset="./images/hero-2-mobile.webp" />
+          <img
+            class="hero-photo"
+            src="./images/hero-2.webp"
+            alt=""
+            width="1672"
+            height="941"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
+          />
+        </picture>
+
+        <picture class="hero-slide">
+          <source media="(max-width: 720px)" srcset="./images/hero-3-mobile.webp" />
+          <img
+            class="hero-photo"
+            src="./images/hero-3.webp"
+            alt=""
+            width="1672"
+            height="941"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
+          />
+        </picture>
+      </div>
 
       <div class="hero-devices">
         <div class="device-laptop">
