@@ -615,18 +615,63 @@ if (heroBg && !prefersReducedMotion) {
   }, { passive: true });
 }
 
-/* === FOTO DEL HERO (con respaldo al mockup CSS) === */
-const heroPhoto = document.getElementById('heroPhoto');
-const heroVisual = document.getElementById('heroVisual');
+/* === FOTOS DEL HERO: carrusel con fundido (respaldo al mockup CSS) === */
+(function heroSlideshow() {
+  const heroVisual = document.getElementById('heroVisual');
+  const heroSlider = document.getElementById('heroSlider');
+  if (!heroVisual || !heroSlider) return;
 
-if (heroPhoto && heroVisual) {
-  const usePhoto = () => heroVisual.classList.add('has-photo');
-  const dropPhoto = () => heroPhoto.remove();
+  const firstImg = heroSlider.querySelector('.hero-slide img');
+  if (!firstImg) return;
 
-  if (heroPhoto.complete) {
-    heroPhoto.naturalWidth ? usePhoto() : dropPhoto();
+  const usePhotos = () => heroVisual.classList.add('has-photo');
+  const dropPhotos = () => heroSlider.remove();
+
+  if (firstImg.complete) {
+    firstImg.naturalWidth ? usePhotos() : dropPhotos();
   } else {
-    heroPhoto.addEventListener('load', usePhoto);
-    heroPhoto.addEventListener('error', dropPhoto);
+    firstImg.addEventListener('load', usePhotos);
+    firstImg.addEventListener('error', dropPhotos);
   }
-}
+
+  // Si una foto secundaria no carga, se descarta para no mostrar un cuadro vacío
+  heroSlider.querySelectorAll('.hero-slide').forEach((slide, i) => {
+    if (i === 0) return;
+    const img = slide.querySelector('img');
+    if (img) img.addEventListener('error', () => slide.remove());
+  });
+
+  const INTERVAL = 4500;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const slides = () => Array.from(heroSlider.querySelectorAll('.hero-slide'));
+
+  let index = 0;
+  let timer = null;
+
+  const advance = () => {
+    const items = slides();
+    if (items.length < 2) return;
+    index = (index + 1) % items.length;
+    items.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+  };
+
+  const start = () => {
+    if (timer || reduced.matches || slides().length < 2) return;
+    timer = setInterval(advance, INTERVAL);
+  };
+
+  const stop = () => {
+    clearInterval(timer);
+    timer = null;
+  };
+
+  document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+  heroVisual.addEventListener('pointerenter', stop);
+  heroVisual.addEventListener('pointerleave', start);
+
+  if (reduced.addEventListener) {
+    reduced.addEventListener('change', () => (reduced.matches ? stop() : start()));
+  }
+
+  start();
+})();
