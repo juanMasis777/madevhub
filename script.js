@@ -399,8 +399,8 @@ if (progressBar) {
 
 /* === PALABRA ROTATIVA DEL TITULAR === */
 const rotatorWords = {
-  en: ['Restaurants', 'Barbershops', 'Clinics', 'Gyms', 'Cleaning Crews', 'Your Business'],
-  es: ['Restaurantes', 'Barberías', 'Clínicas', 'Gimnasios', 'Empresas de Limpieza', 'Tu Negocio']
+  en: ['Restaurants', 'Barbershops', 'Clinics', 'Gyms', 'Cleaners', 'Your Business'],
+  es: ['Restaurantes', 'Barberías', 'Clínicas', 'Gimnasios', 'Limpieza', 'Tu Negocio']
 };
 
 if (!prefersReducedMotion) {
@@ -613,4 +613,20 @@ if (heroBg && !prefersReducedMotion) {
       ticking = false;
     });
   }, { passive: true });
+}
+
+/* === FOTO DEL HERO (con respaldo al mockup CSS) === */
+const heroPhoto = document.getElementById('heroPhoto');
+const heroVisual = document.getElementById('heroVisual');
+
+if (heroPhoto && heroVisual) {
+  const usePhoto = () => heroVisual.classList.add('has-photo');
+  const dropPhoto = () => heroPhoto.remove();
+
+  if (heroPhoto.complete) {
+    heroPhoto.naturalWidth ? usePhoto() : dropPhoto();
+  } else {
+    heroPhoto.addEventListener('load', usePhoto);
+    heroPhoto.addEventListener('error', dropPhoto);
+  }
 }
