@@ -336,10 +336,25 @@ function stopAnimation() {
   frameId = null;
 }
 
-if (canvas && ctx && heroSection && !prefersReducedMotion) {
-  resizeCanvas();
-  createParticles();
-  startAnimation();
+/* En telefonos las particulas no se aprecian y cuestan bateria y velocidad:
+   ahi se quita el canvas, y en pantallas grandes arranca despues del load */
+const useParticles =
+  canvas && ctx && heroSection && !prefersReducedMotion && window.innerWidth > 768;
+
+if (canvas && !useParticles) canvas.remove();
+
+if (useParticles) {
+  const initParticles = () => {
+    resizeCanvas();
+    createParticles();
+    startAnimation();
+  };
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initParticles, { timeout: 2500 });
+  } else {
+    setTimeout(initParticles, 600);
+  }
 
   let resizeTimer = null;
 
@@ -673,5 +688,60 @@ if (heroBg && !prefersReducedMotion) {
     reduced.addEventListener('change', () => (reduced.matches ? stop() : start()));
   }
 
-  start();
+  /* Las fotos 2 y 3 no se descargan con la pagina: se piden despues de load,
+     asi no compiten con la imagen principal en moviles */
+  const hydrateSlides = () => {
+    heroSlider.querySelectorAll('.hero-slide[data-deferred]').forEach(slide => {
+      slide.querySelectorAll('source[data-srcset]').forEach(source => {
+        source.srcset = source.dataset.srcset;
+        source.removeAttribute('data-srcset');
+      });
+
+      const img = slide.querySelector('img[data-src]');
+
+      if (img) {
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+      }
+
+      slide.removeAttribute('data-deferred');
+    });
+
+    start();
+  };
+
+  const whenIdle = () => {
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(hydrateSlides, { timeout: 3000 });
+    } else {
+      setTimeout(hydrateSlides, 1200);
+    }
+  };
+
+  if (document.readyState === 'complete') whenIdle();
+  else window.addEventListener('load', whenIdle);
 })();
+
+/* === FONDOS QUE SE CARGAN AL ACERCARSE A LA PANTALLA === */
+const lazyBackgrounds = document.querySelectorAll('[data-bg]');
+
+if (lazyBackgrounds.length) {
+  const showBackground = element => {
+    element.style.backgroundImage = "url('" + element.dataset.bg + "')";
+    element.removeAttribute('data-bg');
+  };
+
+  if ('IntersectionObserver' in window) {
+    const bgObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        showBackground(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: '400px 0px' });
+
+    lazyBackgrounds.forEach(element => bgObserver.observe(element));
+  } else {
+    lazyBackgrounds.forEach(showBackground);
+  }
+}

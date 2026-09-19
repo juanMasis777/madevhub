@@ -133,13 +133,17 @@
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' rx='26' fill='%23040608'/><g transform='translate(60 60)' fill='none' stroke='%2300D4FF' stroke-linejoin='round'><polygon points='0,-40 35,-20 35,20 0,40 -35,20 -35,-20' stroke-width='5'/><path d='M-19 18 -19 -18 0 4 19 -18 19 18' stroke-width='6.5' stroke-linecap='round'/></g></svg>" />
 
-<link rel="preload" as="image" href="./images/city-bg.jpeg" fetchpriority="high" />
-<link rel="preload" as="image" href="./images/hero.jpg" media="(min-width: 721px)" fetchpriority="high" />
-<link rel="preload" as="image" href="./images/hero-mobile.jpg" media="(max-width: 720px)" fetchpriority="high" />
+<link rel="preload" as="image" type="image/avif" href="./images/hero-mobile.avif" media="(max-width: 720px)" fetchpriority="high" />
+<link rel="preload" as="image" type="image/avif" href="./images/hero.avif" media="(min-width: 721px)" fetchpriority="high" />
+<link rel="preload" as="image" type="image/avif" href="./images/city-bg-mobile.avif" media="(max-width: 720px)" />
+<link rel="preload" as="image" type="image/avif" href="./images/city-bg.avif" media="(min-width: 721px)" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet" />
+<!-- Fuentes variables (un archivo por familia) y carga sin bloquear el renderizado -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400..800&family=Instrument+Sans:wght@400..600&family=JetBrains+Mono:wght@400..700&family=Caveat:wght@600&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400..800&family=Instrument+Sans:wght@400..600&family=JetBrains+Mono:wght@400..700&family=Caveat:wght@600&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400..800&family=Instrument+Sans:wght@400..600&family=JetBrains+Mono:wght@400..700&family=Caveat:wght@600&display=swap" /></noscript>
 
 <link rel="stylesheet" href="styles.css" />
 
@@ -226,18 +230,37 @@
   }
 </style>
 
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel Code (se carga fuera del camino critico: al interactuar o despues de load) -->
 <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '271755952589224');
-  fbq('track', 'PageView');
+  (function () {
+    var started = false;
+
+    function loadPixel() {
+      if (started) return;
+      started = true;
+
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '271755952589224');
+      fbq('track', 'PageView');
+    }
+
+    ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function (evt) {
+      window.addEventListener(evt, loadPixel, { once: true, passive: true });
+    });
+
+    if (document.readyState === 'complete') {
+      setTimeout(loadPixel, 1200);
+    } else {
+      window.addEventListener('load', function () { setTimeout(loadPixel, 1200); });
+    }
+  })();
 </script>
 <noscript>
   <img
@@ -360,7 +383,11 @@
 
       <div class="hero-slider" id="heroSlider">
         <picture class="hero-slide is-active">
+          <source media="(max-width: 720px)" type="image/avif" srcset="./images/hero-mobile.avif" />
+          <source media="(max-width: 720px)" type="image/webp" srcset="./images/hero-mobile.webp" />
           <source media="(max-width: 720px)" srcset="./images/hero-mobile.jpg" />
+          <source type="image/avif" srcset="./images/hero.avif" />
+          <source type="image/webp" srcset="./images/hero.webp" />
           <img
             class="hero-photo"
             id="heroPhoto"
@@ -369,14 +396,18 @@
             width="1672"
             height="941"
             fetchpriority="high"
+            decoding="async"
           />
         </picture>
 
-        <picture class="hero-slide">
-          <source media="(max-width: 720px)" srcset="./images/hero-2-mobile.webp" />
+        <picture class="hero-slide" data-deferred>
+          <source media="(max-width: 720px)" type="image/avif" data-srcset="./images/hero-2-mobile.avif" />
+          <source media="(max-width: 720px)" type="image/webp" data-srcset="./images/hero-2-mobile.webp" />
+          <source type="image/avif" data-srcset="./images/hero-2.avif" />
+          <source type="image/webp" data-srcset="./images/hero-2.webp" />
           <img
             class="hero-photo"
-            src="./images/hero-2.webp"
+            data-src="./images/hero-2.webp"
             alt=""
             width="1672"
             height="941"
@@ -386,11 +417,14 @@
           />
         </picture>
 
-        <picture class="hero-slide">
-          <source media="(max-width: 720px)" srcset="./images/hero-3-mobile.webp" />
+        <picture class="hero-slide" data-deferred>
+          <source media="(max-width: 720px)" type="image/avif" data-srcset="./images/hero-3-mobile.avif" />
+          <source media="(max-width: 720px)" type="image/webp" data-srcset="./images/hero-3-mobile.webp" />
+          <source type="image/avif" data-srcset="./images/hero-3.avif" />
+          <source type="image/webp" data-srcset="./images/hero-3.webp" />
           <img
             class="hero-photo"
-            src="./images/hero-3.webp"
+            data-src="./images/hero-3.webp"
             alt=""
             width="1672"
             height="941"
@@ -626,7 +660,7 @@
     <div class="work-grid">
 
       <a data-cat="retail" href="https://relyxai.com" target="_blank" rel="noopener noreferrer" class="work-card reveal">
-        <div class="work-thumb" style="background-image:url('./images/massager-6-heads.jpeg')">
+        <div class="work-thumb" data-bg="./images/massager-6-heads.webp">
           <span class="work-tag" data-en="Product Landing Page" data-es="Landing de Producto">Product Landing Page</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
         </div>
@@ -643,7 +677,7 @@
       </a>
 
       <a href="https://madevhub-chinese-restaurant-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="food">
-        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1552611052-33e04de081de?w=900&h=600&fit=crop')">
+        <div class="work-thumb" data-bg="https://images.unsplash.com/photo-1552611052-33e04de081de?w=900&h=600&fit=crop">
           <span class="work-tag" data-en="Chinese Restaurant" data-es="Restaurante Chino">Chinese Restaurant</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
         </div>
@@ -660,7 +694,7 @@
       </a>
 
       <a href="https://madevhub-beauty-salon-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="beauty">
-        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&h=600&fit=crop')">
+        <div class="work-thumb" data-bg="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&h=600&fit=crop">
           <span class="work-tag" data-en="Beauty Salon" data-es="Salón de Belleza">Beauty Salon</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
         </div>
@@ -677,7 +711,7 @@
       </a>
 
       <a href="https://www.brightmaxcleaning.com/" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="services">
-        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&h=600&fit=crop')">
+        <div class="work-thumb" data-bg="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&h=600&fit=crop">
           <span class="work-tag" data-en="Cleaning Service" data-es="Servicio de Limpieza">Cleaning Service</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
         </div>
@@ -694,7 +728,7 @@
       </a>
 
       <a href="https://madevhub-blade-co-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="beauty">
-        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&h=600&fit=crop')">
+        <div class="work-thumb" data-bg="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&h=600&fit=crop">
           <span class="work-tag" data-en="Barbershop" data-es="Barbería">Barbershop</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
         </div>
@@ -711,7 +745,7 @@
       </a>
 
       <a href="https://madevhub-fitness-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="health">
-        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&h=600&fit=crop')">
+        <div class="work-thumb" data-bg="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&h=600&fit=crop">
           <span class="work-tag" data-en="Fitness Brand" data-es="Marca Fitness">Fitness Brand</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
         </div>
@@ -728,7 +762,7 @@
       </a>
 
       <a href="https://madevhub-bright-smile-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="health">
-        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900&h=600&fit=crop')">
+        <div class="work-thumb" data-bg="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900&h=600&fit=crop">
           <span class="work-tag" data-en="Dental Clinic" data-es="Clínica Dental">Dental Clinic</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
         </div>
@@ -745,7 +779,7 @@
       </a>
 
       <a href="https://madevhub-restaurant-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-cat="food">
-        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&h=600&fit=crop')">
+        <div class="work-thumb" data-bg="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&h=600&fit=crop">
           <span class="work-tag" data-en="Restaurant" data-es="Restaurante">Restaurant</span>
           <span class="work-arrow" aria-hidden="true">↗</span>
         </div>
@@ -762,7 +796,7 @@
       </a>
 
       <a href="#contact" class="work-card work-card-cta reveal" data-cat="all">
-        <div class="work-thumb" style="background-image:url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&h=600&fit=crop')">
+        <div class="work-thumb" data-bg="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&h=600&fit=crop">
           <span class="work-tag" data-en="Your Project?" data-es="¿Tu Proyecto?">Your Project?</span>
           <span class="work-arrow" aria-hidden="true">→</span>
         </div>
