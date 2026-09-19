@@ -856,6 +856,20 @@ ul, ol { list-style: none; }
   margin-inline: 4px;
 }
 
+.services-note a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  margin-inline: 4px;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.4);
+  transition: color var(--t), border-color var(--t);
+}
+
+.services-note a:hover {
+  color: var(--accent2);
+  border-bottom-color: rgba(0, 232, 143, 0.6);
+}
+
 /* ============================================
    AI & AUTOMATION
    ============================================ */
