@@ -143,7 +143,7 @@
 
 <link rel="stylesheet" href="styles.css" />
 
-<!-- Pricing: 5 paquetes (override de styles.css) -->
+<!-- Pricing: 4 paquetes en una sola fila (override de styles.css) -->
 <style>
   /* Solo afecta la seccion de precios de sitios web, no los Planes IA */
   #pricing > .container {
@@ -151,23 +151,20 @@
   }
 
   #pricing .pricing-grid {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    justify-content: stretch !important;
     align-items: stretch !important;
-    gap: 18px !important;
     width: 100% !important;
     max-width: none !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
-  /* Laptops: 3 + 2 tarjetas, centradas */
   #pricing .pricing-grid > .price-card {
-    flex: 1 1 300px !important;
-    min-width: 300px !important;
-    max-width: 360px !important;
     width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
     margin: 0 !important;
     display: flex !important;
     flex-direction: column !important;
@@ -178,24 +175,7 @@
     flex: 1 1 auto !important;
   }
 
-  /* Pantallas anchas: los 5 paquetes en una sola fila */
-  @media (min-width: 1360px) {
-    #pricing > .container {
-      max-width: 1480px !important;
-    }
-    #pricing .pricing-grid > .price-card {
-      flex: 1 1 240px !important;
-      min-width: 240px !important;
-      max-width: 300px !important;
-      padding: 28px 18px 24px !important;
-    }
-    #pricing .pricing-grid > .price-card .price-features {
-      gap: 9px !important;
-      font-size: 0.92em !important;
-    }
-  }
-
-  /* Pantallas medianas: tarjetas mas compactas */
+  /* Pantallas medianas: siguen las 4 en fila, pero mas compactas */
   @media (max-width: 1240px) {
     #pricing .pricing-grid {
       gap: 14px !important;
@@ -211,17 +191,15 @@
 
   /* Tablet: 2 columnas */
   @media (max-width: 1023px) {
-    #pricing .pricing-grid > .price-card {
-      flex: 1 1 calc(50% - 7px) !important;
-      min-width: 0 !important;
-      max-width: none !important;
+    #pricing .pricing-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     }
   }
 
   /* Movil: 1 columna */
   @media (max-width: 680px) {
-    #pricing .pricing-grid > .price-card {
-      flex: 1 1 100% !important;
+    #pricing .pricing-grid {
+      grid-template-columns: minmax(0, 1fr) !important;
     }
   }
 </style>
@@ -1226,34 +1204,6 @@
 
         <a href="https://buy.stripe.com/00wcN7fDg7Vc19z71k1wY0a" target="_blank" rel="noopener" class="btn btn-primary btn-block" data-en="Get Started" data-es="Empezar">Get Started</a>
         <div class="stripe-badge" data-en="Secure checkout · Stripe" data-es="Pago seguro · Stripe">Secure checkout · Stripe</div>
-      </div>
-
-      <!-- GROWTH WEBSITE — $997 (paquete intermedio entre $697 y $1,497) -->
-      <div class="price-card reveal">
-        <h3 data-en="Growth Website" data-es="Sitio de Crecimiento">Growth Website</h3>
-        <p class="price-sub" data-en="The step up when 4 pages are not enough" data-es="El siguiente paso cuando 4 páginas no alcanzan">The step up when 4 pages are not enough</p>
-
-        <div class="price-amount">$997</div>
-        <div class="price-period" data-en="one-time payment" data-es="pago único">one-time payment</div>
-
-        <ul class="price-features">
-          <li class="is-gift" data-en="FREE domain + hosting for 1 year" data-es="Dominio + hosting GRATIS por 1 año">FREE domain + hosting for 1 year</li>
-          <li data-en="Everything in Business Website" data-es="Todo lo del Sitio Empresarial">Everything in Business Website</li>
-          <li data-en="Custom design — not a template" data-es="Diseño a la medida — no plantilla">Custom design — not a template</li>
-          <li data-en="Mobile responsive design" data-es="Diseño responsivo incluido">Mobile responsive design</li>
-          <li data-en="Custom animations and effects" data-es="Animaciones y efectos personalizados">Custom animations and effects</li>
-          <li data-en="On-page SEO so Google finds you" data-es="SEO on-page para que te encuentren en Google">On-page SEO so Google finds you</li>
-          <li data-en="Social media integration" data-es="Integración con redes sociales">Social media integration</li>
-          <li data-en="Visitor tracking and analytics" data-es="Seguimiento de visitantes y analíticas">Visitor tracking and analytics</li>
-          <li data-en="Contact and lead forms" data-es="Formularios de contacto y leads">Contact and lead forms</li>
-          <li data-en="Delivery in 12 days" data-es="Entrega en 12 días">Delivery in 12 days</li>
-          <li data-en="3 rounds of revisions" data-es="3 rondas de revisiones">3 rounds of revisions</li>
-          <li data-en="100% ownership rights" data-es="100% derechos de propiedad">100% ownership rights</li>
-        </ul>
-
-        <!-- TODO: reemplazar este href por el Stripe Payment Link de $997 cuando esté creado -->
-        <a href="#contact" class="btn btn-outline btn-block" data-en="Get Started" data-es="Empezar">Get Started</a>
-        <div class="stripe-badge" data-en="Payment link · Stripe" data-es="Enlace de pago · Stripe">Payment link · Stripe</div>
       </div>
 
       <!-- PROFESSIONAL WEBSITE -->
